@@ -1,7 +1,7 @@
 
-const Breadcrumb = ({ page_title, page_list, style }: any) => {
+const Breadcrumb = ({ page_title, page_list, style, image_url }: any) => {
    return (
-      <div className="page-banner-area bgs-cover overlay text-white py-165 rpy-125 rmt-65" style={{ backgroundImage: `url(assets/img/background/page-banner.jpg)` }}>
+      <div className="page-banner-area bgs-cover overlay text-white py-165 rpy-125 rmt-65" style={{ backgroundImage: `url(${image_url})` }}>
          <div className="container">
             <div className="row justify-content-center">
                <div className={`${style ? "col-lg-12" : "col-xl-7 col-lg-8"}`}>
