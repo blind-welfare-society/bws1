@@ -8,8 +8,8 @@ const HeaderTop = ({ style }: any) => {
                <ul className="topbar-left">
                   {style ?
                      <>
-                        <li><b>Call now - <Link href="callto:333-444555">333 - 444 555</Link></b></li>
-                        <li>Shiloh, Hawaii 81063</li>
+                        <li><b>Call now - <Link href="callto:+91-9968969932">+91-9968969932</Link></b></li>
+                        <li>Swaroop Nagar, New Delhi – 110042</li>
                      </> :
                      <>
                         <li><i className="fas fa-envelope"></i> <Link href="mailto:info@blindwelfaresociety.in" title='Email'>info@blindwelfaresociety.in</Link></li>
