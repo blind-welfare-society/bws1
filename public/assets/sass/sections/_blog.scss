@@ -412,3 +412,28 @@
     width: 100%;
     height: auto;
 }
+
+.storyBox {
+    box-shadow: 0px 0px 4px 4px #cccc;
+    margin: 10px 0;
+    height: 420px;
+    background: aliceblue;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .storyBox__img {
+        margin-bottom: 20px;
+
+        img {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+        }
+    }
+
+    .storyBox__content {
+        text-align: center;
+    }
+}
