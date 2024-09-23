@@ -1,5 +1,5 @@
 'use client'
-import Breadcrumb from "@/components/common/Breadcrumb"
+import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import StoryOfChangeArea from "./StoryOfChangeArea"
@@ -10,8 +10,16 @@ const StoriesOfChange = () => {
       <>
          <HeaderOne style_1={false} style_2={false} />
          <main>
-               <Breadcrumb page_title="Stories of Change" page_list="Stories of Change" style={false} />
-               <StoryOfChangeArea />   
+            <Banner image_url="assets/img/background/background.jpg" />
+               <div className="container">
+                  <div className="row">
+                     <div className="col-12 mb-40 pt-20">
+                           <h1 className="text-center headings-with-border">Stories of Change</h1>
+                     </div>
+                  </div>
+               </div> 
+            <StoryOfChangeArea />   
+            
          </main>
          <FooterOne />
       </>

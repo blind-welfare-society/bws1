@@ -15,13 +15,13 @@ const menu_data: MenuItem[] = [
         id: 1,
         has_dropdown: true,
         title: "Home",
-        link: "#",
+        link: "/#",
     },
     {
         id: 2,
         has_dropdown: true,
         title: "About Us",
-        link: "#",
+        link: "/#",
         sub_menus: [
             { link: "/about-us", title: "Overview" },
             { link: "/mission-and-vision", title: "Mission and Vision" },
@@ -56,13 +56,13 @@ const menu_data: MenuItem[] = [
         id: 5,
         has_dropdown: true,
         title: "Contact Us",
-        link: "contact-us",
+        link: "/contact-us",
     },
     {
         id: 6,
         has_dropdown: true,
         title: "Blogs",
-        link: "blogs",
+        link: "/blogs",
     },
 ];
 export default menu_data;

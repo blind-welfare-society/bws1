@@ -1,14 +1,22 @@
-import Breadcrumb from "@/components/common/Breadcrumb"
+import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import BlogArea from "./BlogArea"
+import Image from "next/image"
 
-const Blog = () => {
+const News = () => {
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
          <main>
-            <Breadcrumb page_title="Blog Post" page_list="Blog" style={false} />
+            <Banner image_url="assets/img/blog/blog-banner.jpg" />
+            <div className="container">
+               <div className="row">
+                  <div className="col-12">
+                        <h1 className="text-center headings-with-border">Blogs</h1>
+                  </div>
+               </div>
+            </div>
             <BlogArea/>
          </main>
          <FooterOne />
@@ -16,4 +24,4 @@ const Blog = () => {
    )
 }
 
-export default Blog;
+export default News;

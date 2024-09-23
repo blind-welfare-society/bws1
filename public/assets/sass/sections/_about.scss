@@ -189,7 +189,8 @@
 .about-us-content-three {
     p {
         @include res-ab(sm) {
-            font-size: 18px;
+            font-size: 1.04rem;
+            margin-bottom: .7rem;
         }
     }
     .list-style-one {

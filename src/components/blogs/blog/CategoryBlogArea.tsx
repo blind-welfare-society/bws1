@@ -2,9 +2,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiBlogs';
+import { fetchPostsByCategory, Post, PaginatedResponse } from '@/utils/apiCategoryBlog';
+import { usePathname } from "next/navigation";
 
-const BlogArea = () => {
+
+
+const CategoryBlogArea = () => {
 
    const [posts, setPosts] = useState<Post[]>([]);
    const [loading, setLoading] = useState(true);
@@ -13,15 +16,16 @@ const BlogArea = () => {
    const [total, setTotal] = useState(0);
 
    const limit = 12;
+   const pathName = usePathname();
+   const slug = pathName?.split("/").pop() ?? '';
 
    useEffect(() => {
    const getPosts = async () => {
       try {
          setLoading(true);
-         const { data, total } = await fetchPosts(page, limit);
+         const { data, total } = await fetchPostsByCategory(page, limit, slug);
          setPosts(data);
          setTotal(total);
-         console.log(data);
       } catch (error) {
          setError(error as Error);
       } finally {
@@ -30,7 +34,7 @@ const BlogArea = () => {
    };
 
    getPosts();
-   }, [page]);
+   }, [page, slug]);
 
    const totalPages = Math.ceil(total / limit);
    const maxPagesToShow = 5;
@@ -46,9 +50,9 @@ const BlogArea = () => {
   if (error) return <p>Error: {error.message}</p>;
 
    return (
-      <div className="blog-page-area pb-100 pt-30 rel z-1">
+      <div className="blog-page-area pb-80 pt-30 rel z-1">
          <div className="container">
-            <div className="row justify-content-center">
+            <div className="row">
                {posts.map((item) => (
                   <div key={item.id} className="col-xl-4 col-md-6">
                      <div className="blog-item">
@@ -104,4 +108,4 @@ const BlogArea = () => {
    )
 }
 
-export default BlogArea
+export default CategoryBlogArea

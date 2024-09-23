@@ -2,9 +2,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiBlogs';
+import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiNews';
 
-const BlogArea = () => {
+const NewsArea = () => {
 
    const [posts, setPosts] = useState<Post[]>([]);
    const [loading, setLoading] = useState(true);
@@ -51,25 +51,14 @@ const BlogArea = () => {
             <div className="row justify-content-center">
                {posts.map((item) => (
                   <div key={item.id} className="col-xl-4 col-md-6">
-                     <div className="blog-item">
+                     <div className="blog-item ">
                         <div className="blog-item__img">
-                           <Link href={`/blogs/${item.slug}`}><Image src={item.blog_images} width={420} height={280} alt="Blog" /></Link>
+                           <Link href={`/news/${item.slug}`}><Image src={item.news_image} width={168} height={191} alt={item.title} /></Link>
                         </div>
-                        <div className="blog-item__content blog-container">
-                           <h4><Link href={`/blogs/${item.slug}`}>{item.title}</Link></h4>
-                           <p className="post-date"><i className="flaticon-calendar"></i> {item.blog_date}</p>
-                           <div className="blog-categories">
-                              {Array.isArray(item.cat_name) && item.cat_name.length > 0 ? (
-                                 item.cat_name.map((category, index) => (
-                                 <span key={`${category.slug}-${index}`}>
-                                    <Link href={`/blog/${category.slug}`}>{category.name}</Link>
-                                    {index < item.cat_name.length - 1 ? ', ' : ''}
-                                 </span>
-                                 ))
-                              ) : "" }
-                           </div>
+                        <div className="blog-item__content news-container">
+                           <h4><Link href={`/news/${item.slug}`}>{item.title}</Link></h4>
                            <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
-                           <Link href={`/blogs/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
+                           <Link href={`/news/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
                         </div>
                      </div>
                   </div>
@@ -104,4 +93,4 @@ const BlogArea = () => {
    )
 }
 
-export default BlogArea
+export default NewsArea

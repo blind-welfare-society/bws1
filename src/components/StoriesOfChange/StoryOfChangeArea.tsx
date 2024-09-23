@@ -7,29 +7,47 @@ import { fetchPosts,Post } from '@/utils/apiStoriesOfChange';
 
 
 const StoryOfChangeArea = () => {
-    const [posts, setPosts] = useState<Post[]>([]);    
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState<Error | null>(null);
-    useEffect(() => {
-    const getPosts = async () => {
-      try {
-        const data = await fetchPosts();
-        setPosts(data);
-      } catch (error) {
-        setError(error as Error);
-      } finally {
-        setLoading(false);
-      }
-    };
+    const [posts, setPosts] = useState<Post[]>([]);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState<Error | null>(null);
+   const [page, setPage] = useState(1);
+   const [total, setTotal] = useState(0);
 
-    getPosts();
-    }, []);
-    
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error.message}</p>;
+   const limit = 12;
+
+   useEffect(() => {
+   const getPosts = async () => {
+      try {
+         setLoading(true);
+         const { data, total } = await fetchPosts(page, limit);
+         setPosts(data);
+         setTotal(total);
+         console.log(data);
+      } catch (error) {
+         setError(error as Error);
+      } finally {
+       setLoading(false);
+      }
+   };
+
+   getPosts();
+   }, [page]);
+
+   const totalPages = Math.ceil(total / limit);
+   const maxPagesToShow = 5;
+   const startPage = Math.max(1, page - Math.floor(maxPagesToShow / 2));
+   const endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+   const pages = Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index);
+
+   const handlePageClick = (pageNumber: number) => {
+      setPage(pageNumber);
+   };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
     return (
-        <div className="blog-page-area py-50 rel z-1">
+        <div className="blog-page-area pb-50 pt-0 rel z-1">
             <div className="container"> 
                 <div className="row justify-content-center">
                     {posts?.map((item: any) => (
@@ -40,8 +58,8 @@ const StoryOfChangeArea = () => {
                             </div>
                             <div className="storyBox__content">
                             <h6><Link href={`/${item.slug}`}>{item.name}</Link></h6>
-                            <p>{item.brief}</p>
-                            <Link href={`/${item.name}`} className="read-more">Read More</Link>
+                            <p className="mb-1">{item.brief}</p>
+                            <Link href={`/${item.slug}`} className="read-more">Read More</Link>
                             </div>
                         </div>
                      </div>

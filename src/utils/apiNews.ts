@@ -2,9 +2,11 @@ import axios from "@/lib/axios";
 
 export interface Post {
   id: number;
-  name: string;
+  title: string;
+  news_date: string;
+  slug: string;
   brief: string;
-  thumb: string;
+  news_image: string;
   // Add other post properties as needed
 }
 
@@ -15,10 +17,15 @@ export interface PaginatedResponse {
   limit: number;
 }
 
+/*const formatDate = (dateString: string): string => {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', { day: 'numeric', month: 'short' });
+};*/
+
 
 export const fetchPosts = async (page: number, limit: number): Promise<PaginatedResponse> => {
   try {
-    const response = await axios.get<{ message: string, data: Post[], total: number }>('/stories-of-change', {
+    const response = await axios.get<{ message: string, data: Post[], total: number }>('/newsarticles', {
       params: { page, limit },
     });
 

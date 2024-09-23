@@ -1,25 +1,28 @@
 'use client'
-import Breadcrumb from "@/components/common/Breadcrumb"
+import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
-import About from "@/components/homes/home-three/About"
-import Features from "@/components/homes/home-one/Features"
+import CmsPages from "@/components/cmspages"
 import Volunteer from "@/components/homes/home-one/Volunteer"
 import Testimonial from "@/components/homes/home-two/Testimonial"
 import CtaArea from "@/components/homes/home-three/CtaArea"
-import FAQ from "@/components/homes/home-one/FAQ"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
+import { usePathname } from "next/navigation";
 
 
-const InnerAbout = () => {
+const InnerCmsPage = () => {
+   const pathName = usePathname();
+   let fullPathName = '/banner-image' + pathName;
+    
    const [cmsContent, setCmsContent] = useState({} as any);
 
    useEffect(() => {
-      axios.get('/banner-image/about-us').then((res) => {
+      axios.get(fullPathName).then((res) => {
+         //console.log(res.data); // Check the response structure
          setCmsContent(res.data);
       });
-   }, []);
+   }, [fullPathName]);
 
    const imageUrl = cmsContent?.image_url;
    const fullPath = "http://localhost/bws-admin/public/storage/cms_pages/" + imageUrl;
@@ -29,17 +32,15 @@ const InnerAbout = () => {
       <>
          <HeaderOne style_1={false} style_2={false} />
          <main>
-            <Breadcrumb page_title="About Us" page_list="About" image_url={fullPath} style={false} />
-            <About />
-            <Features />
+            <Banner image_url={fullPath} />
+            <CmsPages />
             <Volunteer style={true} />
-            <Testimonial style={false} />
             <CtaArea />
-            <FAQ />
+            <Testimonial style={false} />
          </main>
          <FooterOne />
       </>
    )
 }
 
-export default InnerAbout;
+export default InnerCmsPage;

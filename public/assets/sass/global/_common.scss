@@ -87,13 +87,7 @@
     display: inline-flex;
     text-transform: uppercase;
     font-family: var(--heading-font);
-    &:after {
-        content: '';
-        margin-left: 7px;
-        border-radius: 50%;
-        @include size(6px);
-        background: var(--primary-color);
-    }
+    color: #11a3c9;
 }
 
 .read-more-two {
@@ -496,4 +490,9 @@
 .wrapper{
     overflow: hidden;
     max-width: 100vw;
+}
+
+.image-style-side {
+    float: left;
+    padding-right: 30px;
 }

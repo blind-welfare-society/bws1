@@ -1,4 +1,4 @@
-const BlogDetailsArea = (props: any) => {
+const NewsDetailsArea = (props: any) => {
    const single_blog = props.cmsContent;
    return (
       <div className="blog-details-area pb-20 pt-50">
@@ -17,4 +17,4 @@ const BlogDetailsArea = (props: any) => {
    )
 }
 
-export default BlogDetailsArea
+export default NewsDetailsArea

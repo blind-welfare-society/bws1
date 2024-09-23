@@ -4,12 +4,12 @@ import axios from "@/lib/axios";
 
 export const metadata = async () => {
   try {
-    const response = await axios.get('/about-us');
+    const response = await axios.get('/meta-info/about-us');
     const data = response.data;
-     
+    
     // Ensure data contains title and description
-    const title = data['title'] || 'About Us-----';
-    const description = data['content'] || 'Lorem Ipsum';
+    const title = data.meta_title || 'About Us';
+    const description = data.meta_desc || 'Lorem Ipsum';
 
     return {
       title,

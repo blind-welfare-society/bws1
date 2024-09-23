@@ -3,8 +3,10 @@ import axios from "@/lib/axios";
 export interface Post {
   id: number;
   name: string;
-  brief: string;
-  thumb: string;
+  description: string;
+  location: string;
+  image: string;
+  date_on: string;
   // Add other post properties as needed
 }
 
@@ -16,9 +18,9 @@ export interface PaginatedResponse {
 }
 
 
-export const fetchPosts = async (page: number, limit: number): Promise<PaginatedResponse> => {
+export const fetchTestimonialsPosts = async (page: number, limit: number): Promise<PaginatedResponse> => {
   try {
-    const response = await axios.get<{ message: string, data: Post[], total: number }>('/stories-of-change', {
+    const response = await axios.get<{ message: string, data: Post[], total: number }>('/testimonials', {
       params: { page, limit },
     });
 
