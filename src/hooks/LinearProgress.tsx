@@ -11,6 +11,7 @@ const LinearProgress = ({
   const progressRef = useRef(null);
 
   useEffect(() => {
+    const currentElement = progressRef.current; // Create a local variable to store the current value
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInViewport(entry.isIntersecting);
@@ -22,13 +23,13 @@ const LinearProgress = ({
       }
     );
 
-    if (progressRef.current) {
-      observer.observe(progressRef.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (progressRef.current) {
-        observer.unobserve(progressRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, []);

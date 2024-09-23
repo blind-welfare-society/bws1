@@ -11,6 +11,7 @@ const CircleProgress = ({
   const circleRef = useRef(null);
 
   useEffect(() => {
+    const currentElement = circleRef.current; // Create a local variable to store the current value
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInViewport(entry.isIntersecting);
@@ -22,13 +23,13 @@ const CircleProgress = ({
       }
     );
 
-    if (circleRef.current) {
-      observer.observe(circleRef.current);
+    if (currentElement) {
+      observer.observe(currentElement);
     }
 
     return () => {
-      if (circleRef.current) {
-        observer.unobserve(circleRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, []);
