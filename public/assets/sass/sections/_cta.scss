@@ -10,9 +10,12 @@
                 font-size: 20px;
             }
         }
+        h2{
+            font-size: 38px;
+        }
     }
     &:before {
         opacity: 1;
-        background: linear-gradient(189.16deg, rgba(35, 35, 35, 0.41) -28.68%, #232323 75.27%);
+        background: linear-gradient(180deg, rgb(147 147 147 / 41%) -28.68%, #393737 83.27%);
     }
 }

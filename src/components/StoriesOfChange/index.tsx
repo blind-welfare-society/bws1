@@ -18,8 +18,7 @@ const StoriesOfChange = () => {
                      </div>
                   </div>
                </div> 
-            <StoryOfChangeArea />   
-            
+            <StoryOfChangeArea />
          </main>
          <FooterOne />
       </>

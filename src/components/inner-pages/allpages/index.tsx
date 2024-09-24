@@ -3,9 +3,10 @@ import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import CmsPages from "@/components/cmspages"
-import Volunteer from "@/components/homes/home-one/Volunteer"
-import Testimonial from "@/components/homes/home-two/Testimonial"
-import CtaArea from "@/components/homes/home-three/CtaArea"
+import FeaturedStories from "@/components/common/FeaturedStories"
+import BecomeVolunteer from "@/components/homes/home-two/BecomeVolunteer"
+import Blog from "@/components/homes/home-one/Blog"
+import CtaArea from "@/components/homes/home-one/CtaArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
@@ -34,9 +35,10 @@ const InnerCmsPage = () => {
          <main>
             <Banner image_url={fullPath} />
             <CmsPages />
-            <Volunteer style={true} />
             <CtaArea />
-            <Testimonial style={false} />
+            <FeaturedStories />
+            <BecomeVolunteer />
+            <Blog />
          </main>
          <FooterOne />
       </>

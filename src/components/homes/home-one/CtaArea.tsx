@@ -7,8 +7,8 @@ const CtaArea = () => {
             <div className="row justify-content-center">
                <div className="col-xl-8 col-lg-10">
                   <div className="section-title text-center text-white">
-                     <h2>Welcome To Save Life And Make A Positive <span>Impact</span></h2>
-                     <p>Only when the society comes together and contributeswe will be able to make an impact.</p>
+                     <h2>Welcome to Save Life, empowering blind individuals and making a <span>difference</span></h2>
+                     <p>Only when the society comes together and contributes we will be able to make an impact.</p>
                      <Link className="cr-btn mt-30" href="#">Donate Now</Link>
                   </div>
                </div>

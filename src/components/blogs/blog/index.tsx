@@ -1,6 +1,8 @@
+'use client'
 import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
+import FeaturedStories from "@/components/common/FeaturedStories"
 import BlogArea from "./BlogArea"
 import Image from "next/image"
 
@@ -17,7 +19,8 @@ const News = () => {
                   </div>
                </div>
             </div>
-            <BlogArea/>
+            <BlogArea />
+            <FeaturedStories />
          </main>
          <FooterOne />
       </>

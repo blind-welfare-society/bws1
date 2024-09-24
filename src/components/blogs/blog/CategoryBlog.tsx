@@ -3,6 +3,7 @@ import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import CategoryBlogArea from "./CategoryBlogArea"
+import FeaturedStories from "@/components/common/FeaturedStories"
 import axios from "@/lib/axios";
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation";
@@ -35,6 +36,7 @@ const CategoryBlog = () => {
                     </div>
                 </div>
                 <CategoryBlogArea />
+                <FeaturedStories />
             </main>
             <FooterOne />
         </>

@@ -50,7 +50,7 @@ const CategoryBlogArea = () => {
   if (error) return <p>Error: {error.message}</p>;
 
    return (
-      <div className="blog-page-area pb-80 pt-30 rel z-1">
+      <div className="blog-page-area pb-50 pt-30 rel z-1">
          <div className="container">
             <div className="row">
                {posts.map((item) => (

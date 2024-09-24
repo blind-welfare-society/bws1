@@ -46,7 +46,7 @@ const BlogArea = () => {
   if (error) return <p>Error: {error.message}</p>;
 
    return (
-      <div className="blog-page-area pb-100 pt-30 rel z-1">
+      <div className="blog-page-area pb-50 pt-30 rel z-1">
          <div className="container">
             <div className="row justify-content-center">
                {posts.map((item) => (
