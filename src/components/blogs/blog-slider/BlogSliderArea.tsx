@@ -49,9 +49,9 @@ const BlogSliderArea = () => {
                               <li><i className="flaticon-user"></i> <Link href="#">Wade Warren</Link></li>
                               <li><i className="flaticon-bubble-chat"></i> <Link href="#">05 Comment</Link></li>
                            </ul>
-                           <h4><Link href={`/blog-details/${item.id}`}>tincidunt egeting semper</Link></h4>
+                           <h4><Link href={`/blogs/${item.id}`}>tincidunt egeting semper</Link></h4>
                            <p>Maximus a augue. Nullam ante nunc poraretra are oullam fringill sem ealiquam suscipit.......</p>
-                           <Link href={`/blog-details/${item.id}`} className="read-more">Read More</Link>
+                           <Link href={`/blogs/${item.id}`} className="read-more">Read More</Link>
                         </div>
                      </div>
                   </div>
