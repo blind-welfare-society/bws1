@@ -54,9 +54,9 @@ const ProjectArea = () => {
                   <div key={item.id} className="col-xl-4 col-md-6">
                      <div className={`cause-two-item cause-blue`}>
                         <div className="image">
-                           <Image src={item.image} alt="Cause" width={100} height={100} />
+                           <Image src={item.image} alt="Cause" width={386} height={184} />
                         </div>
-                        <div className="content">
+                        <div className="content projectLists">
                            <div className={`circle-progresss two`}>
                               <div className="chart" data-percent="65">
                                  <span><CircleProgress finish={item.percent_count} /></span>
@@ -64,7 +64,7 @@ const ProjectArea = () => {
                            </div>
                            <h4><Link href={`/projects/${item.project_slug}`}>{item.project_title}</Link></h4>
                            <p> {item.project_brief}</p>
-                           <div className="row">
+                           <div className="row mb-8">
                                 <div className="col-md-6">
                                     <div className="cause-price cause-price--yellow">
                                         <p className="donateDetails">₹{item.totalAmount}<br /><small>raised of ₹{item.target_amount}</small></p>

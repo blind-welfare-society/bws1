@@ -171,11 +171,15 @@
             height: auto;
         }
     }
+    
     .content {
         background: #FAFAFA;
         padding: 0 15px 30px;
         border-radius: 0px 0px 5px 5px;
         border: 1px solid rgba(0, 0, 0, 0.05);
+        &.projectLists{
+            height: 375px;
+        }
         @include res-bl(xs) {
             @include gapLR(padding, 20px);
         }
