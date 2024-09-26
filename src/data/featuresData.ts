@@ -105,7 +105,7 @@ const features_data: DataType[] = [
       bg_img:features3Bg_1,
       icon_name:"flaticon-solidarity",
       title:"Get Inspire And Help",
-      desc:"Maximus a augue. Nullam ante nunc poraretra are oullam fringill sem ealiquam suscipit.......",
+      desc:"Support and inspire blind individuals to overcome challenges and reach potential.",
    }, 
    {
       id:2,
@@ -113,7 +113,7 @@ const features_data: DataType[] = [
       bg_img:features3Bg_2,
       icon_name:"flaticon-heart",
       title:"Send Us Donations",
-      desc:"Maximus a augue. Nullam ante nunc poraretra are oullam fringill sem ealiquam suscipit.......",
+      desc:"Donate generously to help us improve the lives of individuals with blindness.",
    }, 
    {
       id:3,
@@ -121,7 +121,7 @@ const features_data: DataType[] = [
       bg_img:features3Bg_3,
       icon_name:"flaticon-help",
       title:"Become a volunteer",
-      desc:"Maximus a augue. Nullam ante nunc poraretra are oullam fringill sem ealiquam suscipit.......",
+      desc:"Join us for meaningful opportunities to make a positive impact on society.",
    },
 ]
 

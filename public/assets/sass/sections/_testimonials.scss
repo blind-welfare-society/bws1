@@ -199,22 +199,19 @@
     }
     .name {
         margin-bottom: 3px;
-        @include res-bl(xs) {
-            font-size: 22px;
-        }
+       font-size: 18px;
     }
     .designation {
-        font-size: 18px;
+        font-size: 16px;
+        columns: #918e8e;
     }
     .text {
         margin-top: 10px;
         font-weight: 500;
         font-style: italic;
         margin-bottom: 20px;
-        line-height: 1.95;
-        @include res-ab(xs) {
-            font-size: 18px;
-        }
+        line-height: 1.65;
+        font-size: 14px;
     }
     &:hover {
         box-shadow: 0px 0px 90px rgba(0, 0, 0, 0.25);

@@ -173,19 +173,21 @@
     }
     .content {
         background: #FAFAFA;
-        padding: 0 30px 50px;
+        padding: 0 15px 30px;
         border-radius: 0px 0px 5px 5px;
         border: 1px solid rgba(0, 0, 0, 0.05);
         @include res-bl(xs) {
             @include gapLR(padding, 20px);
         }
         h4 {
+            color: #363b97;
+            font-size: 20px;
             margin-bottom: 15px;
             @include res-bl(xxl) {
-                font-size: 27px;
+                font-size: 20px;
             }
             @include res-bl(xs) {
-                font-size: 22px;
+                font-size: 18px;
             }
         }
         .cause-price {
@@ -201,7 +203,7 @@
             }
         }
         p {
-            margin-bottom: 25px;
+            margin-bottom: 8px;
         }
         .cr-btn {
             margin-left: 5px;
@@ -210,6 +212,16 @@
     &.cause-yellow {
         .cause-price {
             color: var(--yellow-color);
+        }
+    }
+    &.cause-blue {
+        .cause-price {
+            color:#000;
+            font-size: 16px;
+            line-height: 1.4;
+            small{
+                color: #363b97;
+            }
         }
     }
     &.cause-green {
@@ -234,7 +246,7 @@
       width: -webkit-max-content;
       width: -moz-max-content;
       width: max-content;
-      margin: -50px auto 20px;
+      margin: -50px auto 0px;
       border: 11px solid #FAFAFA;
    
       &:after {
@@ -277,6 +289,9 @@
 .cause-two-item.cause-yellow .circle-progress-content .bar{
    stroke: #FFB840;
 }
+.cause-two-item.cause-blue .circle-progress-content .bar {
+    stroke: #363b97;
+}
 .cause-two-item.cause-green .circle-progress-content .bar{
    stroke: #20B86D;
 }
@@ -286,6 +301,9 @@
 }
 .cause-two-item.cause-yellow .circle-progress:after {
     background: #FFF7EB;
+}
+.cause-two-item.cause-blue .circle-progress:after {
+    background: #535ad436;
 }
 .cause-two-item.cause-green .circle-progress:after {
     background: #E8F7F0;
@@ -389,8 +407,6 @@
 .course-page-slider.slick-initialized, 
 .blog-page-slider.slick-initialized {
     @include gapLR(margin, -15px);
-     .slick-slide{
-    }
     .slick-track{
         margin-bottom: 35px;
     }

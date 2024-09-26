@@ -3,10 +3,9 @@ import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import FeaturedStories from "@/components/common/FeaturedStories"
-import BlogArea from "./BlogArea"
-import Image from "next/image"
+import ProjectArea from "./ProjectArea"
 
-const Blogs = () => {
+const CampaignProjects = () => {
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
@@ -15,11 +14,11 @@ const Blogs = () => {
             <div className="container">
                <div className="row">
                   <div className="col-12">
-                        <h1 className="text-center headings-with-border">Blogs</h1>
+                        <h1 className="text-center headings-with-border">Projects</h1>
                   </div>
                </div>
-            </div>
-            <BlogArea />
+               </div>
+            <ProjectArea />
             <FeaturedStories />
          </main>
          <FooterOne />
@@ -27,4 +26,4 @@ const Blogs = () => {
    )
 }
 
-export default Blogs;
+export default CampaignProjects;

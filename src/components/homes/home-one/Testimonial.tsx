@@ -1,93 +1,67 @@
 "use client"
 import Image from "next/image"
-import React, { useRef, useEffect } from "react";
-import Slider from 'react-slick'
-import testimonial_data from "@/data/testimonialData";
-
-import testimonialImg_1 from "@/assets/img/testimonials/testimonial-left.png"
-import testimonialThumb_1 from "@/assets/img/testimonials/testi-thumb1.jpg"
-import testimonialThumb_2 from "@/assets/img/testimonials/testi-thumb2.jpg"
-import testimonialThumb_3 from "@/assets/img/testimonials/testi-thumb3.jpg"
+import { useState, useEffect } from "react";
+import { fetchTestimonialsPosts, Post, PaginatedResponse } from '@/utils/apiTestimonials';
+import Link from "next/link"
 
 const Testimonial = () => {
+   const [posts, setPosts] = useState<Post[]>([]);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState<Error | null>(null);
+   const [page, setPage] = useState(1);
+   const [total, setTotal] = useState(0);
 
-   const slider1Ref = useRef<Slider | null>(null);
-   const slider2Ref = useRef<Slider | null>(null);
-
+   const limit = 3;
    useEffect(() => {
-      if (slider1Ref.current && slider2Ref.current) {
-         slider1Ref.current.slickGoTo(2);
+   const getPosts = async () => {
+      try {
+         setLoading(true);
+         const { data, total } = await fetchTestimonialsPosts(page, limit);
+         setPosts(data);
+         setTotal(total);
+      } catch (error) {
+         setError(error as Error);
+      } finally {
+      setLoading(false);
       }
-   }, []);
+   };
+
+   getPosts();
+   }, [page]);
 
    return (
-      <div className="testimonials-area bgc-black bgs-cover py-120" style={{ backgroundImage: `url(/assets/img/testimonials/testimonial-bg.png)` }}>
+      <div className="testimonials-area-three py-120 rel z-1">
          <div className="container">
-            <div className="row gap-100 align-items-center">
-               <div className="col-lg-5">
-                  <div className="testimonial-left-image rmb-65">
-                     <Image src={testimonialImg_1} alt="Testimonials" />
+            <div className="row justify-content-center">
+               <div className="col-xl-6 col-lg-8 col-md-10">
+                  <div className="section-title text-center mb-30">
+                     <span className="section-title__subtitle mb-10">Testimonials</span>
+                     <h3>What Say Our <span>Supporters</span></h3>
+                     <p>Here are few words of appreciation from our donors, supporters and volunteers.</p>
                   </div>
                </div>
-
-               <div className="col-lg-7">
-                  <Slider
-                     slidesToShow={1}
-                     slidesToScroll={1}
-                     arrows={false}
-                     autoplay={false}
-                     fade={true}
-                     autoplaySpeed={1000}
-                     asNavFor={slider2Ref.current as Slider | undefined}
-                     ref={(slider) => (slider1Ref.current = slider)}
-                     className="testimonial-content-slider text-white">
-                     {testimonial_data.filter((item) => item.page === "home_1").map((item) => (
-                        <div key={item.id} className="testimonial-content-item">
-                           <div className="icon"><i className="flaticon-quote"></i></div>
-                           <div className="text">{item.desc}
-                           </div>
-                           <h4>{item.name}</h4>
-                           <span className="designation">{item.designation}</span>
-                        </div>
-                     ))}
-                  </Slider>
-                  
-                  <Slider
-                     slidesToShow={3}
-                     slidesToScroll={1}
-                     asNavFor={slider1Ref.current as Slider | undefined}
-                     ref={(slider) => (slider2Ref.current = slider)}
-                     dots={false}
-                     autoplay={false}
-                     variableWidth={true}
-                     autoplaySpeed={1000}
-                     centerMode={true}
-                     centerPadding="0"
-                     focusOnSelect={true}
-                     arrows={false} className="testimonial-thumb-slider">
-                     <div className="testimonial-thumb-item">
-                        <Image src={testimonialThumb_1} alt="Author" />
-                     </div>
-                     <div className="testimonial-thumb-item">
-                        <Image src={testimonialThumb_2} alt="Author" />
-                     </div>
-                     <div className="testimonial-thumb-item">
-                        <Image src={testimonialThumb_3} alt="Author" />
-                     </div>
-                     <div className="testimonial-thumb-item">
-                        <Image src={testimonialThumb_2} alt="Author" />
-                     </div>
-                     <div className="testimonial-thumb-item">
-                        <Image src={testimonialThumb_3} alt="Author" />
-                     </div>
-                  </Slider>
-               </div>
             </div>
+            
+            <div className="row justify-content-center">
+               {posts?.map((item: any) => (
+               <div key={item.id} className="col-xl-4 col-md-6">
+                  <div className={`testimonial-item-three`}>
+                     <div className="author"><Image src={item.image || ""} alt={item.name}  width={100} height={100} /></div>
+                     <div className="text">{item.description}</div>
+                     <h4 className="name">{item.name}</h4>
+                     <span className="designation">{item.location}</span>
+                  </div>
+               </div>
+               ))}
+            </div>
+            <div className="text-center pt-30">
+               <Link href="/testimonials" className="cr-btn">View All</Link>
+            </div>
+         </div>
+         <div className="testimonials-bg bgs-cover" style={{ backgroundImage: `url(assets/img/background/feature-bg.jpg)` }}>
          </div>
       </div>
    )
 }
 
-export default Testimonial;
-
-
+export default Testimonial

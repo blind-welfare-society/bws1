@@ -293,3 +293,26 @@
         background: #FEF2F1;
     }
 }
+.our-event-area{
+    .image{
+        position: relative;
+        .shape {
+            position: absolute;
+            z-index: -1;
+    
+            @include res-bl(sm) {
+                display: none;
+            }
+    
+            &.one {
+                bottom: 95%;
+                right: 100%;
+            }
+    
+            &.two {
+                left: 100%;
+                top: 95%;
+            }
+        }
+    }
+}

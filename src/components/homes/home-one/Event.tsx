@@ -1,39 +1,75 @@
 "use client"
-import event_data from "@/data/EventData";
+
 import Image from "next/image";
 import Link from "next/link";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry"
+import { useState, useEffect } from "react";
+import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiNews';
+
+import aboutShape_1 from "@/assets/img/shapes/three-round-green.png";
+import aboutShape_2 from "@/assets/img/shapes/three-round-red.png";
+
 
 const Event = () => {
+   const [posts, setPosts] = useState<Post[]>([]);
+   const [loading, setLoading] = useState(true);
+   const [error, setError] = useState<Error | null>(null);
+   const [page, setPage] = useState(1);
+   const [total, setTotal] = useState(0);
+
+   const limit = 3;
+
+   useEffect(() => {
+   const getPosts = async () => {
+      try {
+         setLoading(true);
+         const { data, total } = await fetchPosts(page, limit);
+         setPosts(data);
+         setTotal(total);
+         console.log(data);
+      } catch (error) {
+         setError(error as Error);
+      } finally {
+       setLoading(false);
+      }
+   };
+
+   getPosts();
+   }, [page]);
+
    return (
       <div className="our-event-area pt-120 pb-95 rel z-1">
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
                   <div className="section-title text-center mb-65">
-                     <span className="section-title__subtitle mb-10">Our Event</span>
-                     <h3>Our <span>Upcoming Event</span></h3>
-                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati consectetur adipisicing</p>
+                     <span className="section-title__subtitle mb-10">News updates</span>
+                     <h3>Our <span>News & Events</span></h3>
+                     <p>Explore our news section to stay updated on our latest events that impact the lives of people with blindness.</p>
                   </div>
                </div>
             </div>
-
-            <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 2, 1200: 3 }}>
-               <Masonry columnsCount={3} gutter="30px" className=" events-active">
-                  {event_data.filter((item) => item.page === "home_1").map((item) => (
-                     <div key={item.id} className="event-item">
-                        <Image src={item.thumb} alt="Event" />
-                        <div className="event-item__hover">
-                           <h4><Link href="/event-details">{item.title}</Link></h4>
-                           <ul>
-                              <li><i className="flaticon-time"></i> <span>{item.date}</span></li>
-                              <li><i className="flaticon-map"></i> <span>{item.city}</span></li>
-                           </ul>
+            <div className="row">
+               <div className="image">
+                  <Image className="shape one top_image_bounce" src={aboutShape_1} alt="Shape" />
+               </div>
+               {posts.map((item) => (
+                  <div key={item.id} className="col-xl-4 col-md-6">
+                     <div className="blog-item ">
+                        <div className="blog-item__img">
+                           <Link href={`/news/${item.slug}`}><Image src={item.news_image} width={168} height={191} alt={item.title} /></Link>
+                        </div>
+                        <div className="blog-item__content news-container">
+                           <h4><Link href={`/news/${item.slug}`}>{item.title}</Link></h4>
+                           <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
+                           <Link href={`/news/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
                         </div>
                      </div>
-                  ))}
-               </Masonry>
-            </ResponsiveMasonry>
+                  </div>
+               ))} 
+               <div className="image">
+                  <Image className="shape two top_image_bounce" src={aboutShape_2} alt="Shape" />
+               </div>
+            </div> 
          </div>
       </div>
    )

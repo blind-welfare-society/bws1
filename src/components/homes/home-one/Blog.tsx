@@ -1,9 +1,8 @@
 "use client"
-import blog_data from "@/data/blogData"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useEffect } from "react";
-import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiBlogs';
+import { fetchPosts, Post } from '@/utils/apiBlogs';
 
 import blogShape_1 from "@/assets/img/shapes/three-round-yellow.png"
 

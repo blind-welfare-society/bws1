@@ -7,7 +7,7 @@ import { fetchPosts,Post } from '@/utils/apiProjectLists';
 
 
 const ProjectListArea = () => {
-    const [posts, setPosts] = useState<Post[]>([]);
+   const [posts, setPosts] = useState<Post[]>([]);
    const [loading, setLoading] = useState(true);
    const [error, setError] = useState<Error | null>(null);
    const [page, setPage] = useState(1);

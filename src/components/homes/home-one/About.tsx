@@ -3,9 +3,9 @@ import Link from "next/link"
 import counter_data from "@/data/counterData"
 import Count from "@/components/common/Count"
 
-import aboutImg_1 from "@/assets/img/about/about1.jpg"
-import aboutImg_2 from "@/assets/img/about/about2.jpg"
-import aboutImg_3 from "@/assets/img/about/about3.jpg"
+import aboutImg_1 from "@/assets/img/about/Brail-Dist.jpg"
+import aboutImg_2 from "@/assets/img/about/cane.jpg"
+import aboutImg_3 from "@/assets/img/about/Laptop-Dis.jpg"
 
 const About = () => {
    return (
@@ -24,8 +24,7 @@ const About = () => {
                                  <i className="flaticon-charity"></i>
                               </div>
                               <div className="project-complete__content">
-                                 <h5>We Complete 15000+ Project</h5>
-                                 <span>Donate for charity</span>
+                                 <h5>Educate 40 abandoned <br />blind girls</h5>
                               </div>
                            </div>
                         </div>
@@ -50,19 +49,12 @@ const About = () => {
                   <div className="about-content-part rmt-65">
                      <div className="section-title mb-60">
                         <span className="section-title__subtitle mb-10">About us</span>
-                        <h2>Check what makes us different <span>than others</span></h2>
+                        <h2>Welcome to <span>Blind Welfare Society</span></h2>
+                        <p className="pt-10"><strong>Join us to build an equitable, accessible and inclusive world for the people with visual challenges</strong></p>
                      </div>
-                     <p>There are many variations of passages of orem Ipsum available, but the majority have suffered alteration in some form, by cted ipsum dolor sit amet, consectetur adipisicing elit, sed do usmod mponcid idunt ut labore et dolore magna aliqua.</p>
-                     {counter_data.filter((item) => item.page === "home_1").map((item) => (
-                        <div key={item.id} className="counter-item counter-text-wrap">
-                           <div className={`counter-item__icon ${item.icon_bg}`}><i className={item.icon}></i></div>
-                           <div className="counter-item__content">
-                              <span className="count-text" data-speed="3000" data-stop="45000"><Count number={item.counter_number} /></span>
-                              <span className="counter-title">{item.title}</span>
-                           </div>
-                        </div>
-                     ))}
-                     <Link className="cr-btn ml-5 mt-25" href="#">Didcover more</Link>
+                     <p>While the exact number of visually impaired persons in India is not clearly available, still, we have a sizeable section of people with vision loss in the Country. And thus, it is our duty to enhance the quality of life of our blind sisters and brothers. Blind Welfare Society has been established for the welfare of the people with visual challenges. It is registered under the Societies Registration Act of 1960.</p>
+                     <Link className="cr-btn ml-5 mt-25" href="/about-us">Read More</Link>
+                     <Link className="cr-btn ml-5 mt-25" href="#">Donate Now</Link>
                   </div>
                </div>
             </div>

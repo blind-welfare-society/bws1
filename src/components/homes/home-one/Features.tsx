@@ -1,120 +1,40 @@
-"use client"
+import features_data from "@/data/featuresData"
 import Link from "next/link"
-import Slider from 'react-slick'
-import Image from "next/image";
-import features_data from "@/data/featuresData";
+import Image from "next/image"
 
-import featureShape from "@/assets/img/shapes/three-round-green.png";
-
-const CustomPrevArrow = (props: any) => {
-   const { onClick } = props;
-   return (
-      <div className="slider-arrow text-lg-end mb-20">
-         <button onClick={onClick} type="button" className="feature-prev"><i className="flaticon-left-chevron"></i></button>
-      </div>
-   );
-};
-
-const CustomNextArrow = (props: any) => {
-   const { onClick } = props;
-   return (
-      <div className="slider-arrow text-lg-end mb-20">
-         <button onClick={onClick} type="button" className="feature-next"><i className="flaticon-next"></i></button>
-      </div>
-   );
-};
+import featureImg from "@/assets/img/features/bws-group.jpg"
 
 const Features = () => {
-
-   const single_slider_settings = {
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      autoplay: true,
-      fade: false,
-      dots: true,
-      autoplaySpeed: 5000,
-   }
-
-   const settings = {
-      slidesToShow: 3,
-      slidesToScroll: 1,
-      arrows: true,
-      autoplay: true,
-      fade: false,
-      prevArrow: <CustomPrevArrow />,
-      nextArrow: <CustomNextArrow />,
-      autoplaySpeed: 5000,
-      dots: false,
-      infinite: true,
-      speed: 1000,
-      responsive: [
-         {
-            breakpoint: 991,
-            settings: {
-               slidesToShow: 2,
-               arrows: true,
-            }
-         },
-         {
-            breakpoint: 575,
-            settings: {
-               slidesToShow: 1,
-               arrows: false,
-            }
-         }
-      ],
-   }
-
    return (
-      <div className="features-area rel bgs-cover z-1" style={{ backgroundImage: `url(/assets/img/background/feature-bg.jpg)`, position: "relative" }}>
+      <div className="features-area-three pb-55">
          <div className="container">
-            <div className="row">
-               <div className="col-xl-3">
-                  <div className="feature-left-wrap bgs-cover text-white overlay" style={{ backgroundImage: `url(/assets/img/background/feature-slider-bg.jpg)` }}>
-                     <Slider {...single_slider_settings} className="feature-left-slider">
-                        {features_data.filter((item) => item.page === "single_features").map((item) => (
-                           <div key={item.id} className="feature-single-slide">
-                              <div className="section-title mb-40">
-                                 <h3>{item.title}</h3>
-                                 <p>{item.desc}</p>
-                              </div>
-                              <Link className={`cr-btn ${item.btn_bg}`} href="#">Donation now</Link>
+            <div className="row gap-80 align-items-center">
+               <div className="col-xl-5 col-lg-10">
+                  <div className="feature-three-content-part pb-35">
+                     <div className="section-title mb-50">
+                        <span className="section-title__subtitle mb-10">Help People</span>
+                        <h2>We are <span>Difference</span></h2>
+                     </div>
+                     {features_data.filter((item) => item.page === "home_3").map((item) => (
+                        <div key={item.id} className="feature-item--three" style={{ backgroundImage: `url(${item.bg_img?.src || ''})` }}>
+                           <div className="feature-item__icon">
+                              <i className={item.icon_name}></i>
                            </div>
-                        ))}
-                     </Slider>
-                  </div>
-               </div>
-
-               <div className="col-xl-9">
-                  <div className="feature-content">
-                     <div className="row justify-content-between">
-                        <div className="col-lg-8">
-                           <div className="section-title mb-35">
-                              <span className="section-title__subtitle mb-10">Our Features</span>
-                              <h2>How Could <span>You Help?</span></h2>
-                              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem voluptatem obcaecati consectetur adipisicing</p>
+                           <div className="feature-item__content">
+                              <h4><Link href="/cause-details">{item.title}</Link></h4>
+                              <p>{item.desc}</p>
                            </div>
                         </div>
-                     </div>
-                     
-                     <Slider {...settings} className="feature-right-slider row mt-20">
-                        {features_data.filter((item) => item.page === "home_1").map((item) => (
-                           <div key={item.id} className="col-lg-4">
-                              <div className="feature-item">
-                                 <div className={`feature-item__icon ${item.icon_bg}`}><i className={item.icon_name}></i></div>
-                                 <h4><Link href="/cause-details">{item.title}</Link></h4>
-                                 <p>{item.desc}</p>
-                              </div>
-                           </div>
-                        ))}
-                     </Slider>
+                     ))}
+                  </div>
+               </div>
+               
+               <div className="col-xl-7">
+                  <div className="feature-three-image-part pb-65">
+                     <Image src={featureImg} alt="Features" />
                   </div>
                </div>
             </div>
-         </div>
-         <div className="feature-shapes">
-            <Image className="one right_image_bounce" src={featureShape} alt="Shape" />
          </div>
       </div>
    )

@@ -3,6 +3,8 @@ import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import FeaturedStories from "@/components/common/FeaturedStories"
+import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
+import Blog from "@/components/homes/home-one/Blog"
 import ProjectListArea from "./ProjectListArea"
 
 const ProjectsList = () => {
@@ -20,6 +22,8 @@ const ProjectsList = () => {
             </div>
             <ProjectListArea />
             <FeaturedStories />
+            <BecomeVolunteer />
+            <Blog />
          </main>
          <FooterOne />
       </>

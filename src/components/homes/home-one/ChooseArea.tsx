@@ -6,12 +6,11 @@ import VideoPopup from "@/modals/VideoPopup"
 import videoBg from "@/assets/img/video/video-bg.jpg"
 import leafShape from "@/assets/img/shapes/three-round-green.png"
 
-const tab_title: string[] = ["Mission", "Vission", "Velu",]
+const tab_title: string[] = ["Mission", "Vission"]
 
 const tab_content: JSX.Element[] = [
-   (<>Our Mission: There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or random aset words which don&apos;t look even slightly believable.</>),
-   (<>Our Vission: There are many variations of passages of Lorem Ipsum available, random aset words which don&apos;t look even slightly believable, or but the majority have suffered alteration in some form, by injected humour.</>),
-   (<>Our Velu: There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or random aset words which don&apos;t look even slightly believable.</>),
+   (<>Our Mission: To enable visually impaired individuals to overcome the barriers that impede their independence and participation in society.</>),
+   (<>Our Vision: To empower individuals living with low vision or blindness to discover, develop and achieve their full potential.</>),
 ]
 
 const ChooseArea = () => {
@@ -35,7 +34,7 @@ const ChooseArea = () => {
                      <div className="why-choose-content text-white rmb-65">
                         <div className="section-title mb-60">
                            <span className="section-title__subtitle mb-10">Why Choose Us</span>
-                           <h2>Trusted non profit donation <span>center</span></h2>
+                           <h2>Registered Non Government Voluntary <span>Organization</span></h2>
                         </div>
 
                         <div className="vission-mission-tab">
@@ -76,7 +75,7 @@ const ChooseArea = () => {
          <VideoPopup
             isVideoOpen={isVideoOpen}
             setIsVideoOpen={setIsVideoOpen}
-            videoId={"tUP5S4YdEJo"}
+            videoId={"g3c2j5xoCvY"}
          />
          {/* video modal end */}
       </>
