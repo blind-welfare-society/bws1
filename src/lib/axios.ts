@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-    baseURL: 'http://localhost/bws-admin/api',
+    baseURL: 'https://admin.kitchenkirana.com/api',
     headers: {
         'X-Requested-With': 'XMLHttpRequest',
     },
