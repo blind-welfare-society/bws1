@@ -1,5 +1,7 @@
+'use client'
 import "../styles/index.scss";
 import { DM_Sans, Nunito_Sans, Pacifico } from 'next/font/google'
+import { useEffect } from 'react';
 
 const body = DM_Sans({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -23,7 +25,12 @@ export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
-}) {
+  }) {
+  useEffect(() => {
+    // Remove the 'theme' key from localStorage on page load
+    localStorage.removeItem('idDarkMode');
+    //console.log('Removed theme from localStorage');
+  }, []);
   return (
     <html lang="en">
       <head>

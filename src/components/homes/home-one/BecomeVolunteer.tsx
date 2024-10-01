@@ -2,7 +2,7 @@ import Image from "next/image"
 import BecomeVolunteerForm from "../../forms/BecomeVolunteerForm"
 
 import volunteerImg_1 from "@/assets/img/valunteer/bws-image.png"
-import volunteerImg_2 from "@/assets/img/valunteer/valunteer-bg.png"
+import volunteerImg_2 from "@/assets/img/valunteer/valunteer-bg1.png"
 
 const BecomeVolunteer = () => {
   return (

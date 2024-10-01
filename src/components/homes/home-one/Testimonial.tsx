@@ -18,7 +18,6 @@ const Testimonial = () => {
          setLoading(true);
          const { data, total } = await fetchTestimonialsPosts(page, limit);
          setPosts(data);
-         setTotal(total);
       } catch (error) {
          setError(error as Error);
       } finally {

@@ -92,3 +92,10 @@
         opacity: 0.6;
     }
 }
+
+.grid {
+    column-count: 4;
+    column-gap: .5em;
+    margin: auto;
+    width: 100%;
+}

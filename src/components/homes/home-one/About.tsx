@@ -9,7 +9,7 @@ import aboutImg_3 from "@/assets/img/about/Laptop-Dis.jpg"
 
 const About = () => {
    return (
-      <div className="about-area py-120">
+      <div className="about-area pb-120 pt-50">
          <div className="container">
             <div className="row align-items-center">
                <div className="col-lg-6">

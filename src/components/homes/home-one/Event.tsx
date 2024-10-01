@@ -25,7 +25,6 @@ const Event = () => {
          const { data, total } = await fetchPosts(page, limit);
          setPosts(data);
          setTotal(total);
-         console.log(data);
       } catch (error) {
          setError(error as Error);
       } finally {
@@ -56,7 +55,7 @@ const Event = () => {
                   <div key={item.id} className="col-xl-4 col-md-6">
                      <div className="blog-item ">
                         <div className="blog-item__img">
-                           <Link href={`/news/${item.slug}`}><Image src={item.news_image} width={168} height={191} alt={item.title} /></Link>
+                           <Link href={`/news/${item.slug}`}><Image src={item.news_image} width={416} height={278} alt={item.title} /></Link>
                         </div>
                         <div className="blog-item__content news-container">
                            <h4><Link href={`/news/${item.slug}`}>{item.title}</Link></h4>

@@ -4,7 +4,7 @@
 
 .urgent-cause-area {
     &:before {
-        opacity: 0.9;
+        opacity: 0.8;
         background: #FAF6F3;
     }
 }
@@ -174,7 +174,7 @@
     
     .content {
         background: #FAFAFA;
-        padding: 0 15px 30px;
+        padding: 0 25px 15px;
         border-radius: 0px 0px 5px 5px;
         border: 1px solid rgba(0, 0, 0, 0.05);
         &.projectLists{
@@ -186,7 +186,7 @@
         h4 {
             color: #363b97;
             font-size: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 5px;
             @include res-bl(xxl) {
                 font-size: 20px;
             }
@@ -469,5 +469,26 @@
                 border: 7px solid var(--primary-color);
             }
         }
+    }
+}
+.featuredCampaignsHeading{
+    font-size: 20px;
+    text-align: center;
+}
+
+.featured-campaigns{
+    .headings-with-border{
+        font-size: 32px;
+        margin-bottom: 24px;
+    }
+    .content{
+        height: 320px;
+    }
+}
+
+.featured-campaigns1{
+    .headings-with-border {
+        font-size: 32px;
+        margin-bottom: 24px;
     }
 }

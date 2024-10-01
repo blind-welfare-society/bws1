@@ -394,6 +394,15 @@
 
 }
 
+.dark-mode {
+    .navtop--one{
+        background-color: #000;
+    }
+    .navbar-bg{
+        background-color: #000;
+    }
+}
+
 .navbar--one,
 .navbar--three {
     .container {
@@ -912,4 +921,12 @@
 
 .nav-right-part .dropdown .dropdown-toggle:after {
     display: none !important;
+}
+.topbar-right{
+    .email i{
+        margin-right: 5px;
+    }
+    .phone i{
+        margin-right: 5px;
+    }
 }

@@ -6,7 +6,6 @@ import OurCause from "./OurCause"
 import Projects from "./Projects"
 import Event from "./Event"
 import Blog from "./Blog"
-import Brand from "../../common/Brand"
 import FooterOne from "@/layout/footers/FooterOne"
 import About from "./About"
 import BecomeVolunteer from "./BecomeVolunteer"
@@ -22,10 +21,10 @@ const HomeOne = () => {
             <HeroArea />
             <About />
             <ChooseArea />
-            <Projects />
+            <OurCause />            <Projects />
             <FeaturedStories />
             <Event />
-            <Blog    style={true} />
+            <Blog style={true} />
             <BecomeVolunteer />
             <Testimonial />
             <Features />
