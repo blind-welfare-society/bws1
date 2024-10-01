@@ -5,23 +5,13 @@ import React, { useState, useEffect } from "react";
 const HeaderTop = ({ style }: any) => {
    const [darkMode, setDarkMode] = useState(false);
    const addDarkBg = () => {
-    if (
-      document.body.style.backgroundImage !=
-      "url(/assets/img/bg/page-bg-dark-1.jpg"
-    ) {
-      document.body.style.backgroundImage =
-        "url(/assets/img/bg/page-bg-dark-1.jpg";
-
+    if (document.body.classList.contains("dark-mode") === false) {
       setDarkMode(true);
     }
   };
 
   const addLightBg = () => {
-    if (
-      document.body.style.backgroundImage != "url(/assets/img/bg/page-bg-1.jpg)"
-    ) {
-      document.body.style.backgroundImage = "url(/assets/img/bg/page-bg-1.jpg)";
-
+    if (document.body.classList.contains("dark-mode") === true) {
       setDarkMode(false);
     }
   };
