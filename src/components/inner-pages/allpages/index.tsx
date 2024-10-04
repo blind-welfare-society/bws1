@@ -26,14 +26,13 @@ const InnerCmsPage = () => {
    }, [fullPathName]);
 
    const imageUrl = cmsContent?.image_url;
-   const fullPath = "http://localhost/bws-admin/public/storage/cms_pages/" + imageUrl;
    
 
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
          <main>
-            <Banner image_url={fullPath} />
+            <Banner image_url={imageUrl} />
             <CmsPages />
             <CtaArea />
             <FeaturedStories />
