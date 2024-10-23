@@ -496,3 +496,23 @@
     float: left;
     padding-right: 30px;
 }
+.punch-line{font-size: 18px;line-height: 26px;color: #57597a;font-weight: bold;}
+.gallery-area{
+    .gallery{
+        display: inline-block;
+        margin-right: auto;
+        margin-left: auto;
+        line-height: 0;
+        -webkit-column-count: 5;
+        -webkit-column-gap: 4px;
+        -moz-column-count: 5;
+        -moz-column-gap: 4px;
+        column-count: 5;
+        column-gap: 4px;
+
+        img {
+            width: 100% !important;
+            height: auto !important;
+        }
+    }
+}

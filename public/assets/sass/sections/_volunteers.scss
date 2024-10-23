@@ -4,7 +4,13 @@
 
 /* Become a volunteer */
 .volunteer-area{
-    background-color: #f0f8ff;
+    background-color: #f1f1f5;
+    padding: 50px;
+    .form-group .form-control{
+        padding: 9px 18px;
+        border-radius: 5px;
+        border: 1px solid #818487;
+    }
 }
 .become-volunteer-area {
     background: #1E1E1E;
@@ -256,6 +262,11 @@
     .form-control {
         background: #FEF2F1;
     }
+}
+
+
+.volunteer-content{
+    h3{font-size: 36px;}
 }
 
 

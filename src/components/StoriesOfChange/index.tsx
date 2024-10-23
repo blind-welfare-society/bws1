@@ -14,7 +14,7 @@ const StoriesOfChange = () => {
                <div className="container">
                   <div className="row">
                      <div className="col-12 mb-40 pt-20">
-                           <h1 className="text-center headings-with-border">Stories of Change</h1>
+                        <h1 className="text-center headings-with-border">Stories of Change</h1>
                      </div>
                   </div>
                </div> 

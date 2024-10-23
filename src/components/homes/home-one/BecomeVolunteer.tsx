@@ -1,5 +1,5 @@
 import Image from "next/image"
-import BecomeVolunteerForm from "../../forms/BecomeVolunteerForm"
+import ContactForm from "@/components/forms/ContactForm"
 
 import volunteerImg_1 from "@/assets/img/valunteer/bws-image.png"
 import volunteerImg_2 from "@/assets/img/valunteer/valunteer-bg1.png"
@@ -17,10 +17,10 @@ const BecomeVolunteer = () => {
                <div className="col-lg-6">
                    <div className="volunteer-content form-style-one text-white">
                        <div className="section-title mb-45">
-                           <span className="section-title__subtitle mb-10">Our Volunteer</span>
-                           <h3>Become a <span>volunteer</span></h3>
+                           <span className="section-title__subtitle mb-10">Get In touch</span>
+                           <h3>Uniting for <span>Brighter Futures</span></h3>
                        </div>
-                       <BecomeVolunteerForm/>
+                       <ContactForm />
                    </div>
                </div>
            </div>

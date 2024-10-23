@@ -4,7 +4,7 @@ import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import CmsPages from "@/components/cmspages"
 import FeaturedStories from "@/components/common/FeaturedStories"
-import BecomeVolunteer from "@/components/homes/home-two/BecomeVolunteer"
+import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
 import CtaArea from "@/components/homes/home-one/CtaArea"
 import { useEffect, useState } from "react";

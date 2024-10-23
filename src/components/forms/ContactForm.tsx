@@ -1,50 +1,72 @@
 'use client'
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
+import axios from "@/lib/axios";
 
 interface FormData {
    name: string;
    email: string;
-   phone: number;
-   message: string;
+   phone: string;
+   subject: string;
+   comment: string;
 }
 
 const schema = yup
    .object({
       name: yup.string().required().label("Name"),
       email: yup.string().required().email().label("Email"),
-      phone: yup.number()
-         .transform((originalValue, originalObject) => {
-            // Convert empty string to NaN
-            return originalObject && originalObject.phone === '' ? NaN : originalValue;
-         })
-         .typeError('Phone number is required')
-         .required('Phone must be a number'),
-      message: yup.string().required().label("Message"),
+      phone: yup.string()
+         .required('Phone number is required')
+         .matches(/^\d{10}$/, 'Phone number must be exactly 10 digits'),
+      comment: yup.string().required().label("Message"),
+      subject: yup.string().required().label("Subject"),
    })
    .required();
 
 const ContactForm = () => {
-
+   const [loading, setLoading] = useState(false); 
    const { register, handleSubmit, reset, formState: { errors }, } = useForm<FormData>({ resolver: yupResolver(schema), });
-   const onSubmit = (data: FormData) => {
-      const notify = () => toast('Message sent successfully', { position: 'top-center' });
-      notify();
-      reset();
-   };
+   const onSubmit = async (data: FormData) => {
+      setLoading(true);
+      try {
+         const response = await axios.post('/store-contact-us', {
+         name: data.name,
+         subject: data.subject, // Adjust or pass from form
+         phone: data.phone,
+         email: data.email,
+         comment: data.comment,
+         email_subject:"volunteer" // Map 'message' to 'comment'
+         });
+         
+         if (response.status === 200) {
+         toast('Message sent successfully', { position: 'top-center' });
+         reset();
+         } else {
+         toast.error('Something went wrong. Please try again.', { position: 'top-center' });
+         }
+      } catch (error: any) {
+         console.error('Error:', error.response?.data || error.message);
+         toast.error('Failed to send message. Please check your network or try again.', { position: 'top-center' });
+      }finally {
+         setLoading(false); // Set loading to false after response is received
+      }
+};
+
 
    return (
-      <form onSubmit={handleSubmit(onSubmit)}>
+
+      <form onSubmit={handleSubmit(onSubmit)} className="volunteer-form">
          <div className="row">
-            <div className="col-xl-9 mb-10">
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt</p>
+            <div className="col-xl-11 mb-10">
+               <p>Support Blind Welfare Society by reaching out—your voice helps us brighten lives and build inclusivity together.</p>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="name">Your Name</label>
-                  <input type="text" id="name" {...register("name")} className="form-control" placeholder="Your Name" />
+                  <input type="text" id="name"  {...register("name")} className="form-control" placeholder="Your Name" />
                   <p className="form_error">{errors.name?.message}</p>
                </div>
             </div>
@@ -58,26 +80,29 @@ const ContactForm = () => {
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="phone_number">Phone Number</label>
-                  <input type="text" id="phone_number" {...register("phone")} className="form-control" placeholder="Phone Number" />
+                  <input type="text" id="phone_number"  {...register("phone")} className="form-control" placeholder="Phone Number" />
                   <p className="form_error">{errors.phone?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="phone_number">Date Of Birth</label>
-                  <input type="date" id="birth-day" name="birth-day" className="form-control" />
+                  <label htmlFor="phone_number">Subject</label>
+                  <input type="text" id="subject"  {...register("subject")} className="form-control" placeholder="Subject" />
+                  <p className="form_error">{errors.subject?.message}</p>
                </div>
             </div>
             <div className="col-md-12">
                <div className="form-group">
                   <label htmlFor="message">Message</label>
-                  <textarea {...register("message")} id="message" className="form-control" rows={2} placeholder="Write Your Messages"></textarea>
-                  <p className="form_error">{errors.message?.message}</p>
+                  <textarea id="comment" {...register("comment")} className="form-control" rows={3} placeholder="Write Your Messages"></textarea>
+                  <p className="form_error">{errors.comment?.message}</p>
                </div>
             </div>
             <div className="col-md-12">
                <div className="form-group pt-10 mb-0">
-                  <button type="submit" className="cr-btn ml-5">Send us a message</button>
+                  <button type="submit" className="cr-btn ml-5" disabled={loading}>
+                     {loading ? 'Please wait...' : 'Send us a message'}
+                  </button>
                </div>
             </div>
          </div>

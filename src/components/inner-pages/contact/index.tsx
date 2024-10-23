@@ -1,21 +1,39 @@
-import Breadcrumb from "@/components/common/Breadcrumb"
+'use client'
+import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
-import Brand from "@/components/common/Brand"
 import ContactArea from "./ContactArea"
-import ContactInfo from "./ContactInfo"
 import LocationMap from "./LocationMap"
+import axios from "@/lib/axios";
+import { useEffect, useState } from "react";
+import FeaturedStories from "@/components/common/FeaturedStories"
+import CtaArea from "@/components/homes/home-one/CtaArea"
+import Blog from "@/components/homes/home-one/Blog"
 
 const Contact = () => {
+   const pathName = "/contact-us";
+   let fullPathName = '/banner-image' + pathName;
+   
+   const [cmsContent, setCmsContent] = useState({} as any);
+
+   useEffect(() => {
+      axios.get(fullPathName).then((res) => {
+         //console.log(res.data); // Check the response structure
+         setCmsContent(res.data);
+      });
+   }, [fullPathName]);
+
+   const imageUrl = cmsContent?.image_url;
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
          <main>
-            <Breadcrumb page_title="Contact Us" page_list="Contact" style={false} />
-            <Brand style={true} />
+            <Banner image_url={imageUrl} />
             <ContactArea/>
-            <ContactInfo/>
-            <LocationMap/>
+            <LocationMap />
+            <FeaturedStories />
+            <CtaArea />
+            <Blog />
          </main>
          <FooterOne />
       </>

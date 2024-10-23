@@ -2,16 +2,15 @@
 import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
-import CmsPages from "@/components/cmspages"
 import FeaturedStories from "@/components/common/FeaturedStories"
-import VolunteerArea from "./VolunteerArea"
+import GalleryArea from "./GalleryArea"
 import Blog from "@/components/homes/home-one/Blog"
 import CtaArea from "@/components/homes/home-one/CtaArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 
 
-const Volunteers = () => {
+const Gallery = () => {
     
     let fullPathName = '/banner-image/volunteer';
 
@@ -31,8 +30,7 @@ const Volunteers = () => {
             <HeaderOne style_1={false} style_2={false} />
             <main>
             <Banner image_url={imageUrl} />
-            <CmsPages />
-            <VolunteerArea /> 
+            <GalleryArea />
             <CtaArea />
             <FeaturedStories />
             <Blog />
@@ -42,4 +40,4 @@ const Volunteers = () => {
     )
 }
 
-export default Volunteers;
+export default Gallery;

@@ -4,7 +4,6 @@ import Link from "next/link"
 import SocialIcon from "@/components/common/SocialIcon";
 import footer_data from "@/data/footerData";
 
-import footerLogo from "@/assets/img/logos/logo-white.png"
 import donate from "@/assets/img/footer/donate-by.png";
 
 import footerGallery_1 from "@/assets/img/footer/gallery-two1.jpg";
@@ -15,7 +14,6 @@ import footerGallery_5 from "@/assets/img/footer/gallery-two5.jpg";
 import footerGallery_6 from "@/assets/img/footer/gallery-two6.jpg";
 
 interface ContentType {
-   footer_about_text: string;
    gallery: StaticImageData[];
    gallery_title: string;
    news_title: string;
@@ -24,7 +22,6 @@ interface ContentType {
 }
 
 const footer_content: ContentType = {
-   footer_about_text: "Wimply dummy text of the priatypeset ting industry orem Ipsum has Maecenas quis eros at ante lacinia efficitur.",
    gallery: [footerGallery_1, footerGallery_2, footerGallery_3, footerGallery_4, footerGallery_5, footerGallery_6],
    news_title: "Newsletter",
    news_text: "Wimply dummy text of the priatyp industry orem Ipsum",
@@ -32,7 +29,7 @@ const footer_content: ContentType = {
    copyright_text: "Copyright 2023 All Right Reserved",
 }
 
-const { footer_about_text, gallery, news_title, news_text, gallery_title, copyright_text } = footer_content
+const {gallery, news_title, news_text, gallery_title, copyright_text } = footer_content
 
 const FooterTwo = () => {
    return (
@@ -42,11 +39,11 @@ const FooterTwo = () => {
                <div className="col-xl-3 col-sm-6">
                   <div className="widget widget_about">
                      <div className="logo_footer mb-25">
-                        <Link href="/">
-                           <Image src={footerLogo} alt="Logo" />
-                        </Link>
+                        <p><i className="fas fa-map-marker-alt"></i> Blind Welfare Society, Plot No. 2/16, Block WXYZ, Near M.N. Convent Public School, Kushak Road No. 2, Swaroop Nagar, New Delhi - 110042</p>
+                        <p><i className="fas fa-envelope"></i> <a href="mailto:info@blindwelfaresociety.in">info@blindwelfaresociety.in</a></p>
+                        <p><i className="fas fa-phone-alt"></i> <a href="tel:+91-11-25948803">+91-11-25948803</a></p>
+                        <p><i className="fas fa-mobile"></i> <a href="tel:+91-9968969932">+91-9968969932</a></p>
                      </div>
-                     <p> {footer_about_text} </p>
                      <div className="social-style-one pt-20">
                         <SocialIcon />
                      </div>

@@ -28,8 +28,6 @@ const CmsPages = () => {
                         </div>
                      </div>
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['content'] }}></div>
-                    
-                     <hr className="mt-30 mb-5" />
                   </div>
                </div>
             </div>

@@ -1,14 +1,15 @@
 import ContactForm from "@/components/forms/ContactForm"
-import FaqContent from "@/components/common/FaqContent"
+import ContactInfo from "./ContactInfo"
+
 
 const ContactArea = () => {
    return (
-      <div className="contact-page-area overflow-hidden py-120 rpt-100">
+      <div className="contact-page-area overflow-hidden pb-0 pt-0 rpt-100">
          <div className="container">
             <div className="row gap-60 align-items-center">
                <div className="col-lg-6">
                   <div className="faq-three-left-part mb-20 rel rmb-75">
-                    <FaqContent/>
+                     <ContactInfo />
                   </div>
                </div>
                <div className="col-lg-6">

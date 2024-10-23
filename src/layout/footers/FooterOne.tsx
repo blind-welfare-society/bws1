@@ -18,7 +18,7 @@ interface ContentType {
 }
 
 const footer_content: ContentType = {
-   copyright_text: "Copyright 2024 All Right Reserved",
+   copyright_text: "©2024 Copyright. Blind Welfare Society All Rights Reserved.",
 }
 
 const {copyright_text } = footer_content
