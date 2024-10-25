@@ -10,7 +10,7 @@ const GalleryArea = () => {
     useEffect(() => {
         axios.get('/photo-gallery').then((res) => {
         const images = res.data.data.images.data.map((item: any) => ({
-            src: `https://www.blindwelfaresociety.in/public/storage/gallery/${item.name}`,
+            src: item.name,
             description: item.title
         }));
          
