@@ -71,11 +71,11 @@ const ProjectArea = () => {
                                     </div>
                                 </div>
                                 <div className="col-md-6">
-                                    <p><strong>{item.total_donar}</strong> Supporters</p>       
+                                 <p><strong>{item.total_donar}</strong> Supporters</p> 
                                 </div>
                            </div>
                            <div className="cause-btn">
-                              <Link className={`cr-btn btn--yellow`} href="{`/projects/${item.project_slug}`}">Donation now</Link>
+                              <Link className={`cr-btn btn--yellow`} href={`/projects/${item.project_slug}`}>Donation now</Link>
                            </div>
                         </div>
                      </div>

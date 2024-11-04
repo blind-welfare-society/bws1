@@ -57,7 +57,6 @@ const BecomeVolunteerForm = () => {
 
 
    return (
-
       <form onSubmit={handleSubmit(onSubmit)} className="volunteer-form">
          <div className="row">
             <div className="col-sm-6">

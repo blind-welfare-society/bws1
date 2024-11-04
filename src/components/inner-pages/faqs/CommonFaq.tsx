@@ -16,7 +16,7 @@ const CommonFaq = ({ style }: any) => {
    const [faqData2, setFaqData2] = useState<DataType[]>([]);
 
    useEffect(() => {
-      const initialFaqData: DataType[] = faq_data.filter((item) => item.page === "inner_page").slice(0, 4).map((faq, index) => ({
+      const initialFaqData: DataType[] = faq_data.filter((item) => item.page === "inner_page").map((faq, index) => ({
          ...faq,
          showAnswer: index === 1,
       }));
@@ -56,7 +56,7 @@ const CommonFaq = ({ style }: any) => {
          {style ? (faqData.map((item) => (
             <div key={item.id} className={`accordion-item ${item.showAnswer ? "active" : ""}`}>
                <h5 className="accordion-header">
-                  <button className={`accordion-button ${item.showAnswer ? "" : "collapsed"}`} onClick={() => toggleAnswer(item.id)} type="button">
+                  <button className={`accordion-button ${item.showAnswer ? "" : "collapsed"}`} aria-expanded={item.showAnswer}  onClick={() => toggleAnswer(item.id)} type="button">
                      {item.question}
                   </button>
                </h5>
