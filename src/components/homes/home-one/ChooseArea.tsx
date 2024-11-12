@@ -33,8 +33,7 @@ const ChooseArea = () => {
                   <div className="col-lg-6">
                      <div className="why-choose-content text-white rmb-65">
                         <div className="section-title mb-60">
-                           <span className="section-title__subtitle mb-10">Why Choose Us</span>
-                           <h2>Registered Non Government Voluntary <span>Organization</span></h2>
+                           <h2>Join us to build an equitable, accessible and inclusive world for the people with <span>visual challenges</span></h2>
                         </div>
 
                         <div className="vission-mission-tab">

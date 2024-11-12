@@ -43,7 +43,6 @@ const Projects = () => {
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
                   <div className="section-title text-center mb-50">
-                     <span className="section-title__subtitle mb-10">Life-changing initiatives</span>
                      <h3>Our <span>Projects</span></h3>
                      <p>This section tells about the various initiatives of our organization which are impacting lives of thousands of people with vision loss.</p>
                   </div>

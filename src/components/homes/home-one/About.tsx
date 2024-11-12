@@ -24,7 +24,7 @@ const About = () => {
                                  <i className="flaticon-charity"></i>
                               </div>
                               <div className="project-complete__content">
-                                 <h5>Educate 40 abandoned <br />blind girls</h5>
+                                 <h5>Empower People with<br/>Blindness</h5>
                               </div>
                            </div>
                         </div>
@@ -33,8 +33,7 @@ const About = () => {
                            <div className="image mt-65 rmt-15 rel">
                               <Image src={aboutImg_2} alt="About" />
                               <div className="experiences-years">
-                                 <span className="experiences-years__number">25</span>
-                                 <span className="experiences-years__text">Years Experiences</span>
+                                 <span className="experiences-years__text">Inspiring limitless Possibilities</span>
                               </div>
                            </div>
                            <div className="image">
@@ -48,7 +47,7 @@ const About = () => {
                <div className="col-lg-6">
                   <div className="about-content-part rmt-65">
                      <div className="section-title mb-60">
-                        <span className="section-title__subtitle mb-10">About us</span>
+                        <h1 className="section-title__subtitle mb-10">About us</h1>
                         <h2>Welcome to <span>Blind Welfare Society</span></h2>
                         <p className="pt-10"><strong>Join us to build an equitable, accessible and inclusive world for the people with visual challenges</strong></p>
                      </div>
