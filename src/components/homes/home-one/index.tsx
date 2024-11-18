@@ -26,9 +26,8 @@ const HomeOne = () => {
             <FeaturedStories />
             <Event />
             <Blog style={true} />
-            <BecomeVolunteer />
             <Testimonial />
-            <Features />
+            <BecomeVolunteer />
          </main>
          <FooterOne />
       </>

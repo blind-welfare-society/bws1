@@ -19,7 +19,7 @@ const SponsorMeal = () => {
       });
    }, [pathName]);
 
-   console.log(cmsContent);
+   //console.log(cmsContent);
 
    return (
       <div className="about-us-three pt-10 pb-15">

@@ -25,12 +25,15 @@ const NavMenu = () => {
         }
     };
 
+    const handleClick = (e:any) => { e.preventDefault();  console.log(''); };
+
     return (
         <ul className="navbar-nav menu-open text-lg-end">
             {menu_data.map((menu: any) => (
                 <li key={menu.id}  onClick={() => openMobileMenu(menu.title)} className={`${menu.has_dropdown ? "menu-item-has-children" : ""} 
                     ${navTitle === menu.title ? "open" : ""} `}>
                     <Link href={menu.link}
+                        {...(menu.link && isMenuItemActive(menu.link) ? { onClick: handleClick } : {})}
                         className={`${(isMenuItemActive(menu.link) || (menu.sub_menus && menu.sub_menus.some((sub_m: any) => sub_m.link && isSubMenuItemActive(sub_m.link)))) ? "active" : ""}`}>
                         {menu.title}
                     </Link>

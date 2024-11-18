@@ -7,7 +7,7 @@ import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   // read route params
-  const slug = "donate-a-walking-cane-lighten-the-life-of-the-blind"
+  const slug = "sponsor-a-meal-on-any-special-occasion"
  
   const response = await axios.get(`/meta-info/${slug}`);
   const meta = response.data;

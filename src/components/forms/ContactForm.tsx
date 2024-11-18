@@ -61,7 +61,7 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="volunteer-form">
          <div className="row">
             <div className="col-xl-11 mb-10">
-               <p>Support Blind Welfare Society by reaching out—your voice helps us brighten lives and build inclusivity together.</p>
+               <p>We’d love to hear from you! Whether you have questions, suggestions, or simply want to connect, we’re with you to help. Reach out using any of the methods below, and our team will get back to you as soon as possible.</p>
             </div>
             <div className="col-sm-6">
                <div className="form-group">

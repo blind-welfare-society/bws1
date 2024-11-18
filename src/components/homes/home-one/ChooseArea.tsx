@@ -60,10 +60,14 @@ const ChooseArea = () => {
 
                   <div className="col-lg-6">
                      <div className="why-choose-video">
-                        <div className="video rel">
-                           <Image src={videoBg} alt="Video" />
-                           <a onClick={() => setIsVideoOpen(true)} style={{ cursor: "pointer" }} className="video-play video-play--one" data-effect="mfp-zoom-in"><i className="fa fa-play"></i></a>
-                        </div>
+                        <iframe
+                           src="https://www.youtube.com/embed/g3c2j5xoCvY?rel=0"
+                           style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%" }}
+                           frameBorder="0"
+                           allow="autoplay; encrypted-media"
+                           allowFullScreen
+                           title="Embedded YouTube Video"
+                        ></iframe>
                         <Image className="leaf-shape top_image_bounce" src={leafShape} alt="Shape" />
                      </div>
                   </div>

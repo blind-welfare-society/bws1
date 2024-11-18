@@ -30,7 +30,7 @@ const SponsorMeal = () => {
                 <h4 className="pt-30">{ title }</h4>
                 <p>{brief}</p>
                 <div className="cause-btn mb-20">
-                    <Link className={`cr-btn btn--yellow`} href="{`/${pathName}`}">Donation now</Link>
+                    <Link className={`cr-btn btn--yellow`} href={pathName}>Donation now</Link>
                 </div>
             </div>
             </div>

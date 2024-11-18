@@ -19,7 +19,7 @@ const WalkingCane = () => {
       });
    }, [pathName]);
 
-   console.log(cmsContent);
+   //console.log(cmsContent);
 
    return (
       <div className="about-us-three pt-10 pb-15">
@@ -28,7 +28,9 @@ const WalkingCane = () => {
                <div className="col-md-12 mb-40">
                   <h1 className="text-center headings-with-border">{cmsContent['title']}</h1>
                </div>
-               <div className="col-xl-8">
+            </div>
+            <div className="row">
+               <div className="col-xl-8" style={{position:'relative'}}>
                   <div className="about-us-content-three mb-25">
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['content'] }}></div>
                   </div>
@@ -40,7 +42,7 @@ const WalkingCane = () => {
                      <ProjectFaqs />
                   </div>
                </div>
-               <div className="col-xl-4">
+               <div className="col-xl-4 donationOptForm1">
                   <DonateWalkingCaneForm />
                </div>
             </div>

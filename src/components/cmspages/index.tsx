@@ -1,5 +1,5 @@
 'use client'
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import axios from "@/lib/axios";
 import { useEffect, useState } from "react";
 
@@ -7,14 +7,37 @@ import { useEffect, useState } from "react";
 const CmsPages = () => {
 
    const pathName = usePathname();
+   const router   = useRouter();
 
    const [cmsContent, setCmsContent] = useState({} as any);
+   const [isLoading, setIsLoading] = useState(true);
 
    useEffect(() => {
-      axios.get(pathName).then((res) => {
-         setCmsContent(res.data);
-      });
-   }, [pathName]);
+      const fetchData = async () => {
+         try {
+            const res = await axios.get(pathName);
+            const data = res.data;
+            // If title is blank, redirect to 404
+            if (!data?.title) {
+               router.push('/');
+               return;
+            }
+
+            setCmsContent(data);
+         } catch (error) {
+            router.push('/'); // Redirect to 404 on fetch failure
+         } finally {
+            setIsLoading(false);
+         }
+      };
+
+      fetchData();
+   }, [pathName, router]);
+
+   if (isLoading) {
+      return <div>Loading...</div>; // Optional: Show a loading state while fetching data
+   }
+
 
    return (
       <div className="about-us-three pt-10 pb-15">

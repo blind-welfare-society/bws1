@@ -72,19 +72,19 @@ const HeaderTop = ({ style }: any) => {
               <li className="social-area">
                 <span>Follow Us - </span>
                 <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook">
-                  <i className="fab fa-facebook-f"></i>
+                  <i className="fab fa-facebook-f" role="img" aria-label="SShare"></i>
                 </Link>
                 <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter">
-                  <i className="fab fa-twitter"></i>
+                  <i className="fab fa-twitter" role="img"></i>
                 </Link>
                 <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram">
-                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-instagram" role="img"></i>
                 </Link>
                 <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin">
-                  <i className="fab fa-linkedin-in"></i>
+                  <i className="fab fa-linkedin-in" role="img"></i>
                 </Link>
                 <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube">
-                  <i className="fab fa-youtube"></i>
+                  <i className="fab fa-youtube" role="img"></i>
                 </Link>
               </li>
             </ul>

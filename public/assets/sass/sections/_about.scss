@@ -267,3 +267,31 @@
     h2{font-size: 20px;}
     h3{font-size: 18px;}
 }
+
+.donation-sec{
+    margin: 0 auto;
+    padding: 45px 40px;
+    background-color: #f1f1f5;
+    box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, .1);
+    width: 60%;
+}
+.donation_button{
+    background: #363b97;
+    border: 2px solid #363b97;
+    color: #fff;
+    margin-top: 15px;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 13px 15px;
+    min-width: 190px;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.1;
+    border-radius: 4px;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+    &:hover, &:focus, &:active{
+        color: #fff;
+    }
+}
