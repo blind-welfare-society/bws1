@@ -65,9 +65,9 @@ const ThankYou = ({ pageID }: any) => {
                             <p><strong>Date of Donation:</strong> {formattedDate}</p>
                                
                                {currentPath.includes('sponsormeal') ? (
-                                    <a href={`${process.env.NEXT_PUBLIC_BASE_URL}/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                                    <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                                 ) : (
-                                  <a href={`${process.env.NEXT_PUBLIC_BASE_URL}/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                                  <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                                 )}
                         </div>
                     </div>
