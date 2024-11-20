@@ -78,7 +78,7 @@ const OurCause = () => {
                                 </div>
                            </div>
                            <div className="cause-btn">
-                              <Link className={`cr-btn btn--yellow`} href={`/projects/${item.project_slug}`}>Donate Now</Link>
+                              <Link className={`cr-btn btn--lightblue`} href={`/projects/${item.project_slug}`}>Donate Now</Link>
                            </div>
                         </div>
                      </div>

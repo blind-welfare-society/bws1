@@ -5,6 +5,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from "@/lib/axios";
+import { useSearchParams } from 'next/navigation'
 
 declare global {
   interface Window {
@@ -96,6 +97,23 @@ const schema = yup
    .required();
 
 const SponsorMealForm = () => {
+   const searchParams = useSearchParams();
+   
+   const utm_source = searchParams.get('utm_source');
+   const utm_medium = searchParams.get('utm_medium');
+   const utm_campaign = searchParams.get('utm_campaign');
+   const utm_content = searchParams.get('utm_content');
+   const utm_id = searchParams.get('utm_id');
+   const utm_term = searchParams.get('utm_term');
+
+   const [currentUrl, setCurrentUrl] = useState('');
+    
+    useEffect(() => {
+    // Access window only after the component is mounted (client-side)
+    if (typeof window !== 'undefined') {
+      setCurrentUrl(window.location.origin + window.location.pathname);
+    }
+    }, []);
    const [loading, setLoading] = useState(false); 
 
    useEffect(() => {
@@ -154,6 +172,13 @@ const SponsorMealForm = () => {
             booking_day: data.booking_date.booking_day,
             booking_month: data.booking_date.booking_month,
             booking_year: data.booking_date.booking_year,
+            utm_source: utm_source,
+            utm_medium: utm_medium,
+            utm_campaign: utm_campaign,
+            utm_content: utm_content,
+            utm_id: utm_id,
+            utm_term: utm_term,
+            sourceUrl: currentUrl
          });
          
          if (response.status === 200) {

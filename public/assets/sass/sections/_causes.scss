@@ -97,6 +97,9 @@
         .cause-btn {
             text-align: center;
             margin-bottom: 25px;
+            .cr-btn {
+                text-transform: capitalize;
+            }
         }
     }
 }
@@ -211,6 +214,16 @@
         }
         .cr-btn {
             margin-left: 5px;
+            text-transform: capitalize;
+            padding: 10px 18px;
+            font-size: 20px;
+            letter-spacing: .5px;
+            &.btn--lightblue{
+                background: #11a3c9;
+                &:after{
+                    border-color: #11a3c9;
+                }
+            }
         }
     }
     &.cause-yellow {

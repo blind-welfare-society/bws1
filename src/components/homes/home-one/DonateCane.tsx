@@ -29,7 +29,7 @@ const DonateCane = () => {
           <h4 className="pt-30">{title}</h4>
           <p>{brief}</p>
           <div className="cause-btn mb-20">
-            <Link className="cr-btn btn--yellow" href={pathName}>
+            <Link className="cr-btn btn--lightblue" href={pathName}>
               Donate now
             </Link>
           </div>

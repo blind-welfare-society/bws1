@@ -31,11 +31,24 @@ const ThankYou = ({ pageID }: any) => {
            <div className="container">
                 <div className="row">
                     <div className="col-12 mb-40">
-                           <h1 className="text-center headings-with-border">Thank you for your Support</h1>
+                           <h1 className="text-center headings-with-border" {...currentPath.includes('bws') && {style: {fontSize: '36px',marginTop:'100px'}}}>
+                               Thank you for your Support
+                               {currentPath.includes('bws') && (
+                                   <span>, You have just made someone Smile!</span>                                    
+                                )}
+                           </h1>
                     </div>
                 </div>
                 <div className="row">
-                    <div className="col-12">
+                   {currentPath.includes('bws') ? (
+                       <div className="col-md-12">
+                        <div className="cms_content text-center mb-150">
+                            <p style={{fontSize:'26px'}}>Please click below to download your contribution receipt.</p>
+                            <a href={`https://admin.kitchenkirana.com/exportCampaignPDF/${donationData.id}`} className="donation_button" download="">Download Receipt </a>
+                        </div>
+                       </div>
+                    ): (
+                       <div className="col-12">
                         <div className="donation-sec">
                             <p><strong>Your donations details are as under:</strong></p>
                             <p><strong>Your Name:</strong> {donationData.name}</p>
@@ -70,7 +83,9 @@ const ThankYou = ({ pageID }: any) => {
                                   <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                                 )}
                         </div>
-                    </div>
+                       </div>      
+                   )
+                   }
                 </div>   
             </div> 
          </main>

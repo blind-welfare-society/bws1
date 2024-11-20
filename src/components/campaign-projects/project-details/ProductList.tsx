@@ -14,11 +14,15 @@ interface ProductListProps {
   };
   setTotalPrice: (price: number) => void;
   onProductChange: (formattedProducts: string[]) => void;
+  resetQuantities: boolean;
+  onResetComplete: () => void;
+  onProductAdd: () => void;
 }
 
-const ProductList = ({ products, setTotalPrice, onProductChange }: ProductListProps) => {
+const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities, onResetComplete, onProductAdd }: ProductListProps) => {
   // State to manage visibility and quantity of each product
   const [quantitySelectors, setQuantitySelectors] = useState<{ [key: number]: { visible: boolean; quantity: number; productPrice: any } }>({});
+  
 
   const addProduct = (id: number, price: any) => {
     setQuantitySelectors((prev) => ({
@@ -29,6 +33,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange }: ProductListPr
         productPrice: price * (prev[id]?.quantity ? prev[id].quantity + 1 : 1),
       },
     }));
+    onProductAdd();
   };
 
   
@@ -61,6 +66,14 @@ const ProductList = ({ products, setTotalPrice, onProductChange }: ProductListPr
       return updatedPrev;
     });
   };
+
+  useEffect(() => {
+    if (resetQuantities) {
+      setQuantitySelectors({});
+      onResetComplete(); // Notify parent reset is complete
+    }
+  }, [resetQuantities, onResetComplete]);
+
   
   useEffect(() => {
     const total = Object.values(quantitySelectors).reduce((acc, curr) => {
@@ -74,6 +87,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange }: ProductListPr
       .map(([id, selector]) => `${id}####${selector.quantity}####${selector.productPrice}`);
     
     onProductChange(formattedProducts);
+    
 
   }, [quantitySelectors, setTotalPrice, onProductChange]);  
 

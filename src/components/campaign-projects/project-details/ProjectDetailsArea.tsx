@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProductList from "./ProductList";
 import ProjectBrief from "./ProjectBrief";
 import ProjectUpdates from "./ProjectUpdates";
@@ -16,13 +16,22 @@ const ProjectDetailsArea = (props: any) => {
     const content       = props.project_content.content;
     const targetAmount  = props.project_content.target_amount;
     const goatDetail    = props.project_content.goatDetail;
-    const preferred_slot = props.project_content?.preferred_slot || [];
+    const preferred_slot= props.project_content?.preferred_slot || [];
+    
     
     const [totalPrice, setTotalPrice] = useState(0);
     const [formattedProducts, setFormattedProducts] = useState<string[]>([]);
-    
+    const [resetProductQuantities, setResetProductQuantities] = useState(false);
+    const [totalDonationAmount, setTotalDonationAmount] = useState(0);
 
+    const handlePreferredSlotClick = () => {
+        setResetProductQuantities(true);
+        setFormattedProducts([]); // Clear formatted products
+    };
 
+    const handleProductAdd = () => {
+        setTotalDonationAmount(0); // Reset donation amount when a product is added
+    };
 
     return (
         <div className="container project-container">
@@ -40,6 +49,9 @@ const ProjectDetailsArea = (props: any) => {
                         products={products} 
                         donation_amount={totalPrice} 
                         formattedProducts={formattedProducts}
+                        onProductChange={setFormattedProducts}
+                        onPreferredSlotClick={handlePreferredSlotClick}
+                        resetDonationAmount={setTotalDonationAmount}
                     />
                 </div>
                 <div className="col-md-8">
@@ -66,6 +78,9 @@ const ProjectDetailsArea = (props: any) => {
                         products={products}
                         setTotalPrice={setTotalPrice} 
                         onProductChange={setFormattedProducts}
+                        resetQuantities={resetProductQuantities}
+                        onResetComplete={() => setResetProductQuantities(false)}
+                        onProductAdd={handleProductAdd} 
                          />
                     <ProjectBrief project_description={description} project_content={content} />
                     <ProjectUpdates />    
