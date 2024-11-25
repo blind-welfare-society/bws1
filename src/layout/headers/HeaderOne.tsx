@@ -48,7 +48,7 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                   <NavMenu />
                </div>
                <div className="nav-right-part nav-right-part-desktop">
-                  <Link className="cr-btn btn--style-two" href="#">Donate Now</Link>
+                  <Link className="cr-btn btn--style-two" href="donate">Donate Now</Link>
                </div>
             </div>
          </nav>
