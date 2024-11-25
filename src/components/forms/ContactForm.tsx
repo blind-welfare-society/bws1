@@ -66,35 +66,35 @@ const ContactForm = () => {
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="name">Your Name</label>
-                  <input type="text" id="name"  {...register("name")} className="form-control" placeholder="Your Name" />
+                  <input type="text" id="name"  {...register("name")} className="form-control" />
                   <p className="form_error">{errors.name?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="email">Your Email</label>
-                  <input type="email" id="email" {...register("email")} className="form-control" placeholder="Email Address" />
+                  <input type="email" id="email" {...register("email")} className="form-control" />
                   <p className="form_error">{errors.email?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="phone_number">Phone Number</label>
-                  <input type="text" id="phone_number"  {...register("phone")} className="form-control" placeholder="Phone Number" />
+                  <input type="text" id="phone_number"  {...register("phone")} className="form-control" />
                   <p className="form_error">{errors.phone?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="phone_number">Subject</label>
-                  <input type="text" id="subject"  {...register("subject")} className="form-control" placeholder="Subject" />
+                  <input type="text" id="subject"  {...register("subject")} className="form-control" />
                   <p className="form_error">{errors.subject?.message}</p>
                </div>
             </div>
             <div className="col-md-12">
                <div className="form-group">
                   <label htmlFor="message">Message</label>
-                  <textarea id="comment" {...register("comment")} className="form-control" rows={3} placeholder="Write Your Messages"></textarea>
+                  <textarea id="comment" {...register("comment")} className="form-control" rows={3}></textarea>
                   <p className="form_error">{errors.comment?.message}</p>
                </div>
             </div>

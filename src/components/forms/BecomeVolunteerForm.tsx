@@ -62,21 +62,21 @@ const BecomeVolunteerForm = () => {
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="name" className="fw-bold">Your Name<span className='text-danger'>*</span></label>
-                  <input type="text" id="name"  {...register("name")} className="form-control" placeholder="Name" />
+                  <input type="text" id="name"  {...register("name")} className="form-control" />
                   <p className="form_error">{errors.name?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="email" className="fw-bold">Your Email<span className='text-danger'>*</span></label>
-                  <input type="email" id="email" {...register("email")} className="form-control" placeholder="Email Address" />
+                  <input type="email" id="email" {...register("email")} className="form-control" />
                   <p className="form_error">{errors.email?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="phone_number" className="fw-bold">Phone Number<span className='text-danger'>*</span></label>
-                  <input type="text" id="phone_number"  {...register("phone")} className="form-control" placeholder="Phone Number" />
+                  <input type="text" id="phone_number"  {...register("phone")} className="form-control" />
                   <p className="form_error">{errors.phone?.message}</p>
                </div>
             </div>
@@ -100,7 +100,7 @@ const BecomeVolunteerForm = () => {
             <div className="col-md-12">
                <div className="form-group">
                   <label htmlFor="comment" className="fw-bold">Message<span className='text-danger'>*</span></label>
-                  <textarea id="comment" {...register("comment")} className="form-control" rows={3} placeholder="Write Your Messages"></textarea>
+                  <textarea id="comment" {...register("comment")} className="form-control" rows={3} ></textarea>
                   <p className="form_error">{errors.comment?.message}</p>
                </div>
             </div>

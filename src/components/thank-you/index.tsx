@@ -76,12 +76,13 @@ const ThankYou = ({ pageID }: any) => {
                             <p><strong>Transaction ID:</strong> {donationData?.transaction_id}</p>
                             <p><strong>Payment Method:</strong> {donationData?.payment_option}</p>
                             <p><strong>Date of Donation:</strong> {formattedDate}</p>
-                               
-                               {currentPath.includes('sponsormeal') ? (
-                                    <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
-                                ) : (
-                                  <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
-                                )}
+                            {currentPath.includes('walkingcanedonation') ? (
+                                <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                            ) : currentPath.includes('sponsormeal') && currentPath.includes('walkingcanedonation') ? (
+                                <a href={`https://admin.kitchenkirana.com/download-sponsor-pdf/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                            ):(
+                                <a href={`http://localhost/bws-admin/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                            )}
                         </div>
                        </div>      
                    )

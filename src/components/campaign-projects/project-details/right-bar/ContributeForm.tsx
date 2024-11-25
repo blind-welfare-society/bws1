@@ -177,7 +177,7 @@ const ContributeForm = (props: any) => {
             });
 
             if (response.status === 200) { 
-                console.log(response.data);
+                //console.log(response.data);
                 const order_id    = response.data.data.order_id;
                 const saveData_id = response.data.data.saveData_id;
 

@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { useState, useEffect } from 'react';
+import { Tooltip as ReactTooltip } from "react-tooltip";
+import "react-tooltip/dist/react-tooltip.css";
 
 interface ProductListProps {
   products: {
@@ -129,12 +131,13 @@ const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities
                   Description
                   <span
                     className="js-btn-tooltip--custom"
-                    data-toggle="tooltip"
-                    data-placement="top"
-                    title={products.description[index]}
-                  >
+                    data-tooltip-id="product-tooltip"
+                    data-tooltip-content={products.description[index].replace(/<\/?[^>]+(>|$)/g, "")}
+                    aria-describedby="product-tooltip"
+                    >
                     i
                   </span>
+                  <ReactTooltip id="product-tooltip" role="tooltip" />
                 </div>
                 <div className="productPrice">
                   ₹{products.price[index]}<i>/</i><span>unit</span>

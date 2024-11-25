@@ -49,7 +49,6 @@ const About = () => {
                      <div className="section-title mb-60">
                         <h1 className="section-title__subtitle mb-10">About us</h1>
                         <h2>Welcome to <span>Blind Welfare Society</span></h2>
-                        <p className="pt-10"><strong>Join us to build an equitable, accessible and inclusive world for the people with visual challenges</strong></p>
                      </div>
                      <p>While the exact number of visually impaired persons in India is not clearly available, still, we have a sizeable section of people with vision loss in the Country. And thus, it is our duty to enhance the quality of life of our blind sisters and brothers. Blind Welfare Society has been established for the welfare of the people with visual challenges. It is registered under the Societies Registration Act of 1960.</p>
                      <Link className="cr-btn ml-5 mt-25" href="/about-us">Read More</Link>
