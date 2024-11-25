@@ -272,7 +272,7 @@
     a {
         color: #555555;
         margin: 0 7.5px 10px;
-        @include circle(rgba(255, 255, 255, 0.05), 48px);
+        @include circle(rgb(255, 255, 255), 40px);
         &:hover {
             color: white;
             background: var(--primary-color);
@@ -529,4 +529,8 @@
 }
 .visible-overflow{
     overflow: visible;
+}
+
+.styles-module_tooltip__mnnfp{
+    width: 35% !important;
 }

@@ -424,3 +424,93 @@
         padding: 0 4px;
     }
 }
+
+.donate-form-wrapper{
+    padding: 20px 10px;
+    background-color: #f1f1f5;
+    -webkit-box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, .1);
+    -moz-box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, .1);
+    box-shadow: 4px 4px 12px 0 rgba(0, 0, 0, .1)
+}
+.donationItems {
+    width: 900px;
+    margin: 20px auto;
+}
+.itemHeader {
+    padding-bottom: 5px;
+    font-weight: 600;
+    color: #363b97;
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.itemContainer {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    small{
+        font-size: 12px;
+    }
+}
+.itemName {
+    color: #363b97;
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 10px;
+}
+.product-desc {
+    margin-bottom: 0 !important;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+    cursor: pointer;
+    gap: 4px;
+    padding-top: 5px;
+    span {
+        color: #000;
+        font-size: 8px;
+        font-weight: 700;
+        border: 1px solid #000;
+        border-radius: 50%;
+        width: 13px;
+        line-height: 11px;
+        -moz-box-pack: center;
+        justify-content: center;
+        display: flex;
+        -moz-box-align: center;
+        align-items: center;
+    }
+}
+
+.number{
+    input{
+        height: 30px;
+        width: 50px;
+        text-align: center;
+        font-size: 16px;
+        border: 1px solid #363b97;
+        border-radius: 4px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    span {
+        cursor: pointer;
+    }
+}
+.minus,
+.plus {
+    width: 28px;
+    height: 28px;
+    background: #363b97;
+    border-radius: 4px;
+    padding: 0px 5px 0px 5px;
+    border: 1px solid #363b97;
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    color: #fff;
+    font-weight: bold;
+}
+.product_quantity_btn.plus{width: auto!important;}

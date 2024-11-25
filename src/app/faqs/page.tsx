@@ -1,13 +1,13 @@
-import Blog from "@/components/blogs/blog";
+import Faqs from "@/components/inner-pages/faqs";
 import Wrapper from "@/layout/Wrapper";
 
 export const metadata = {
-   title: "Blog Charite - Charity & Donation React Next js Template",
+   title: "Faq Charite - Charity & Donation React Next js Template",
 };
 const index = () => {
    return (
       <Wrapper>
-         <Blog />
+         <Faqs />
       </Wrapper>
    )
 }

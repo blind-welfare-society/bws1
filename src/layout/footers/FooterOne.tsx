@@ -6,13 +6,6 @@ import footer_data from "@/data/footerData";
 
 import donate from "@/assets/img/footer/donate-by.png";
 
-import footerGallery_1 from "@/assets/img/footer/gallery-two1.jpg";
-import footerGallery_2 from "@/assets/img/footer/gallery-two2.jpg";
-import footerGallery_3 from "@/assets/img/footer/gallery-two3.jpg";
-import footerGallery_4 from "@/assets/img/footer/gallery-two4.jpg";
-import footerGallery_5 from "@/assets/img/footer/gallery-two5.jpg";
-import footerGallery_6 from "@/assets/img/footer/gallery-two6.jpg";
-
 interface ContentType {
    copyright_text: string;
 }
@@ -37,12 +30,8 @@ const FooterTwo = () => {
                         <p><i className="fas fa-phone-alt"></i> <a href="tel:+91-11-25948803">+91-11-25948803</a></p>
                         <p><i className="fas fa-mobile"></i> <a href="tel:+91-9968969932">+91-9968969932</a></p>
                      </div>
-                     <div className="social-style-one pt-20">
-                        <SocialIcon />
-                     </div>
                   </div>
                </div>
-
                {footer_data.filter((item) => item.page === "home_2").map((item) => (
                   <div key={item.id} className="col-xl-2 col-sm-3 col-6">
                      <div className="widget widget_nav_menu">
@@ -51,17 +40,17 @@ const FooterTwo = () => {
                      </div>
                   </div>
                ))}
-
-              
             </div>
          </div>
          
          <div className="footer-bottom mt-10">
             <div className="container">
-               <div className="footer-bottom__inner">
-                 
+               <div className="footer-bottom__inner pb-3">
                   <div className="copyright">
                      <p>{copyright_text}</p>
+                  </div>
+                  <div className="social-style-one">
+                     <SocialIcon />
                   </div>
                </div>
             </div>

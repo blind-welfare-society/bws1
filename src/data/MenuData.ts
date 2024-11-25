@@ -15,13 +15,13 @@ const menu_data: MenuItem[] = [
         id: 1,
         has_dropdown: true,
         title: "Home",
-        link: "/#",
+        link: "/",
     },
     {
         id: 2,
         has_dropdown: true,
         title: "About Us",
-        link: "/#",
+        link: "",
         sub_menus: [
             { link: "/about-us", title: "Overview" },
             { link: "/mission-and-vision", title: "Mission and Vision" },
@@ -33,7 +33,7 @@ const menu_data: MenuItem[] = [
         id: 3,
         has_dropdown: true,
         title: "Our Activities",
-        link: "#",
+        link: "",
         sub_menus: [
             { link: "/our-projects", title: "Our Projects" },
             { link: "/news", title: "News & Events" },
@@ -46,7 +46,7 @@ const menu_data: MenuItem[] = [
         id: 4,
         has_dropdown: true,
         title: "Gallery",
-        link: "#",
+        link: "",
         sub_menus: [
             { link: "/gallery", title: "Photo Gallery" },
             { link: "/videos", title: "Video Gallery" },
