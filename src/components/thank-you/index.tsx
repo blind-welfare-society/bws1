@@ -4,6 +4,7 @@ import HeaderOne from "@/layout/headers/HeaderOne"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from 'next/navigation'
+import Image from "next/image"
 
 
 const ThankYou = ({ pageID }: any) => {
@@ -54,7 +55,30 @@ const ThankYou = ({ pageID }: any) => {
                             <p><strong>Your Name:</strong> {donationData.name}</p>
                             {currentPath.includes('sponsormeal') ? (
                                 <p><strong>Your Donation Description:</strong> {donationData.type_of_meal}</p>
-                            ) : (
+                            ) : currentPath.includes('donation') ? (
+                                <div style={{ overflowX: "auto" }}>
+                                        <p><strong>Your Donation Description:</strong></p>
+                                        <table className="productTable">
+                                        <thead>
+                                        <tr>
+                                            <th>Product</th>
+                                            <th>Name</th>
+                                            <th>Quantity</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {donationData.payment_desc?.map((item:any, index:any) => (
+                                            <tr key={index}>
+                                            <td><Image src={item[2]} alt={item[1]} width={50} height={50} /></td>
+                                            <td>{item[1]}</td>
+                                            <td>{item[0]}</td>
+                                            </tr>
+                                        ))}
+                                        </tbody>
+                                    </table>
+                                </div>
+                               
+                            ):(
                                 <p><strong>Your Donation Description:</strong> {donationData.payment_desc}</p>
                             )}
                             <p><strong>Your Donation Amount:</strong> {`₹${donationData.amount}`}</p>
@@ -81,7 +105,7 @@ const ThankYou = ({ pageID }: any) => {
                             ) : currentPath.includes('sponsormeal') && currentPath.includes('walkingcanedonation') ? (
                                 <a href={`https://admin.kitchenkirana.com/download-sponsor-pdf/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             ):(
-                                <a href={`http://localhost/bws-admin/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                                <a href={`https://admin.kitchenkirana.com/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             )}
                         </div>
                        </div>      

@@ -514,3 +514,17 @@
     font-weight: bold;
 }
 .product_quantity_btn.plus{width: auto!important;}
+
+.donatePage .payment-mods .mode-info .qr-code{width: 38%!important;}
+.productTable{
+    width: 90%;
+    border:1px solid #ccc;
+    text-align: center;
+    margin-bottom: 15px;
+    tr{
+        td{
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+    }
+}
