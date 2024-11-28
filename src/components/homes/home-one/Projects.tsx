@@ -16,7 +16,7 @@ const Projects = () => {
     const [page, setPage] = useState(1);
     const [total, setTotal] = useState(0);
 
-    const limit = 8;
+    const limit = 6;
 
     useEffect(() => {
     const getPosts = async () => {

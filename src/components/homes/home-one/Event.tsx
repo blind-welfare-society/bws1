@@ -41,7 +41,6 @@ const Event = () => {
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
                   <div className="section-title text-center mb-65">
-                     <span className="section-title__subtitle mb-10">News updates</span>
                      <h3>Our <span>News & Events</span></h3>
                      <p>Explore our news section to stay updated on our latest events that impact the lives of people with blindness.</p>
                   </div>

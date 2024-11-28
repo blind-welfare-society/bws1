@@ -40,7 +40,6 @@ const HomeOneBlog = ({ style }: any) => {
             <div className="row justify-content-center">
                <div className="col-xl-x col-lg-8 col-md-10">
                   <div className={`section-title text-center ${style ? "text-white mb-55" : "mb-60"}`}>
-                     <span className="section-title__subtitle mb-10">Our Blog Post</span>
                      <h2>Our Latest <span>Blogs</span></h2>
                      <p>Read our blogs to understand the major challenges face by people with blindness.</p>
                   </div>

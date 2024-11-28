@@ -17,8 +17,7 @@ const BecomeVolunteer = () => {
                <div className="col-lg-6">
                    <div className="volunteer-content form-style-one text-white">
                        <div className="section-title mb-45">
-                           <h2 className="section-title__subtitle mb-10">Get In touch</h2>
-                           <h3>Uniting for <span>Brighter Futures</span></h3>
+                           <h3>Get In  <span>Touch</span></h3>
                        </div>
                        <ContactForm />
                    </div>

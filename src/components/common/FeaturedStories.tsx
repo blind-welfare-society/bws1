@@ -28,8 +28,7 @@ const FeaturedStories =() => {
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
                   <div className="section-title text-center mb-60">
-                     <span className="section-title__subtitle mb-10">Resilience and Empowerment</span>
-                     <h3>Stories of Change</h3>
+                     <h3>Stories of  <span>Change</span></h3>
                      <p>The following stories highlight the transformative journey of these remarkable individuals within our organization.</p>
                   </div>
                </div>

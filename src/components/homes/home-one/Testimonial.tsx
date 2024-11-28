@@ -59,8 +59,7 @@ const Testimonial = () => {
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
                   <div className="section-title text-center mb-30">
-                     <span className="section-title__subtitle mb-10">Testimonials</span>
-                     <h3>What Say Our <span>Supporters</span></h3>
+                     <h3><span>Testimonials</span></h3>
                      <p>Here are few words of appreciation from our donors, supporters and volunteers.</p>
                   </div>
                </div>
