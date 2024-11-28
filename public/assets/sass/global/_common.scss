@@ -272,7 +272,7 @@
     a {
         color: #555555;
         margin: 0 7.5px 10px;
-        @include circle(rgb(255, 255, 255), 40px);
+        @include circle(rgb(255, 255, 255), 30px);
         &:hover {
             color: white;
             background: var(--primary-color);
