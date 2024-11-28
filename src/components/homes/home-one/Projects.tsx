@@ -59,7 +59,7 @@ const Projects = () => {
                     <div className="blog-item__content news-container">
                         <h4><Link href={`/${item.slug}`}>{item.name}</Link></h4>
                         <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
-                        <Link href={`/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
+                        <Link href={`/${item.slug}`} className="read-more">Read More</Link>
                     </div>
                     </div>
                 </div>

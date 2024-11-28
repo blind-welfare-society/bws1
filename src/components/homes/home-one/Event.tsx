@@ -60,7 +60,7 @@ const Event = () => {
                         <div className="blog-item__content news-container">
                            <h4><Link href={`/news/${item.slug}`}>{item.title}</Link></h4>
                            <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
-                           <Link href={`/news/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
+                           <Link href={`/news/${item.slug}`} className="read-more">Read More</Link>
                         </div>
                      </div>
                   </div>
