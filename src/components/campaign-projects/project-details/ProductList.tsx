@@ -132,7 +132,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities
                   <span
                     className="js-btn-tooltip--custom"
                     data-tooltip-id="product-tooltip"
-                    data-tooltip-content={products.description[index].replace(/<\/?[^>]+(>|$)/g, "")}
+                    data-tooltip-content={products.description[index]?.replace(/<\/?[^>]+(>|$)/g, "")}
                     aria-describedby="product-tooltip"
                     >
                     i
