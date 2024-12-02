@@ -25,7 +25,6 @@ const ThankYou = ({ pageID }: any) => {
     return date.toLocaleDateString('en-GB').replace(/\//g, '-');
    };
    const formattedDate = formatDate(donationData.created_at);
-   console.log(process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID);
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
