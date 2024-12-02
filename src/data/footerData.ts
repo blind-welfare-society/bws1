@@ -35,7 +35,7 @@ const footer_data: DataType[] = [
       id:1,
       page:"home_2",
       widget_title: "About",
-      footer_link: [{ link: "/", link_title: "Home" }, { link: "/our-projects", link_title: "Our Projects" }, { link: "#", link_title: "Donate" }, { link: "/news", link_title: "News & Events" },]
+      footer_link: [{ link: "/", link_title: "Home" }, { link: "/our-projects", link_title: "Our Projects" }, { link: "/donate", link_title: "Donate" }, { link: "/news", link_title: "News & Events" },]
    },
    {
       id:2,
