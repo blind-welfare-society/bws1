@@ -102,7 +102,7 @@ const ThankYou = ({ pageID }: any) => {
                             <p><strong>Date of Donation:</strong> {formattedDate}</p>
                             {currentPath.includes('walkingcanedonation') ? (
                                 <a href={`https://dheeraj84.blindwelfaresociety.in/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
-                            ) : currentPath.includes('sponsormeal') && currentPath.includes('walkingcanedonation') ? (
+                            ) : currentPath.includes('sponsormeal') || currentPath.includes('walkingcanedonation') ? (
                                 <a href={`https://dheeraj84.blindwelfaresociety.in/download-sponsor-pdf/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             ):(
                                 <a href={`https://dheeraj84.blindwelfaresociety.in/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
