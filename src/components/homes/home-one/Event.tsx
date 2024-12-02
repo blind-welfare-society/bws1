@@ -64,6 +64,9 @@ const Event = () => {
                      </div>
                   </div>
                ))} 
+               <div className="text-center pt-30">
+                  <Link href="/news" className="cr-btn">View All</Link>
+               </div>
                <div className="image">
                   <Image className="shape two top_image_bounce" src={aboutShape_2} alt="Shape" />
                </div>
