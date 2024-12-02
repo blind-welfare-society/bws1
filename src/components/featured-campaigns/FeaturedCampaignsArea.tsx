@@ -61,7 +61,7 @@ const FeaturedCampaignsArea = () => {
                                     </div>
                             </div>
                             <div className="cause-btn">
-                                <Link className={`cr-btn btn--yellow`} href="{`/projects/${item.project_slug}`}">Donation now</Link>
+                                <Link className={`cr-btn btn--yellow`} href={`/projects/${item.project_slug}`}>Donate now</Link>
                             </div>
                             </div>
                         </div>
