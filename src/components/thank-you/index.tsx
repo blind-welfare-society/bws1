@@ -45,7 +45,7 @@ const ThankYou = ({ pageID }: any) => {
                        <div className="col-md-12">
                         <div className="cms_content text-center mb-150">
                             <p style={{fontSize:'26px'}}>Please click below to download your contribution receipt.</p>
-                            <a href={`https://admin.kitchenkirana.com/exportCampaignPDF/${donationData.id}`} className="donation_button" download="">Download Receipt </a>
+                            <a href={`https://dheeraj84.blindwelfaresociety.in/exportCampaignPDF/${donationData.id}`} className="donation_button" download="">Download Receipt </a>
                         </div>
                        </div>
                     ): (
@@ -101,11 +101,11 @@ const ThankYou = ({ pageID }: any) => {
                             <p><strong>Payment Method:</strong> {donationData?.payment_option}</p>
                             <p><strong>Date of Donation:</strong> {formattedDate}</p>
                             {currentPath.includes('walkingcanedonation') ? (
-                                <a href={`https://admin.kitchenkirana.com/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                                <a href={`https://dheeraj84.blindwelfaresociety.in/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             ) : currentPath.includes('sponsormeal') && currentPath.includes('walkingcanedonation') ? (
-                                <a href={`https://admin.kitchenkirana.com/download-sponsor-pdf/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                                <a href={`https://dheeraj84.blindwelfaresociety.in/download-sponsor-pdf/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             ):(
-                                <a href={`https://admin.kitchenkirana.com/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
+                                <a href={`https://dheeraj84.blindwelfaresociety.in/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             )}
                         </div>
                        </div>      
