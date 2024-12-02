@@ -12,7 +12,7 @@ import FAQ from "./FAQ";
 import Testimonial from "./Testimonial";
 import Features from "./Features";
 import Blog from "./Blog";
-import FooterThree from "@/layout/footers/FooterThree";
+
 
 const HomeThree = () => {
   return (
@@ -33,7 +33,6 @@ const HomeThree = () => {
         <Features />
         <Blog />
       </main>
-      <FooterThree />
     </>
   )
 }
