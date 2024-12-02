@@ -13,7 +13,6 @@ import CtaArea from "./CtaArea"
 import FAQ from "./FAQ"
 import Blog from "../home-one/Blog"
 import Brand from "@/components/common/Brand"
-import FooterTwo from "@/layout/footers/FooterTwo"
 
 const HomeTwo = () => {
   return (
@@ -35,7 +34,6 @@ const HomeTwo = () => {
         <Blog style={true} />
         <Brand style={false} />
       </main>
-      <FooterTwo/>
     </>
   )
 }
