@@ -235,7 +235,6 @@ const SponsorMealForm = () => {
    return (
       <div className="donate-form-wrapper sub-donate">
          <form onSubmit={handleSubmit(onSubmit)} id="donateForm">
-            <p className='d-none'>{process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID}</p>
             <div className="row">
                <div className="col-md-12">
                   <h4>Select your Donation Option</h4>
