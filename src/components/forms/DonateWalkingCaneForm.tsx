@@ -172,7 +172,7 @@ const DonateWalkingCaneForm = () => {
                         saveData_id: saveData_id
                      })
                      .then(function (response) {
-                        const dynamicId = "walkingcanedonation-" + saveData_id;
+                        const dynamicId = "walkingcane-" + saveData_id;
                         //console.log(dynamicId);
                         window.location.href = `/thank-you/${dynamicId}`;
                         

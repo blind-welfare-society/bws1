@@ -100,9 +100,9 @@ const ThankYou = ({ pageID }: any) => {
                             <p><strong>Transaction ID:</strong> {donationData?.transaction_id}</p>
                             <p><strong>Payment Method:</strong> {donationData?.payment_option}</p>
                             <p><strong>Date of Donation:</strong> {formattedDate}</p>
-                            {currentPath.includes('walkingcanedonation') ? (
+                            {currentPath.includes('walkingcane') ? (
                                 <a href={`https://dheeraj84.blindwelfaresociety.in/exportDonationPDF/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
-                            ) : currentPath.includes('sponsormeal') || currentPath.includes('walkingcanedonation') ? (
+                            ) : currentPath.includes('sponsormeal') ? (
                                 <a href={`https://dheeraj84.blindwelfaresociety.in/download-sponsor-pdf/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
                             ):(
                                 <a href={`https://dheeraj84.blindwelfaresociety.in/exportPDFForDonation/${donationData.id}`} className="donation_button" download="">Download your Receipt</a>
