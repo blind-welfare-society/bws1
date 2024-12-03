@@ -251,7 +251,7 @@ const ContributeForm = (props: any) => {
                     onChange: (e) => setValue("donation_amount", e.target.value), // Update form value
                 })}
                 className="form-control amount" 
-                defaultValue={donationAmountField}
+                value={donationAmountField || ""} 
                 placeholder="Enter other amount - ₹500 or more" />
             <p className="form_error">{errors.donation_amount?.message}</p>
         </div> 
