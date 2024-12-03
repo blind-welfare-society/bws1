@@ -146,6 +146,7 @@ const ContributeForm = (props: any) => {
         }
     }, [props.project_id, setValue, totalDonationAmount, donationAmount, formattedProducts]);
 
+    const donationAmountField = watch("donation_amount", totalDonationAmount || donationAmount);
 
     const is80GSelected = watch("form_80G") === "1";
     
@@ -244,7 +245,14 @@ const ContributeForm = (props: any) => {
         </div>  
         <div className="donate_amount_field">
             <div className="donate_currency">₹</div>
-            <input type="number" id="donation_amount" {...register("donation_amount")} className="form-control amount" value={totalDonationAmount || donationAmount} placeholder="Enter other amount - ₹500 or more" />
+            <input type="number"
+                id="donation_amount"
+                {...register("donation_amount", {
+                    onChange: (e) => setValue("donation_amount", e.target.value), // Update form value
+                })}
+                className="form-control amount" 
+                defaultValue={donationAmountField}
+                placeholder="Enter other amount - ₹500 or more" />
             <p className="form_error">{errors.donation_amount?.message}</p>
         </div> 
         {formattedProducts && formattedProducts.length > 0 && formattedProducts.map((item: any, index: number) => (
