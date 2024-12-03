@@ -51,7 +51,7 @@ const About = () => {
                      </div>
                      <p>While the exact number of visually impaired persons in India is not clearly available, still, we have a sizeable section of people with vision loss in the Country. And thus, it is our duty to enhance the quality of life of our blind sisters and brothers. Blind Welfare Society has been established for the welfare of the people with visual challenges. It is registered under the Societies Registration Act of 1960.</p>
                      <Link className="cr-btn ml-5 mt-25" href="/about-us">Read More</Link>
-                     <Link className="cr-btn ml-5 mt-25" href="#">Donate Now</Link>
+                     <Link className="cr-btn ml-5 mt-25" href="/donate">Donate Now</Link>
                   </div>
                </div>
             </div>
