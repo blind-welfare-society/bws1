@@ -36,7 +36,7 @@ const schema = yup
    .object({
       donation_amount: yup.number()
       .required("Donation Amount is required")
-      .min(400, "Please Enter amount More than 400")
+      .min(5, "Please Enter amount More than 5")
       .label("Donation Amount"),
       first_name: yup.string().required().label("First Name"),
       last_name: yup.string().required("Last name is required"),
