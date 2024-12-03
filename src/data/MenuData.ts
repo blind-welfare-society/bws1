@@ -55,8 +55,8 @@ const menu_data: MenuItem[] = [
     {
         id: 5,
         has_dropdown: true,
-        title: "Contact Us",
-        link: "/contact-us",
+        title: "Donate Now",
+        link: "/donate",
     },
     {
         id: 6,
