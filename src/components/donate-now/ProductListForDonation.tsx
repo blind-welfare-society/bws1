@@ -94,6 +94,7 @@ const ProductListForDonation = ({ setTotalPrice, setFormattedProducts}: ProductL
                                 </div>
                                 <div className="col-md-7">
                                     <p className="itemName">{item.name}<br /><small>tax benifits: 50%</small></p>
+                                    {item?.description  &&
                                     <div className="product-desc">
                                         Description
                                         <span
@@ -104,6 +105,7 @@ const ProductListForDonation = ({ setTotalPrice, setFormattedProducts}: ProductL
                                             >i</span>
                                         <ReactTooltip id="product-tooltip" role="tooltip" />
                                     </div>
+                                    }
                                 </div>
                             </div>
                         </div>

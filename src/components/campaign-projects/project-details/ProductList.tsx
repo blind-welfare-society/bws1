@@ -127,6 +127,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities
               </div>
 
               <div className="product_details">
+               {products.description[index] &&
                 <div className="product-desc">
                   Description
                   <span
@@ -139,6 +140,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities
                   </span>
                   <ReactTooltip id="product-tooltip" role="tooltip" />
                 </div>
+                }
                 <div className="productPrice">
                   ₹{products.price[index]}<i>/</i><span>unit</span>
                 </div>
