@@ -13,7 +13,7 @@ const menu_data: MenuItem[] = [
 
     {
         id: 1,
-        has_dropdown: true,
+        has_dropdown: false,
         title: "Home",
         link: "/",
     },
@@ -54,13 +54,13 @@ const menu_data: MenuItem[] = [
     },
     {
         id: 5,
-        has_dropdown: true,
-        title: "Donate Now",
-        link: "/donate",
+        has_dropdown: false,
+        title: "Contact Us",
+        link: "/contact-us",
     },
     {
         id: 6,
-        has_dropdown: true,
+        has_dropdown: false,
         title: "Blogs",
         link: "/blogs",
     },

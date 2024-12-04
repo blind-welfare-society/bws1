@@ -42,9 +42,6 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                <div className={`collapse navbar-collapse ${isActive ? "sopen" : ""}`} id="Iitechie_main_menu">
                   <NavMenu />
                </div>
-               <div className="nav-right-part nav-right-part-desktop">
-                  <Link className="cr-btn btn--style-two" href="/contact-us">Contact Us</Link>
-               </div>
             </div>
          </nav>
       </>

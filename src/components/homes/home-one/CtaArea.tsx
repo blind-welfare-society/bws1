@@ -2,7 +2,7 @@ import Link from "next/link"
 
 const CtaArea = () => {
    return (
-      <div className="cta-area overlay bgs-cover pt-110 rpt-120 pb-120" style={{ backgroundImage: `url(/assets/img/background/cta.jpg)` }}>
+      <div className="cta-area overlay bgs-cover pt-110 rpt-80 pb-120" style={{ backgroundImage: `url(/assets/img/background/cta.jpg)` }}>
          <div className="container container-1170">
             <div className="row justify-content-center">
                <div className="col-xl-8 col-lg-10">
