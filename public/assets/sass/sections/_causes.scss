@@ -505,3 +505,11 @@
         margin-bottom: 24px;
     }
 }
+
+@media only screen and (max-width: 767px) {
+    .featured-campaigns {
+        .content {
+            height: auto;
+        }
+    }
+}
