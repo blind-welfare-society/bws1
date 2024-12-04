@@ -534,14 +534,21 @@
         }
     }
 
-    .button.product_quantity_btn {
-        display: block;
+    .donate-form-wrapper{
+        padding: 20px 0px;
+    }
+    .donationItems {
+        width: auto;
     }
 
-    .minus,
-    .plus,
-    .noOfItem {
-        display: block!important;
+}
+@media only screen and (max-width: 991px) {
+    .itemcontainer{
+        .col-md-7{
+            .col-md-4{
+                text-align: unset !important;
+                padding: 8px 15px;
+            }
+        }
     }
-
 }
