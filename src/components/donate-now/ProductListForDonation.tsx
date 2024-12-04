@@ -112,7 +112,7 @@ const ProductListForDonation = ({ setTotalPrice, setFormattedProducts}: ProductL
                         <div className="col-md-7">
                             <div className="row">
                                 <div className="col-md-4">₹ {item.price}</div>
-                                <div className="col-md-4 text-center">
+                                <div className="col-md-4 text-lg-center text-start">
                                     <div className="product_add_to_cart" id={`prod_${item.id}`}>
                                         {!quantitySelectors[item.id]?.visible ? (
                                         <button
