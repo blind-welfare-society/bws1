@@ -27,7 +27,7 @@ const ChooseArea = () => {
 
    return (
       <>
-         <div className="why-choose-area overlay py-120">
+         <div className="why-choose-area overlay py-lg-120 py-50">
             <div className="container">
                <div className="row gap-100 align-items-center">
                   <div className="col-lg-6">
