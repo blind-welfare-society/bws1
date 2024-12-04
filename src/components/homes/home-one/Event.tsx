@@ -36,7 +36,7 @@ const Event = () => {
    }, [page]);
 
    return (
-      <div className="our-event-area pt-50  pt-lg-120 pb-95 rel z-1">
+      <div className="our-event-area pt-50 pt-lg-120 pb-95 rel z-1">
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">

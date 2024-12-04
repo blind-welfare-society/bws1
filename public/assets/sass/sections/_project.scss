@@ -526,7 +526,6 @@
         }
     }
 }
-
 @media only screen and (max-width: 767px) {
     .project-container {
         .headings-with-border {
@@ -534,4 +533,15 @@
             padding-top: 78px;
         }
     }
+
+    .button.product_quantity_btn {
+        display: block;
+    }
+
+    .minus,
+    .plus,
+    .noOfItem {
+        display: block;
+    }
+
 }
