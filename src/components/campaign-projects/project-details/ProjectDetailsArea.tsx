@@ -17,6 +17,7 @@ const ProjectDetailsArea = (props: any) => {
     const content       = props.project_content.content;
     const targetAmount  = props.project_content.target_amount;
     const goatDetail    = props.project_content.goatDetail;
+    const videoContent  = props.project_content.video_content;
     const preferred_slot= props.project_content?.preferred_slot || [];
     
     
@@ -83,7 +84,7 @@ const ProjectDetailsArea = (props: any) => {
                         onResetComplete={() => setResetProductQuantities(false)}
                         onProductAdd={handleProductAdd} 
                          />
-                    <ProjectBrief project_description={description} project_content={content} />
+                    <ProjectBrief project_description={description} project_content={content} video_content={videoContent} />
                     </div>
                 </div>
             </div>
