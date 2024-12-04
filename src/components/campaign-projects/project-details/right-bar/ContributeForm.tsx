@@ -234,6 +234,7 @@ const ContributeForm = (props: any) => {
     return (
         <form className="campaign_donation_payment" onSubmit={handleSubmit(onSubmit)} id="donateForm">
         <input type="hidden" id="campaign_id" {...register("campaign_id")} />
+        <h5 style={{ marginBottom: "5px",fontWeight: "600",fontSize: "20px"}}>Contribute</h5>
         <div className='donate-amount-placeholder'>
         <ul>
         {
