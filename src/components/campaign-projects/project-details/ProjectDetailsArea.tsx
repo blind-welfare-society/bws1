@@ -6,6 +6,7 @@ import ProjectUpdates from "./ProjectUpdates";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
 import ProgressInfo from "./right-bar/ProgressInfo";
 import ContributeForm from "./right-bar/ContributeForm";
+import PaymentMods from "@/components/common/PaymentMods";
 
 const ProjectDetailsArea = (props: any) => {
     const title = props.project_content.title;
@@ -41,7 +42,7 @@ const ProjectDetailsArea = (props: any) => {
                 </div>
             </div>
             <div className="row project_details_section">
-                <div className="col-md-4 donationOptForm order-lg-2">
+                <div className="col-md-4 donationOptForm order-lg-2 order-1">
                     <ProgressInfo targetAmount={targetAmount} goatDetail={goatDetail} />
                     <ContributeForm 
                         preferred_slot={preferred_slot} 
@@ -83,9 +84,15 @@ const ProjectDetailsArea = (props: any) => {
                         onProductAdd={handleProductAdd} 
                          />
                     <ProjectBrief project_description={description} project_content={content} />
+                    </div>
+                </div>
+            </div>
+            <div className="row mt-lg-0 mt-4">
+                <div className="col-md-8">
+                    <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
+                    <PaymentMods />
                     <ProjectUpdates />    
                     <ProjectFaqs /> 
-                    </div>
                 </div>
             </div>
         </div>   

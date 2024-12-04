@@ -1,8 +1,7 @@
-import PaymentMods from "@/components/common/PaymentMods";
 const ProjectBrief = (props: any) => { 
     
     return (
-        <div className="project-brief-area pb-50 pt-30 rel z-1" id="projectTab">
+        <div className="project-brief-area pt-30 rel z-1" id="projectTab">
             <div className="project_content">
                 <h3 className="text-center">Story</h3>
                 <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
@@ -16,10 +15,7 @@ const ProjectBrief = (props: any) => {
                 ></iframe>
                 </div>
                 <div dangerouslySetInnerHTML={{ __html: props.project_content }}></div>
-                
             </div>
-            <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
-            <PaymentMods />
         </div>
     )
 }
