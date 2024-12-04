@@ -30,6 +30,9 @@ const SponsorMeal = () => {
                </div>
                <div className="col-xl-8">
                   <div className="about-us-content-three mb-25">
+                     <div dangerouslySetInnerHTML={{ __html: cmsContent['video_content'] }}></div>
+                  </div>
+                  <div className="about-us-content-three mb-25">
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['content'] }}></div>
                   </div>
                   <div className="about-us-content-three mb-25">
