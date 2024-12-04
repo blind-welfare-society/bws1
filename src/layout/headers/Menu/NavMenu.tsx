@@ -56,9 +56,9 @@ const NavMenu = () => {
                             )}
                         </>
                     )}
-                    <li className="donate-btn-mobile"><Link className="" href="/donate">Donate Now</Link></li>
                 </li>
             ))}
+            <li className="donate-btn-mobile"><Link className="" href="/donate">Donate Now</Link></li>
         </ul>
     );
 };
