@@ -109,7 +109,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities
 
               <div className="progressBarHeading">
                 <p className="mb-0">
-                  {`${products.productQty[index]} of ${products.totalproducts[index]} Quantity Obtained `}
+                  {`${products.totalproducts[index]} of ${products.productQty[index]} Quantity Obtained `}
                 </p>
                 <div
                   className="progress"
