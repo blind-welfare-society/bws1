@@ -3,13 +3,8 @@
 ---------------------------------------------------*/
 
 .hero-area {
-    @include res-bl(xxl) {
-        padding-top: 110px;
-        padding-bottom: 120px;
-    }
-    @include res-bl(lg) {
-        margin-top: 66px;
-    }
+    padding-top: 110px;
+    padding-bottom: 120px;
 }
 .hero-content {
     h1 {
@@ -98,4 +93,11 @@
     column-gap: .5em;
     margin: auto;
     width: 100%;
+}
+
+@media only screen and (max-width: 767px) {
+    .hero-area{margin-top: 0x;}
+    .hero-area .grid{
+        column-count: 1;
+    }
 }
