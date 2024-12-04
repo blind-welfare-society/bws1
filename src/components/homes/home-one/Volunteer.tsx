@@ -14,7 +14,7 @@ const Volunteer = ({ style }: any) => {
       .slice(0, style ? 3 : 6);
 
    return (
-      <div className="volunteer-area pt-120 pb-90 rel z-1">
+      <div className="volunteer-area pt-120 rpt-50 pb-90 rel z-1">
          <div className="container container-1170">
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">

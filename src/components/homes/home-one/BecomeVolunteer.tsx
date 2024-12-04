@@ -6,7 +6,7 @@ import volunteerImg_2 from "@/assets/img/valunteer/valunteer-bg1.png"
 
 const BecomeVolunteer = () => {
   return (
-   <div className="become-volunteer-area py-50  py-lg-120 overflow-hidden rel z-1">
+   <div className="become-volunteer-area rpy-50 py-120 overflow-hidden rel z-1">
        <div className="container">
            <div className="row align-items-center">
                <div className="col-lg-6">

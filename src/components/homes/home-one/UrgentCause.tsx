@@ -10,7 +10,7 @@ import causeShape_3 from "@/assets/img/shapes/circle-with-line-green.png";
 
 const UrgentCause = () => {
    return (
-      <div className="urgent-cause-area overlay bgs-cover pt-50 pt-lg-120 pn-30 rel z-1" style={{ backgroundImage: `url(/assets/img/causes/urgent-causes.jpg)` }}>
+      <div className="urgent-cause-area overlay bgs-cover rpt-50 pt-120 pn-30 rel z-1" style={{ backgroundImage: `url(/assets/img/causes/urgent-causes.jpg)` }}>
          <div className="container container-1370">
             <div className="row gap-40">
                <div className="col-xl-3 col-md-6">

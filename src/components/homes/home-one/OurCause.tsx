@@ -40,7 +40,7 @@ const OurCause = () => {
 
 
    return (
-      <div className="urgent-cause-area pt-lg-120 pt-50 pb-90 rel z-1 overlay bgs-cover " style={{ backgroundImage: `url(/assets/img/causes/bws-girls.jpg)` }}>
+      <div className="urgent-cause-area pt-120 rpt-50 pb-90 rel z-1 overlay bgs-cover " style={{ backgroundImage: `url(/assets/img/causes/bws-girls.jpg)` }}>
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-8 col-lg-10 col-md-10">

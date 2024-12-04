@@ -38,7 +38,7 @@ const Projects = () => {
     
     
    return (
-      <div className="our-cause-area pt-50 pt-lg-120 pb-0 rel z-1">
+      <div className="our-cause-area rpt-50 pt-120 pb-0 rel z-1">
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">

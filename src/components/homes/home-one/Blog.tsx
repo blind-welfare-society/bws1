@@ -35,7 +35,7 @@ const HomeOneBlog = ({ style }: any) => {
   if (error) return <p>Error: {error.message}</p>;
 
    return (
-      <div className={`pt-120 pb-60 rel z-1 ${style ? "blog-area-two overlay" : "blog-area"}`}>
+      <div className={`pt-120 rpt-50 pb-60 rel z-1 ${style ? "blog-area-two overlay" : "blog-area"}`}>
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-x col-lg-8 col-md-10">

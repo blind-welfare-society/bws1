@@ -54,7 +54,7 @@ const Testimonial = () => {
    }
 
    return (
-      <div className="testimonials-area-three py-120 rel z-1">
+      <div className="testimonials-area-three py-120 rpy-50 rel z-1">
          <div className="container">
             <div className="row justify-content-center">
                <div className="col-xl-6 col-lg-8 col-md-10">
