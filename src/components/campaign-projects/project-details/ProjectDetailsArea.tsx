@@ -17,7 +17,8 @@ const ProjectDetailsArea = (props: any) => {
     const content       = props.project_content.content;
     const targetAmount  = props.project_content.target_amount;
     const goatDetail    = props.project_content.goatDetail;
-    const videoContent  = props.project_content.video_content;
+    const videoContent = props.project_content.video_content;
+    const minimumAmount = props.project_content.minimum_amount;
     const preferred_slot= props.project_content?.preferred_slot || [];
     
     
@@ -49,6 +50,7 @@ const ProjectDetailsArea = (props: any) => {
                         preferred_slot={preferred_slot} 
                         project_id={props.project_content.id} 
                         products={products} 
+                        minimum_amount={minimumAmount}
                         donation_amount={totalPrice} 
                         formattedProducts={formattedProducts}
                         onProductChange={setFormattedProducts}

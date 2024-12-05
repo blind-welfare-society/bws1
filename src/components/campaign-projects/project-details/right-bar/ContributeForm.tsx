@@ -30,11 +30,12 @@ interface FormData {
    frm_products?: string[] | null;
 }
 
-const schema = yup
+const getSchema = (minimum_amount: number | undefined) =>
+    yup
    .object({
       donation_amount: yup.number()
       .required("Donation Amount is required")
-      .min(500, "Please Enter amount More than 500")
+      .min(minimum_amount || 500, `Please enter an amount more than ${minimum_amount || 500}`)
       .label("Donation Amount"),
       full_name: yup.string().required().label("First Name"),
       email: yup.string().required().email().label("Enter Email"),
@@ -72,6 +73,7 @@ const schema = yup
    })
     .required();
    
+   
 const ContributeForm = (props: any) => {
     const searchParams = useSearchParams();
 
@@ -88,6 +90,7 @@ const ContributeForm = (props: any) => {
     const formattedProducts = props.formattedProducts;
     const onProductChange = props.onProductChange; 
     const onPreferredSlotClick = props.onPreferredSlotClick;
+    const minimum_amount = props.minimum_amount;
 
     const [totalDonationAmount, setTotalDonationAmount] = useState(donationAmount);
     const [loading, setLoading] = useState(false); 
@@ -126,7 +129,7 @@ const ContributeForm = (props: any) => {
     }, []);
     
     const { register, handleSubmit, reset, formState: { errors }, setValue, watch,} = useForm<FormData>({
-      resolver: yupResolver(schema),
+      resolver: yupResolver(getSchema(minimum_amount)),
       defaultValues: {
          form_80G: "0",
          contributor_name_display:"full_name"
@@ -253,7 +256,7 @@ const ContributeForm = (props: any) => {
                 })}
                 className="form-control amount" 
                 value={donationAmountField || ""} 
-                placeholder="Enter other amount - ₹500 or more" />
+                placeholder={`Enter other amount - ₹${minimum_amount || 500} or more`} />
             <p className="form_error">{errors.donation_amount?.message}</p>
         </div> 
         {formattedProducts && formattedProducts.length > 0 && formattedProducts.map((item: any, index: number) => (
