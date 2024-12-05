@@ -21,20 +21,20 @@ const OurCause = () => {
    const limit = 12;
 
    useEffect(() => {
-   const getPosts = async () => {
-      try {
-         setLoading(true);
-         const { data, total } = await fetchPosts(page, limit);
-         setPosts(data);
-         setTotal(total);
-      } catch (error) {
-         setError(error as Error);
-      } finally {
-       setLoading(false);
-      }
-   };
+      const getPosts = async () => {
+         try {
+            setLoading(true);
+            const { data, total } = await fetchPosts(page, limit);
+            setPosts(data);
+            setTotal(total);
+         } catch (error) {
+            setError(error as Error);
+         } finally {
+            setLoading(false);
+         }
+      };
 
-   getPosts();
+      getPosts();
    }, [page]);
 
 
@@ -50,7 +50,7 @@ const OurCause = () => {
                   </div>
                </div>
             </div>
-            
+
             <div className="row">
                {posts.map((item) => (
                   <div key={item.id} className="col-md-6 featured-campaigns">
@@ -61,21 +61,21 @@ const OurCause = () => {
                         </div>
                         <div className="content">
                            <div className={`circle-progresss two`}>
-                              <div className="chart" data-percent="65">
-                                 <span><CircleProgress finish={item.percent_count} /></span>
+                              <div className="chart" data-percent={item.percent_count}>
+                                 <span><CircleProgress finish={item.percent_count} duration={100} /></span>
                               </div>
                            </div>
                            <h4><Link href={`/projects/${item.project_slug}`}>{item.project_title}</Link></h4>
                            <p> {item.project_brief}</p>
                            <div className="row mb-8">
-                                <div className="col-md-6">
-                                    <div className="cause-price cause-price--yellow">
-                                        <p className="donateDetails">₹{item.totalAmount}<br /><small>raised of ₹{item.target_amount}</small></p>
-                                    </div>
-                                </div>
-                                <div className="col-md-6">
-                                    <p><strong>{item.total_donar}</strong> Supporters</p>       
-                                </div>
+                              <div className="col-md-6">
+                                 <div className="cause-price cause-price--yellow">
+                                    <p className="donateDetails">₹{item.totalAmount}<br /><small>raised of ₹{item.target_amount}</small></p>
+                                 </div>
+                              </div>
+                              <div className="col-md-6">
+                                 <p><strong>{item.total_donar}</strong> Supporters</p>
+                              </div>
                            </div>
                            <div className="cause-btn">
                               <Link className={`cr-btn btn--lightblue`} href={`/projects/${item.project_slug}`}>Donate Now</Link>

@@ -1,25 +1,21 @@
-"use client"
-import React, { useState, useEffect, useRef } from 'react';
+"use client";
+import React, { useState, useEffect, useRef } from "react";
 
-const CircleProgress = ({
-  duration = 4200,
-  finish = 85,
-}) => {
+const CircleProgress = ({ duration = 4200, finish = 100 }) => {
   const [isInViewport, setIsInViewport] = useState(false);
-  const [percentage, setPercentage] = useState(0);
   const [displayedProgress, setDisplayedProgress] = useState(0);
   const circleRef = useRef(null);
 
   useEffect(() => {
-    const currentElement = circleRef.current; // Create a local variable to store the current value
+    const currentElement = circleRef.current;
     const observer = new IntersectionObserver(
       ([entry]) => {
         setIsInViewport(entry.isIntersecting);
       },
       {
         root: null,
-        rootMargin: '0px',
-        threshold: 0.1, // 0.1 means 10% of the element must be visible
+        rootMargin: "0px",
+        threshold: 0.1, // 10% of the element must be visible
       }
     );
 
@@ -35,28 +31,28 @@ const CircleProgress = ({
   }, []);
 
   useEffect(() => {
-    if (isInViewport && percentage <= finish) {
-      const interval = duration / 100;
-  
-      const easeOutQuad = (t:any) => t * (2 - t);
-  
-      const increment = () => {
-        setTimeout(() => {
-          const newPercentage = percentage + 1;
-          const newDisplayedProgress = Math.round(easeOutQuad(newPercentage / finish) * finish);
-          setPercentage(newPercentage);
-          setDisplayedProgress(newDisplayedProgress);
-        }, interval);
-      };
-  
-      increment();
-  
+    if (isInViewport) {
+      const interval = duration / finish;
+      let currentProgress = 0;
+
+      const intervalId = setInterval(() => {
+        currentProgress += 1;
+        const easedProgress = Math.round(
+          (1 - Math.pow(1 - currentProgress / finish, 3)) * finish // Ease-out cubic function
+        );
+
+        setDisplayedProgress(easedProgress);
+
+        if (currentProgress >= finish) {
+          clearInterval(intervalId);
+        }
+      }, interval);
+
       return () => {
-        clearTimeout(interval);
+        clearInterval(intervalId);
       };
     }
-  }, [isInViewport, percentage, duration, finish]);
-  
+  }, [isInViewport, duration, finish]);
 
   const r = 34;
   const c = Math.PI * (r * 2);
@@ -72,7 +68,7 @@ const CircleProgress = ({
           r="34"
           fill="none"
           strokeWidth="4"
-          strokeDasharray="213.63"
+          strokeDasharray={c}
           strokeDashoffset={0}
         />
         <circle
@@ -82,7 +78,7 @@ const CircleProgress = ({
           r="34"
           fill="none"
           strokeWidth="4"
-          strokeDasharray="213.63"
+          strokeDasharray={c}
           strokeDashoffset={pct}
         />
       </svg>
