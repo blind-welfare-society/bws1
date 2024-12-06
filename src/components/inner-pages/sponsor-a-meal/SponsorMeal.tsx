@@ -35,6 +35,13 @@ const SponsorMeal = () => {
                   <div className="about-us-content-three mb-25">
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['content'] }}></div>
                   </div>
+               </div>
+               <div className="col-xl-4">
+                  <SponsorMealForm />
+               </div>
+            </div>
+            <div className="row">
+               <div className="col-md-8">
                   <div className="about-us-content-three mb-25">
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['description'] }}></div>
                   </div>
@@ -42,9 +49,6 @@ const SponsorMeal = () => {
                      <PaymentMods />
                      <ProjectFaqs />
                   </div>
-               </div>
-               <div className="col-xl-4">
-                  <SponsorMealForm />
                </div>
             </div>
          </div>
