@@ -8,7 +8,6 @@ import Volunteer from "./Volunteer";
 import BecomeVolunteer from "./BecomeVolunteer";
 import CtaArea from "./CtaArea";
 import Event from "./Event";
-import FAQ from "./FAQ";
 import Testimonial from "./Testimonial";
 import Features from "./Features";
 import Blog from "./Blog";
@@ -28,7 +27,6 @@ const HomeThree = () => {
         <BecomeVolunteer style={true} />
         <CtaArea />
         <Event />
-        <FAQ style={false} />
         <Testimonial />
         <Features />
         <Blog />
