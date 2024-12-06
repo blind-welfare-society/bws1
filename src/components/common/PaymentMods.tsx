@@ -5,18 +5,18 @@ const PaymentMods = () => {
             <div className="col-md-12 mb-10">
                 <p className="fst-italic fw-bold">Donations made to Blind Welfare Society are Exempted under section 80G of Indian Income Tax Act, 1961.</p>
             </div>
-            <div className="col-md-6 text-center">
-                <h4 className="fw-bold mb-2">Donate via UPI</h4>
+            <div className="col-md-12 text-center">
                 <div className="mode-info">
+                    <h4 className="fw-bold mb-2">Donate via UPI</h4>
                     <div className="text-center">
-                        <Image src={"/assets/img/about/BWS-QR-Code.jpeg"} width={300} height={418} className="qr-code" alt="BWS QR Code" />
+                        <Image src={"/assets/img/about/UPI_Scanner.jpeg"} width={300} height={418} className="qr-code" alt="UPI_Scanner" title="UPI_Scanner" />
                     </div>
                     <p className="pt-2 text-start note">In case you have donated directly through UPI, kindly E-Mail your details such as Name, Address and PAN for 80G receipt on <a className="text-decoration-underline" href="mailto:info@blindwelfaresociety.in">info@blindwelfaresociety.in</a></p>
                 </div>
             </div>
-            <div className="col-md-6">
-                <h4 className="fw-bold mb-2 text-center">Bank Transfers</h4>
+            <div className="col-md-12">
                 <div className="mode-info">
+                    <h4 className="fw-bold mb-2 text-center">Bank Transfers</h4>
                     <p>You can transfer your contributions in the below account:</p>
                     <p><strong>Account Holder Name:</strong> Blind Welfare Society</p>
                     <p><strong>Account Number:</strong> 31073619505</p>
