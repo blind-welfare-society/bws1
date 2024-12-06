@@ -73,7 +73,7 @@ const OurCause = () => {
                                     </div>
                                  </div>
                               </div>
-                              <div className="row donarDetails mt-4">
+                              <div className="row donarDetails mb-4">
                                  <div className="col-md-6">
                                     <p><strong>{item.left_days}</strong> Days left</p>
                                  </div>
