@@ -7,6 +7,7 @@ import FeaturedStories from "@/components/common/FeaturedStories"
 import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
 import CtaArea from "@/components/homes/home-one/CtaArea"
+import OurCause from "@/components/homes/home-one/OurCause"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
@@ -34,6 +35,7 @@ const InnerCmsPage = () => {
          <main>
             <Banner image_url={imageUrl} />
             <CmsPages />
+            <OurCause noOfPosts={4} style={true} />
             <CtaArea />
             <FeaturedStories />
             <BecomeVolunteer />

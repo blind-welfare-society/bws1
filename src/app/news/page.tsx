@@ -1,4 +1,4 @@
-import News from "@/components/news";
+import NewsEvents from "@/components/news";
 import Wrapper from "@/layout/Wrapper";
 
 export const metadata = {
@@ -8,7 +8,7 @@ export const metadata = {
 const index = () => {
    return (
       <Wrapper>
-         <News />
+         <NewsEvents />
       </Wrapper>
    )
 }

@@ -8,7 +8,7 @@ import causeShape_1 from "@/assets/img/shapes/half-circle-with-dots.png";
 import causeShape_2 from "@/assets/img/shapes/circle-with-line-red.png";
 import causeShape_3 from "@/assets/img/shapes/circle-with-line-green.png";
 
-const OurCause = () => {
+const OurCause = ({ noOfPosts, style }: { noOfPosts: number, style: boolean }) => {
 
    const [posts, setPosts] = useState<Post[]>([]);
    const [loading, setLoading] = useState(true);
@@ -16,7 +16,7 @@ const OurCause = () => {
    const [page, setPage] = useState(1);
    const [total, setTotal] = useState(0);
 
-   const limit = 12;
+   const limit = noOfPosts;
 
    useEffect(() => {
    const getPosts = async () => {
@@ -33,7 +33,7 @@ const OurCause = () => {
    };
 
    getPosts();
-   }, [page]);
+   }, [page, limit]);
 
 
 
@@ -51,14 +51,14 @@ const OurCause = () => {
             
             <div className="row">
                {posts.map((item) => (
-                  <div key={item.id} className="col-md-6 featured-campaigns">
-                     <h2 className="text-center headings-with-border">{item.project_Name}</h2>
+                  <div key={item.id} className={ `${style ? "col-md-3 four-cols pe-0 ps-0" : "col-md-6"} featured-campaigns`}>
+                     <h2 className={ `${style ? "" : "headings-with-border"} text-center`}>{item.project_Name}</h2>
                      <div className={`cause-two-item cause-blue`}>
                         <div className="image">
                            <Image src={item.image} alt="Cause" width={386} height={184} />
                         </div>
                         <div className="content">
-                           <div className="project-box-wrapper pt-4">
+                           <div className={ `${style ? "project-box-wrapper-style2" : "project-box-wrapper"} pt-4`}>
                               <h4 className="title"><Link href={`/projects/${item.project_slug}`}>{item.project_title}</Link></h4>
                               {item.project_brief && <p>{item.project_brief}</p>}
                               <div className="row">
@@ -68,12 +68,12 @@ const OurCause = () => {
                                  <div className="col-md-6">
                                     <div className="counterBox">
                                        <div className="box">
-                                          {item.percent_count && <p>{`${item.percent_count}%`}</p>}
+                                         {item.percent_count && <p>{`${item.percent_count}%`}</p>}
                                        </div>
                                     </div>
                                  </div>
                               </div>
-                              <div className="row donarDetails mb-4">
+                              <div className={ `${style ? "mb-2" : "mb-4"} row donarDetails`}>
                                  <div className="col-md-6">
                                     <p><strong>{item.left_days}</strong> Days left</p>
                                  </div>
@@ -89,7 +89,13 @@ const OurCause = () => {
                      </div>
                   </div>
                ))}
+               {style  && (
+                  <div className="text-center pt-30">
+                  <Link href="/featured-campaigns" className="cr-btn">View All</Link>
+                  </div>
+               )}
             </div>
+
          </div>
          <div className="urgent-cause-shapes">
             <Image className="one top_image_bounce" src={causeShape_1} alt="Shape" />

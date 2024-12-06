@@ -3,9 +3,11 @@ import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import NewsArea from "./NewsArea"
+import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
+import Blog from "@/components/homes/home-one/Blog"
 import FeaturedStories from "@/components/common/FeaturedStories"
 
-const Blog = () => {
+const NewsEvents = () => {
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
@@ -20,10 +22,12 @@ const Blog = () => {
             </div>
                <NewsArea />
                <FeaturedStories />
+               <BecomeVolunteer />
+               <Blog />
          </main>
          <FooterOne />
       </>
    )
 }
 
-export default Blog;
+export default NewsEvents;

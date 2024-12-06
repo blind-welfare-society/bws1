@@ -1,6 +1,5 @@
 import Image from "next/image"
 import Link from "next/link"
-import CircleProgress from "@/hooks/Circular"
 import { useState, useEffect } from "react";
 import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiFeaturedCampaigns';
 import SponsorMeal from "@/components/homes/home-one/SponsorMeal";

@@ -21,7 +21,7 @@ const HomeOne = () => {
             <HeroArea />
             <About />
             <ChooseArea />
-            <OurCause />
+            <OurCause noOfPosts={4} style={false} />
             <SponsorMeal />
             <Projects />
             <FeaturedStories />
