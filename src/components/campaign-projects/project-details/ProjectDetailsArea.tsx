@@ -7,8 +7,11 @@ import ProjectFaqs from "@/components/common/ProjectFaqs";
 import ProgressInfo from "./right-bar/ProgressInfo";
 import ContributeForm from "./right-bar/ContributeForm";
 import PaymentMods from "@/components/common/PaymentMods";
+import { usePathname } from "next/navigation";
+import BeneficiariesTestimonials from "@/components/common/BeneficiariesTestimonials";
 
 const ProjectDetailsArea = (props: any) => {
+    const currentProject = usePathname();
     const title = props.project_content.title;
     const banner_image = props.project_content.project_image;
     
@@ -91,7 +94,8 @@ const ProjectDetailsArea = (props: any) => {
                 </div>
             </div>
             <div className="row mt-lg-0 mt-4">
-                <div className="col-md-8">
+                <div className="col-md-12">
+                    {currentProject === '/projects/be-the-light-donate-groceries-to-homeless-blind-in-need' && <BeneficiariesTestimonials /> }
                     <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
                     <PaymentMods />
                     <ProjectUpdates />    

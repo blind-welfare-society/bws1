@@ -5,7 +5,7 @@ const PaymentMods = () => {
             <div className="col-md-12 mb-10">
                 <p className="fst-italic fw-bold">Donations made to Blind Welfare Society are Exempted under section 80G of Indian Income Tax Act, 1961.</p>
             </div>
-            <div className="col-md-12 text-center">
+            <div className="col-md-12 text-center mb-10">
                 <div className="mode-info">
                     <h4 className="fw-bold mb-2">Donate via UPI</h4>
                     <div className="text-center">
@@ -35,7 +35,7 @@ const PaymentMods = () => {
             <div className="col-md-12 mb-10">
                 <h4 className="fw-bold mb-2 text-center mb-4">Success Stories</h4>
                 <div className="row">
-                    <div className="col-md-6 mb-3">
+                    <div className="col-md-4 mb-3">
                         <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
                             <iframe
                                 src="https://www.youtube.com/embed/neo3BfoZs4A"
@@ -47,7 +47,7 @@ const PaymentMods = () => {
                             ></iframe>
                         </div>
                     </div>
-                    <div className="col-md-6 mb-3">
+                    <div className="col-md-4 mb-3">
                         <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
                             <iframe
                                 src="https://www.youtube.com/embed/SPgjzsIsk6Y"
@@ -59,7 +59,7 @@ const PaymentMods = () => {
                             ></iframe>
                         </div>
                     </div>
-                    <div className="col-md-6 mb-3">
+                    <div className="col-md-4 mb-3">
                         <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, overflow: "hidden", maxWidth: "100%" }}>
                             <iframe
                                 src="https://www.youtube.com/embed/5ULBbQLktQk"
