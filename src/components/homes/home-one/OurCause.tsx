@@ -3,8 +3,6 @@ import Link from "next/link"
 import CircleProgress from "@/hooks/Circular"
 import { useState, useEffect } from "react";
 import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiFeaturedCampaigns';
-import DonateCane from "@/components/homes/home-one/DonateCane";
-import SponsorMeal from "@/components/homes/home-one/SponsorMeal";
 
 import causeShape_1 from "@/assets/img/shapes/half-circle-with-dots.png";
 import causeShape_2 from "@/assets/img/shapes/circle-with-line-red.png";
@@ -75,7 +73,7 @@ const OurCause = () => {
                                     </div>
                                  </div>
                               </div>
-                              <div className="row donarDetails">
+                              <div className="row donarDetails mt-4">
                                  <div className="col-md-6">
                                     <p><strong>{item.left_days}</strong> Days left</p>
                                  </div>
@@ -91,10 +89,6 @@ const OurCause = () => {
                      </div>
                   </div>
                ))}
-            </div>
-            <div className="row">
-               <DonateCane />
-               <SponsorMeal />
             </div>
          </div>
          <div className="urgent-cause-shapes">

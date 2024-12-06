@@ -11,7 +11,7 @@ import About from "./About"
 import BecomeVolunteer from "./BecomeVolunteer"
 import Testimonial from "./Testimonial"
 import FeaturedStories from "@/components/common/FeaturedStories"
-import Features from "./Features"
+import SponsorMeal from "./SponsorMeal"
 
 const HomeOne = () => {
    return (
@@ -22,6 +22,7 @@ const HomeOne = () => {
             <About />
             <ChooseArea />
             <OurCause />
+            <SponsorMeal />
             <Projects />
             <FeaturedStories />
             <Event />
