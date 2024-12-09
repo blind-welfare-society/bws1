@@ -51,7 +51,7 @@ const HomeOneBlog = ({ style }: any) => {
                   <div key={item.id} className="col-xl-4 col-md-6">
                      <div className="blog-item">
                         <div className="blog-item__img">
-                           <Link href={`/blogs/${item.slug}`}><Image src={item.blog_images} width={420} height={280} alt="Blog" /></Link>
+                           <Link href={`/blogs/${item.slug}`}><Image src={item.blog_images} width={420} height={280} alt={item.title} /></Link>
                         </div>
                         <div className="blog-item__content blog-container">
                            <h4><Link href={`/blogs/${item.slug}`}>{item.title}</Link></h4>

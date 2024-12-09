@@ -54,7 +54,7 @@ const Projects = () => {
                 <div key={item.id} className="col-xl-4 col-md-6">
                     <div className="blog-item">
                     <div className="blog-item__img">
-                        <Link href={`/${item.slug}`}><Image src={item.thumb} width={416} height={292} alt="Blog" /></Link>
+                        <Link href={`/${item.slug}`}><Image src={item.thumb} width={416} height={292} alt={item.name} /></Link>
                     </div>
                     <div className="blog-item__content news-container">
                         <h4><Link href={`/${item.slug}`}>{item.name}</Link></h4>
