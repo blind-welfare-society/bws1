@@ -168,7 +168,7 @@ const DonationForm = () => {
             });
             if (response.status === 200) { 
                 
-            console.log(response.data.data);
+            //console.log(response.data.data);
             const order_id    = response.data.data.order_id;
             const saveData_id = response.data.data.saveData_id;
 
@@ -188,9 +188,9 @@ const DonationForm = () => {
                         saveData_id: saveData_id
                      })
                      .then(function (response) {
-                        const dynamicId = "donation-" + saveData_id;
+                        
                         //console.log(dynamicId);
-                        window.location.href = `/thank-you/${dynamicId}`;
+                        window.location.href = `/donationsuccess/${saveData_id}`;
                         
                      })
                      .catch(function (error) {
