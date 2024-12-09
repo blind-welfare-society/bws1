@@ -55,7 +55,7 @@ const OurCause = ({ noOfPosts, style }: { noOfPosts: number, style: boolean }) =
                      <h2 className={ `${style ? "" : "headings-with-border"} text-center`}>{item.project_Name}</h2>
                      <div className={`cause-two-item cause-blue`}>
                         <div className="image">
-                           <Image src={item.image} alt="Cause" width={386} height={184} />
+                           <Image src={item.image} alt={item.project_Name} width={386} height={184} />
                         </div>
                         <div className="content">
                            <div className={ `${style ? "project-box-wrapper-style2" : "project-box-wrapper"} pt-4`}>
