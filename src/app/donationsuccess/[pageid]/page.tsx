@@ -13,10 +13,10 @@ const index = (params: any) => {
           id="google-conversion-inline-script"
           dangerouslySetInnerHTML={{
             __html: `
-             gtag('event', 'conversion', {
-             'send_to': 'AW-527459866/kZgGCJabreQBEJrMwfsB',
-             'transaction_id': ''
-
+               gtag('event', 'conversion', {
+                     'send_to': 'AW-527459866/kZgGCJabreQBEJrMwfsB',
+                     'transaction_id': ''
+                 });
             `,
           }}
          />
