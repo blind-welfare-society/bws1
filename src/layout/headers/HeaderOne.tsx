@@ -37,7 +37,7 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                   </button>
                </div>
                <div className="logo">
-                  <Link href="/"><Image src={style_2 ? HeaderLogo_2 : HeaderLogo_1} alt="img" /></Link>
+                  <Link href="/"><Image src={style_2 ? HeaderLogo_2 : HeaderLogo_1} alt="BWS Logo" /></Link>
                </div>
                <div className={`collapse navbar-collapse ${isActive ? "sopen" : ""}`} id="Iitechie_main_menu">
                   <NavMenu />
