@@ -4,6 +4,7 @@ import { DM_Sans, Nunito_Sans, Pacifico } from 'next/font/google'
 import { useEffect } from 'react';
 import Script from 'next/script';
 import Image from "next/image";
+import { usePathname } from 'next/navigation'
 
 const body = DM_Sans({
   weight: ['400', '500', '600', '700', '800', '900'],
@@ -33,6 +34,9 @@ export default function RootLayout({
     localStorage.removeItem('idDarkMode');
     //console.log('Removed theme from localStorage');
   }, []);
+
+  const currentPath = usePathname();
+
   return (
     <html lang="en">
       <head>
@@ -93,6 +97,17 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true} className={` ${body.variable} ${heading.variable} ${script.variable} `}>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9RTDRWN" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
+        {currentPath.includes('donationsuccess') && (
+          <Script
+            id="fb_conversion-inline-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+             fbq('track', 'Donate');
+            `,
+          }}
+          />
+        )}
         <div className="wrapper">
           {children}
         </div>
