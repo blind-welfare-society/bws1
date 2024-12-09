@@ -20,7 +20,7 @@ const SponsorMeal = () => {
       });
    }, [pathName]);
 
-   const { title, brief, image } = walkingContent;
+   const { title, brief, image, pagename } = walkingContent;
 
     return (
        <div className="volunteer-area pt-120 pb-90 rel z-1">
@@ -28,18 +28,20 @@ const SponsorMeal = () => {
                 <div className="row justify-content-center">
                     <div className="col-xl-8 col-lg-10 col-md-10">
                         <div className="section-title text-center mb-50">
-                            <h3><span>{ title }</span></h3>
-                            <p>{brief}</p>
+                            <h2 className="text-center headings-with-border">{title}</h2>
                         </div>
                     </div>
                 </div>
                 <div className="row justify-content-center">
                     <div className="col-xl-6">
-                        <h4 className="pt-10"></h4>
-                         { image && (
-                                <Image src={image} alt="Cause" width={640} height={304} style={{width: '100%', height: 'auto', border:'1px solid #ccc', padding:'10px'}} />  
+                        {image && (
+                            <Link href={pathName}>
+                                <Image src={image} alt={pagename} width={640} height={304} style={{ width: '100%', height: 'auto', border: '1px solid #ccc', padding: '10px' }} />  
+                            </Link>
                         )}
-                         <div className="cause-btn mt-30 mb-20 text-center">
+                        <h3 className="title"><a href={pathName} style={{color: '#363b97', fontSize:"22px"}}>{pagename}</a></h3>
+                        <p>{brief}</p>
+                        <div className="cause-btn mt-30 mb-20 text-center">
                             <Link className={`cr-btn btn--lightblue`} href={pathName}>Donate now</Link>
                         </div>
                     </div>
