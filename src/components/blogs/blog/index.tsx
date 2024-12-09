@@ -4,7 +4,7 @@ import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import FeaturedStories from "@/components/common/FeaturedStories"
 import BlogArea from "./BlogArea"
-import Image from "next/image"
+import OurCause from "@/components/homes/home-one/OurCause"
 
 const Blogs = () => {
    return (
@@ -20,6 +20,7 @@ const Blogs = () => {
                </div>
             </div>
             <BlogArea />
+            <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
          </main>
          <FooterOne />

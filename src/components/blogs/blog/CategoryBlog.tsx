@@ -7,6 +7,7 @@ import FeaturedStories from "@/components/common/FeaturedStories"
 import axios from "@/lib/axios";
 import { useState, useEffect } from "react"
 import { usePathname } from "next/navigation";
+import OurCause from "@/components/homes/home-one/OurCause"
 
 
 const CategoryBlog = () => {
@@ -36,6 +37,7 @@ const CategoryBlog = () => {
                     </div>
                 </div>
                 <CategoryBlogArea />
+                <OurCause noOfPosts={4} style={true} />
                 <FeaturedStories />
             </main>
             <FooterOne />
