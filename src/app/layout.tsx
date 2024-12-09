@@ -97,32 +97,32 @@ export default function RootLayout({
       </head>
       <body suppressHydrationWarning={true} className={` ${body.variable} ${heading.variable} ${script.variable} `}>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9RTDRWN" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
-        {currentPath.includes('donationsuccess') && (
-          <>
-          <Script
-            id="fb_conversion-inline-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-             fbq('track', 'Donate');
-            `,
-          }}
-          />
-          <Script
-            id="google_conversion-inline-script"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-             gtag('event', 'conversion', {
-            'send_to': 'AW-527459866/kZgGCJabreQBEJrMwfsB',
-            'transaction_id': ''
-
-            `,
-          }}
-          />
-          </>
-        )}
         <div className="wrapper">
+          {currentPath.includes('donationsuccess') && (
+            <>
+            <Script
+              id="fb_conversion-inline-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+              fbq('track', 'Donate');
+              `,
+            }}
+            />
+            <Script
+              id="google_conversion-inline-script"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+              gtag('event', 'conversion', {
+              'send_to': 'AW-527459866/kZgGCJabreQBEJrMwfsB',
+              'transaction_id': ''
+
+              `,
+            }}
+            />
+            </>
+          )}
           {children}
         </div>
       </body>
