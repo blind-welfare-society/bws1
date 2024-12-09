@@ -39,8 +39,8 @@ const SponsorMeal = () => {
                                 <Image src={image} alt={pagename} width={640} height={304} style={{ width: '100%', height: 'auto', border: '1px solid #ccc', padding: '10px' }} />  
                             </Link>
                         )}
-                        <h3 className="title"><a href={pathName} style={{color: '#363b97', fontSize:"22px"}}>{pagename}</a></h3>
-                        <p>{brief}</p>
+                        <h3 className="title text-center"><a href={pathName} style={{color: '#363b97', fontSize:"22px"}}>{pagename}</a></h3>
+                        <p className="text-center">{brief}</p>
                         <div className="cause-btn mt-30 mb-20 text-center">
                             <Link className={`cr-btn btn--lightblue`} href={pathName}>Donate now</Link>
                         </div>
