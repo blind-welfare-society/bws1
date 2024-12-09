@@ -98,6 +98,7 @@ export default function RootLayout({
       <body suppressHydrationWarning={true} className={` ${body.variable} ${heading.variable} ${script.variable} `}>
         <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9RTDRWN" height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe></noscript>
         {currentPath.includes('donationsuccess') && (
+          <>
           <Script
             id="fb_conversion-inline-script"
           strategy="afterInteractive"
@@ -107,6 +108,19 @@ export default function RootLayout({
             `,
           }}
           />
+          <Script
+            id="google_conversion-inline-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+             gtag('event', 'conversion', {
+            'send_to': 'AW-527459866/kZgGCJabreQBEJrMwfsB',
+            'transaction_id': ''
+
+            `,
+          }}
+          />
+          </>
         )}
         <div className="wrapper">
           {children}
