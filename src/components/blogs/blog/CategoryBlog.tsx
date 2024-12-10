@@ -19,7 +19,7 @@ const CategoryBlog = () => {
     useEffect(() => {
         axios.get(`/bloginfobycategory/${slug}`).then((res) => {
             setBlogHeading(res.data);
-            console.log(res.data);
+            //console.log(res.data);
         });
     }, [slug])
     
