@@ -4,6 +4,7 @@ import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import BlogDetailsArea from "./BlogDetailsArea"
 import FeaturedStories from "@/components/common/FeaturedStories"
+import OurCause from "@/components/homes/home-one/OurCause"
 import axios from "@/lib/axios";
 import { useState, useEffect } from "react"
 import { usePathname, useRouter } from "next/navigation";
@@ -52,6 +53,7 @@ const BlogDetails = (props:any) => {
          <main>
             <Banner image_url={imageUrl} />
             <BlogDetailsArea cmsContent={cmsContent} key={cmsContent?.id} />
+            <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
          </main>
          <FooterOne />

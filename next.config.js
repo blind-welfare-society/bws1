@@ -4,7 +4,13 @@ const nextConfig = {}
 module.exports = nextConfig
 
 module.exports = {
-    images: {
-        domains: ['dheeraj84.blindwelfaresociety.in'],
-    },
-}
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'dheeraj84.blindwelfaresociety.in',
+        pathname: '/**', // Optional: match all paths
+      }
+    ],
+  },
+};
