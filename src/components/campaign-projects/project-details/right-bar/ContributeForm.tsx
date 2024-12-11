@@ -35,6 +35,7 @@ const getSchema = (minimum_amount: number | undefined) =>
    .object({
       donation_amount: yup.number()
       .required("Donation Amount is required")
+      .typeError('Donation Amount must be a number')
       .min(minimum_amount || 500, `Please enter an amount more than ${minimum_amount || 500}`)
       .label("Donation Amount"),
       full_name: yup.string().required().label("First Name"),
@@ -132,7 +133,7 @@ const ContributeForm = (props: any) => {
       resolver: yupResolver(getSchema(minimum_amount)),
       defaultValues: {
          form_80G: "0",
-         contributor_name_display:"full_name"
+         contributor_name_display:"full_name",
       }
     });
 

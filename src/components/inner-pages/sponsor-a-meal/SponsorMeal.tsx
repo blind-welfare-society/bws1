@@ -20,6 +20,7 @@ const SponsorMeal = () => {
    }, [pathName]);
 
    //console.log(cmsContent);
+   const minamount = cmsContent?.minamount;
 
    return (
       <div className="about-us-three pt-10 pb-15">
@@ -37,7 +38,7 @@ const SponsorMeal = () => {
                   </div>
                </div>
                <div className="col-xl-4">
-                  <SponsorMealForm />
+                  <SponsorMealForm minamount={minamount} />
                </div>
             </div>
             <div className="row">

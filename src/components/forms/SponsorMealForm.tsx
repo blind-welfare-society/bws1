@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import axios from "@/lib/axios";
 import { useSearchParams } from 'next/navigation'
+import { get } from 'http';
 
 declare global {
   interface Window {
@@ -35,11 +36,13 @@ interface FormData {
    book_for: string;
 }
 
-const schema = yup
+const getSchema = (minamount: number | undefined) =>
+   yup
    .object({
       donation_amount: yup.number()
       .required("Donation Amount is required")
-      .min(400, "Please Enter amount More than 400")
+      .typeError('Donation Amount must be a number')
+      .min(minamount || 500, `Please enter an amount more than ${minamount || 500}`)
       .label("Donation Amount"),
       amount_choosed: yup.string().required().label("Amount Choosed"),
       name: yup.string().required().label("First Name"),
@@ -96,7 +99,7 @@ const schema = yup
    })
    .required();
 
-const SponsorMealForm = () => {
+const SponsorMealForm = ({ minamount }: { minamount: number }) => {
    const searchParams = useSearchParams();
    
    const utm_source = searchParams.get('utm_source');
@@ -126,8 +129,9 @@ const SponsorMealForm = () => {
     };
    }, []);
 
-   const { register, handleSubmit, reset, formState: { errors }, setValue, watch} = useForm<FormData>({
-      resolver: yupResolver(schema),
+   const { register, handleSubmit, reset, formState: { errors }, setValue, watch,clearErrors} = useForm<FormData>({
+      resolver: yupResolver(getSchema(minamount)),
+      mode: "onChange",
       defaultValues: {
          amount_choosed: "₹8000 will provide lunch & dinner to blind girls of the hostel",
          form_80G: "0"
@@ -144,11 +148,16 @@ const SponsorMealForm = () => {
       setDonationAmount(selectedAmount);
       setValue('donation_amount', selectedAmount);
       setIsEditable(selectedAmount === "0");
+      clearErrors('donation_amount');
    };
 
    const handleAmountChange = (event:any) => {
       const inputAmount = event.target.value.replace(/[^0-9]/g, "");
       setDonationAmount(inputAmount);
+      setValue('donation_amount', Number(inputAmount), { shouldValidate: true });
+      if (Number(inputAmount) >= (minamount || 500)) {
+         clearErrors('donation_amount'); // Clear error when value is valid
+      }
    };
 
    const onSubmit = async (data: FormData) => {
@@ -232,6 +241,8 @@ const SponsorMealForm = () => {
       }
    };
 
+   
+
    return (
       <div className="donate-form-wrapper sub-donate">
          <form onSubmit={handleSubmit(onSubmit)} id="donateForm">
@@ -244,7 +255,7 @@ const SponsorMealForm = () => {
                         //value={isEditable ? donationAmount : `₹${donationAmount}.00`}
                         value={donationAmount}
                         data-validation="required"
-                        className="form-control valid"
+                        className="form-control"
                         {...register("donation_amount")}
                         readOnly={!isEditable}
                         onChange={handleAmountChange} // Allow manual editing if editable
