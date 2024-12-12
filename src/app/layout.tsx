@@ -42,7 +42,6 @@ export default function RootLayout({
         type='text/javascript' 
         src='https://platform-api.sharethis.com/js/sharethis.js#property=659d032eb492fb00132dce84&product=sop' 
         async 
-        strategy="afterInteractive" 
         />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16567220501" strategy="afterInteractive" />
         <Script
