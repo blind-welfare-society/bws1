@@ -27,7 +27,7 @@ const ShareButtons = () => {
   }, []);
 
   return (
-    <div className="share-buttons-container">
+    <div className="share-buttons-container mt-20 mb-30">
       <h4>Spread The Word! Every Share Matters</h4>
       <div className="sharethis-inline-share-buttons"></div>
     </div>
