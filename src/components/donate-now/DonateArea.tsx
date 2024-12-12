@@ -71,7 +71,13 @@ const DonateArea = () => {
                                     </div>
                                 </div>
                                 <div className="row">
-                                    <div className="col-md-12 mt-5 donatePage">
+                                    <div className="col-md-12 mt-3">
+                                        <div className="shear mt-20 mb-30">
+                                            <h4>Spread The Word! Every Share Matters</h4>
+                                            <div className="sharethis-inline-share-buttons"></div>
+                                        </div>
+                                    </div>
+                                    <div className="col-md-12 donatePage">
                                         <PaymentMods />
                                         <ProjectFaqs />
                                     </div>
