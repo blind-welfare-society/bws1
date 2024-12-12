@@ -38,11 +38,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.png" sizes="any" />
-        <Script 
-        type='text/javascript' 
-        src='https://platform-api.sharethis.com/js/sharethis.js#property=659d032eb492fb00132dce84&product=sop' 
-        async 
-        />
         <Script async src="https://www.googletagmanager.com/gtag/js?id=AW-16567220501" strategy="afterInteractive" />
         <Script
           id="gtm-inline-script"

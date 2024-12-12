@@ -5,6 +5,7 @@ import axios from "@/lib/axios";
 import { useEffect, useState } from "react";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
 import SponsorMealForm from "@/components/forms/SponsorMealForm";
+import ShareButtons from "@/components/common/ShareButtons";
 
 
 const SponsorMeal = () => {
@@ -48,10 +49,7 @@ const SponsorMeal = () => {
                   </div>
                   <div className="about-us-content-three mb-25">
                      <PaymentMods />
-                     <div className="shear mt-20 mb-30">
-                        <h4>Spread The Word! Every Share Matters</h4>
-                        <div className="sharethis-inline-share-buttons"></div>
-                    </div>
+                     <ShareButtons />
                      <ProjectFaqs />
                   </div>
                </div>

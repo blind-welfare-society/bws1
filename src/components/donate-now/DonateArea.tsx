@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import DonationForm from "./DonationForm";
 import PaymentMods from "@/components/common/PaymentMods";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
+import ShareButtons from "@/components/common/ShareButtons";
 
 const DonateArea = () => { 
     const pathName = "/donate";
@@ -72,10 +73,7 @@ const DonateArea = () => {
                                 </div>
                                 <div className="row">
                                     <div className="col-md-12 mt-3">
-                                        <div className="shear mt-20 mb-30">
-                                            <h4>Spread The Word! Every Share Matters</h4>
-                                            <div className="sharethis-inline-share-buttons"></div>
-                                        </div>
+                                        <ShareButtons />
                                     </div>
                                     <div className="col-md-12 donatePage">
                                         <PaymentMods />

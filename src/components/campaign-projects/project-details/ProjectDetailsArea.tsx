@@ -9,6 +9,7 @@ import ContributeForm from "./right-bar/ContributeForm";
 import PaymentMods from "@/components/common/PaymentMods";
 import { usePathname } from "next/navigation";
 import BeneficiariesTestimonials from "@/components/common/BeneficiariesTestimonials";
+import ShareButtons from "@/components/common/ShareButtons";
 
 const ProjectDetailsArea = (props: any) => {
     const currentProject = usePathname();
@@ -98,10 +99,7 @@ const ProjectDetailsArea = (props: any) => {
                     {currentProject === '/projects/be-the-light-donate-groceries-to-homeless-blind-in-need' && <BeneficiariesTestimonials /> }
                     <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
                     <PaymentMods />
-                    <div className="shear mt-20 mb-30">
-                        <h4>Spread The Word! Every Share Matters</h4>
-                        <div className="sharethis-inline-share-buttons"></div>
-                    </div>
+                    <ShareButtons />
                     <ProjectUpdates />    
                     <ProjectFaqs /> 
                 </div>
