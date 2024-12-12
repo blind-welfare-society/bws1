@@ -98,6 +98,10 @@ const ProjectDetailsArea = (props: any) => {
                     {currentProject === '/projects/be-the-light-donate-groceries-to-homeless-blind-in-need' && <BeneficiariesTestimonials /> }
                     <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
                     <PaymentMods />
+                    <div className="shear mt-20 mb-30">
+                        <h4>Spread The Word! Every Share Matters</h4>
+                        <div className="sharethis-inline-share-buttons"></div>
+                    </div>
                     <ProjectUpdates />    
                     <ProjectFaqs /> 
                 </div>

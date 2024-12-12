@@ -48,6 +48,10 @@ const SponsorMeal = () => {
                   </div>
                   <div className="about-us-content-three mb-25">
                      <PaymentMods />
+                     <div className="shear mt-20 mb-30">
+                        <h4>Spread The Word! Every Share Matters</h4>
+                        <div className="sharethis-inline-share-buttons"></div>
+                    </div>
                      <ProjectFaqs />
                   </div>
                </div>
