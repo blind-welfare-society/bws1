@@ -136,19 +136,23 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
          amount_choosed: "₹8000 will provide lunch & dinner to blind girls of the hostel",
          form_80G: "0"
       }
-      
    });
    
    const [donationAmount, setDonationAmount] = useState("8000");
    const [isEditable, setIsEditable] = useState(false);
    const is80GSelected = watch("form_80G") === "1";
 
-   const handleRadioChange = (event:any) => {
-    const selectedAmount = event.target.getAttribute("data-value");
-      setDonationAmount(selectedAmount);
-      setValue('donation_amount', selectedAmount);
-      setIsEditable(selectedAmount === "0");
-      clearErrors('donation_amount');
+   const handleRadioChange = (event: any) => {
+      const selectedAmount = event.target.getAttribute("data-value");
+      if (selectedAmount === "0") {
+         setDonationAmount(""); // Set to empty string to enable placeholder
+         setIsEditable(true); // Make the input editable
+      } else {
+         setDonationAmount(selectedAmount);
+         setIsEditable(false); // Make the input non-editable for predefined amounts
+      }
+      setValue("donation_amount", selectedAmount === "0" ? 0 : Number(selectedAmount));
+      clearErrors("donation_amount");
    };
 
    const handleAmountChange = (event:any) => {
@@ -159,6 +163,8 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
          clearErrors('donation_amount'); // Clear error when value is valid
       }
    };
+
+
 
    const onSubmit = async (data: FormData) => {
       setLoading(true);
@@ -241,7 +247,6 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
       }
    };
 
-   
 
    return (
       <div className="donate-form-wrapper sub-donate">
@@ -259,7 +264,7 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                         {...register("donation_amount")}
                         readOnly={!isEditable}
                         onChange={handleAmountChange} // Allow manual editing if editable
-                        placeholder="Enter custom amount"
+                        placeholder={!isEditable ? "" : `Enter other amount - ₹${minamount || 500} or more`} 
                         id="donation_amount"
                         // Placeholder when empty
                      />
