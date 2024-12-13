@@ -6,6 +6,7 @@ import OurCause from "@/components/homes/home-one/OurCause"
 import ProjectDetailsArea from "./ProjectDetailsArea"
 import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
+import Tabs from "@/components/common/Tabs"
 import axios from "@/lib/axios";
 import { useState, useEffect } from "react"
 
@@ -14,20 +15,24 @@ const ProjectDetails = (props:any) => {
    
    const [projectContent, setProjectContent] = useState({} as any);
    const [productList, setProductList] = useState({} as any);
+   const [recentDonarList, setRecentDonarList] = useState({} as any);
+   const [mostGenerousDonar, setMostGenerousDonar] = useState({} as any);
 
    useEffect(() => {
       axios.get(`/project-detail/${slug}`).then((res) => {
           setProjectContent(res.data.data.project);
           setProductList(res.data.data.product_list);
+          setMostGenerousDonar(res.data.data.mostGenerousDonar);
+          setRecentDonarList(res.data.data.recentDonar);
       });
    }, [slug]);
-   
    
    return (
       <>
          <HeaderOne style_1={false} style_2={false} />
            <main>
             <ProjectDetailsArea project_content={projectContent} product_list={productList} />
+            <Tabs mostGenerousDonar={mostGenerousDonar} recentDonarList={recentDonarList} />
             <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
             <BecomeVolunteer />
