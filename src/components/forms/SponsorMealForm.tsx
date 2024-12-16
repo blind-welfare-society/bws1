@@ -266,7 +266,9 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                         onChange={handleAmountChange} // Allow manual editing if editable
                         placeholder={!isEditable ? "" : `Enter other amount - ₹${minamount || 500} or more`} 
                         id="donation_amount"
-                        // Placeholder when empty
+                        aria-required="true"
+                        aria-invalid={!!errors.donation_amount}
+                        aria-describedby={errors.donation_amount ? 'donation_amount-error' : undefined}
                      />
                      <p className="form_error">{errors.donation_amount?.message}</p>
                   </div>
@@ -286,7 +288,7 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                      <div className="col-md-12">
                         <div className="form-group">
                            <label htmlFor="occasion">Select Occasion <span className="required" title="This field is required.">*</span></label>
-                           <select {...register("occasion")} className="form-control" id="">
+                           <select {...register("occasion")} className="form-control" id="" aria-required="true" aria-invalid={!!errors.occasion} aria-describedby={errors.occasion ? 'occasion-error' : undefined}>
                               <option value="">Select Occasion</option>
                               <option value="Birthday" data-value="Birthday">Birthday</option>
                               <option value="Marriage Anniversary" data-value="Marriage Anniversary">Marriage Anniversary</option>
@@ -341,7 +343,7 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                      <div className="col-md-12">
                         <div className="form-group">
                            <label htmlFor="book_for">I would Like to Book for <span className="required" title="This field is required.">*</span></label>
-                           <select {...register("book_for")} className="form-control" id="book_for">
+                           <select {...register("book_for")} className="form-control" id="book_for" aria-required="true" aria-invalid={!!errors.book_for} aria-describedby={errors.book_for ? 'book_for-error' : undefined}>
                               <option value="">Select</option>
                               <option value="Yearly" data-value="Yearly">Yearly</option>
                               <option value="One-Time" data-value="One-Time">One-Time</option>
@@ -355,21 +357,45 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                      <div className="col-md-12">
                         <div className="form-group">
                            <label htmlFor="name">Your Name <span className="required" title="This field is required.">*</span></label>
-                           <input type="text" id="name"  {...register("name")} className="form-control" />
+                           <input
+                              type="text"
+                              id="name"
+                              {...register("name")}
+                              className="form-control"
+                              aria-required="true"
+                              aria-invalid={!!errors.name}
+                              aria-describedby={errors.name ? 'name-error' : undefined}
+                           />
                            <p className="form_error">{errors.name?.message}</p>
                         </div>
                      </div>
                      <div className="col-md-12">
                         <div className="form-group">
                            <label htmlFor="email">Email Address <span className="required" title="This field is required.">*</span></label>
-                           <input type="text" id="email" {...register("email")} className="form-control" />
+                           <input
+                              type="text"
+                              id="email"
+                              {...register("email")}
+                              className="form-control"
+                              aria-required="true"
+                              aria-invalid={!!errors.email}
+                              aria-describedby={errors.email ? 'email-error' : undefined}
+                           />
                            <p className="form_error">{errors.email?.message}</p>
                         </div>
                      </div>
                      <div className="col-md-12">
                         <div className="form-group">
                            <label htmlFor="phone">Phone <span className="required" title="This field is required.">*</span></label>
-                           <input type="text" {...register("phone")} className="form-control" />
+                           <input
+                              type="text"
+                              id="phone"
+                              {...register("phone")}
+                              className="form-control"
+                              aria-required="true"
+                              aria-invalid={!!errors.phone}
+                              aria-describedby={errors.phone ? 'phone-error' : undefined}
+                           />
                            <p className="form_error">{errors.phone?.message}</p>
                         </div>
                      </div>
@@ -392,7 +418,15 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                               <div className="col-md-12">
                                  <div className="form-group">
                                     <label htmlFor="pan">Your PAN <span className="required" title="This field is required.">*</span></label>
-                                    <input type="text" id="pan" {...register("pan")} className="form-control" />
+                                    <input
+                                       type="text"
+                                       id="pan"
+                                       {...register("pan")}
+                                       className="form-control"
+                                       aria-required="true"
+                                       aria-invalid={!!errors.pan}
+                                       aria-describedby={errors.pan ? 'pan-error' : undefined}
+                                    />
                                     <p className="form_error">{errors.pan?.message}</p>
                                  </div>
                               </div>
@@ -402,7 +436,15 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                               <div className="col-md-12">
                                  <div className="form-group">
                                     <label htmlFor="address">Your Address <span className="required" title="This field is required.">*</span></label>
-                                    <input type="text" id="address" {...register("address")} className="form-control" />
+                                    <input
+                                       type="text"
+                                       id="address"
+                                       {...register("address")}
+                                       className="form-control"
+                                       aria-required="true"
+                                       aria-invalid={!!errors.address}
+                                       aria-describedby={errors.address ? 'address-error' : undefined}
+                                    />
                                     <p className="form_error">{errors.address?.message}</p>
                                  </div>
                               </div>
@@ -411,28 +453,60 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                               <div className="col-md-6">
                                  <div className="form-group">
                                     <label htmlFor="country">Country <span className="required" title="This field is required.">*</span></label>
-                                    <input type="text" id="country" {...register("country")} className="form-control" />
+                                    <input
+                                       type="text"
+                                       id="country"
+                                       {...register("country")}
+                                       className="form-control"
+                                       aria-required="true"
+                                       aria-invalid={!!errors.country}
+                                       aria-describedby={errors.country ? 'country-error' : undefined}
+                                    />
                                     <p className="form_error">{errors.country?.message}</p>
                                  </div>
                               </div>
                               <div className="col-md-6">
                                  <div className="form-group">
                                     <label htmlFor="state">State <span className="required" title="This field is required.">*</span></label>
-                                    <input type="text" id="state" {...register("state")} className="form-control" />
+                                    <input
+                                       type="text"
+                                       id="state"
+                                       {...register("state")}
+                                       className="form-control"
+                                       aria-required="true"
+                                       aria-invalid={!!errors.state}
+                                       aria-describedby={errors.state ? 'state-error' : undefined}
+                                    />
                                     <p className="form_error">{errors.state?.message}</p>
                                  </div>
                               </div>
                               <div className="col-md-6">
                                  <div className="form-group">
                                     <label htmlFor="city">City <span className="required" title="This field is required.">*</span></label>
-                                    <input type="text" id="city" {...register("city")} className="form-control" />
+                                    <input
+                                       type="text"
+                                       id="city"
+                                       {...register("city")}
+                                       className="form-control"
+                                       aria-required="true"
+                                       aria-invalid={!!errors.city}
+                                       aria-describedby={errors.city ? 'city-error' : undefined}
+                                    />
                                     <p className="form_error">{errors.city?.message}</p>
                                  </div>
                               </div>
                               <div className="col-md-6">
                                  <div className="form-group">
                                     <label htmlFor="pincode">Zip Code <span className="required" title="This field is required.">*</span></label>
-                                    <input type="text" id="pincode" {...register("pincode")} className="form-control" />
+                                    <input
+                                       type="text"
+                                       id="pincode"
+                                       {...register("pincode")}
+                                       className="form-control"
+                                       aria-required="true"
+                                       aria-invalid={!!errors.pincode}
+                                       aria-describedby={errors.pincode ? 'pincode-error' : undefined}
+                                    />
                                     <p className="form_error">{errors.pincode?.message}</p>
                                  </div>
                               </div>
