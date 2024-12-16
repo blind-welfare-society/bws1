@@ -66,35 +66,70 @@ const ContactForm = () => {
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="name">Your Name</label>
-                  <input type="text" id="name"  {...register("name")} className="form-control" />
+                  <input
+                     type="text"
+                     id="name"
+                     {...register("name")}
+                     aria-required="true"
+                     aria-invalid={!!errors.name}
+                     aria-describedby={errors.name ? 'name-error' : undefined}
+                     className="form-control" />
                   <p className="form_error">{errors.name?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="email">Your Email</label>
-                  <input type="email" id="email" {...register("email")} className="form-control" />
+                  <input
+                     type="email"
+                     id="email"
+                     {...register("email")}
+                     aria-required="true"
+                     aria-invalid={!!errors.email}
+                     aria-describedby={errors.email ? 'email-error' : undefined}
+                     className="form-control" />
                   <p className="form_error">{errors.email?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="phone_number">Phone Number</label>
-                  <input type="text" id="phone_number"  {...register("phone")} className="form-control" />
+                  <input
+                     type="text"
+                     id="phone_number"
+                     {...register("phone")}
+                     aria-required="true"
+                     aria-invalid={!!errors.phone}
+                     aria-describedby={errors.phone ? 'phone-error' : undefined}
+                     className="form-control" />
                   <p className="form_error">{errors.phone?.message}</p>
                </div>
             </div>
             <div className="col-sm-6">
                <div className="form-group">
                   <label htmlFor="phone_number">Subject</label>
-                  <input type="text" id="subject"  {...register("subject")} className="form-control" />
+                  <input
+                     type="text"
+                     id="subject"
+                     {...register("subject")}
+                     aria-required="true"
+                     aria-invalid={!!errors.subject}
+                     aria-describedby={errors.subject ? 'subject-error' : undefined}
+                     className="form-control" />
                   <p className="form_error">{errors.subject?.message}</p>
                </div>
             </div>
             <div className="col-md-12">
                <div className="form-group">
                   <label htmlFor="message">Message</label>
-                  <textarea id="comment" {...register("comment")} className="form-control" rows={3}></textarea>
+                  <textarea
+                     id="comment"
+                     {...register("comment")}
+                     aria-required="true"
+                     aria-invalid={!!errors.comment}
+                     aria-describedby={errors.comment ? 'comment-error' : undefined}
+                     className="form-control"
+                     rows={3}></textarea>
                   <p className="form_error">{errors.comment?.message}</p>
                </div>
             </div>
