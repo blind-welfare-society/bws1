@@ -30,7 +30,7 @@ const DonateArea = () => {
                             <div className="col-md-12">
                                 <iframe
                                 src="https://www.youtube.com/embed/8-SqMi81Qjo?rel=0"
-                                style={{ width: "100%", height: "450px" }}
+                                style={{ width: "100%", height: "460px" }}
                                 frameBorder="0"
                                 allow="autoplay; encrypted-media"
                                 allowFullScreen
@@ -43,7 +43,6 @@ const DonateArea = () => {
                                     <div className="col-md-4">
                                         <iframe
                                         src="https://www.youtube.com/embed/4eFQckwDUyY?rel=0"
-                                        style={{ width: "100%", height: "350px" }}
                                         frameBorder="0"
                                         allow="autoplay; encrypted-media"
                                         allowFullScreen
@@ -53,7 +52,6 @@ const DonateArea = () => {
                                     <div className="col-md-4">
                                         <iframe
                                         src="https://www.youtube.com/embed/U6tzzUKbLgo?rel=0"
-                                        style={{ width: "100%", height: "350px" }}
                                         frameBorder="0"
                                         allow="autoplay; encrypted-media"
                                         allowFullScreen
@@ -63,7 +61,6 @@ const DonateArea = () => {
                                     <div className="col-md-4">
                                         <iframe
                                         src="https://www.youtube.com/embed/yPFNGTDio-U?rel=0"
-                                        style={{ width: "100%", height: "350px" }}
                                         frameBorder="0"
                                         allow="autoplay; encrypted-media"
                                         allowFullScreen
