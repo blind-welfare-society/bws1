@@ -41,11 +41,9 @@ const DonateArea = () => {
                                 <DonationForm />
                                 <BeneficiariesTestimonials />
                                 <div className="row">
-                                    <div className="col-md-12 mt-3">
-                                        <ShareButtons />
-                                    </div>
                                     <div className="col-md-12 donatePage">
                                         <PaymentMods />
+                                        <ShareButtons />
                                         <ProjectFaqs />
                                     </div>
                                 </div>
