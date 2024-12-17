@@ -28,7 +28,7 @@ export const fetchPosts = async (page: number, limit: number): Promise<Paginated
     const formattedData = response.data.data.map(post => ({
       ...post,
     }));
-    console.log(formattedData);
+    //console.log(formattedData);
     return {
       data: formattedData,
       total: response.data.total,

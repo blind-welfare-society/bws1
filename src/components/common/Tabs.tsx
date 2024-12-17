@@ -28,7 +28,7 @@ const AccessibleTabs = (props: any) => {
       setActiveTab((prev) => (prev - 1 + tabs.length) % tabs.length);
     }
   };
-  console.log(Array.isArray(props.mostGenerousDonar)); 
+  
   return (
     <div className="container">
     <div className="row">

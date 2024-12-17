@@ -15,8 +15,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
     const response = await axios.get(`/bloginfobycategory/${slug}`);
     const meta = response.data;
-    console.log(meta);
-
     return {
         title: meta.data.meta_title || "Blogs | Blind Welfare Society, Expanding possibilities for people with vision loss",
         description: meta.data.meta_desc || "Read our blogs to understand the major challenges face by people with blindness."

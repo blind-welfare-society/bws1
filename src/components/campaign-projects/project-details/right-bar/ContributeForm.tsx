@@ -209,7 +209,6 @@ const ContributeForm = (props: any) => {
                             })
                             .catch(function (error) {
                                 toast.error('Something went wrong. Please try again.', { position: 'top-center' });
-                                console.log(response.razorpay_signature);
                             });
                     },
                     prefill: {

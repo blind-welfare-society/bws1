@@ -20,8 +20,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       throw new Error('Metadata is empty or undefined.');
     }
 
-    //console.log(meta);
-
     return {
       title: meta.meta_title || 'Blind Welfare Society | Expanding possibilities for people with vision loss.',
       description: meta.meta_description || 'Join us to build an equitable, accessible and inclusive world for the people with visual challenges',

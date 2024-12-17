@@ -18,8 +18,6 @@ const GalleryArea = () => {
             
       });
     }, []);
-
-    console.log(imageData);
     
     return (
         <div className="row justify-content-center">

@@ -167,8 +167,7 @@ const DonationForm = () => {
                 sourceUrl: currentUrl
             });
             if (response.status === 200) { 
-                
-            //console.log(response.data.data);
+            
             const order_id    = response.data.data.order_id;
             const saveData_id = response.data.data.saveData_id;
 
@@ -195,7 +194,6 @@ const DonationForm = () => {
                      })
                      .catch(function (error) {
                         toast.error('Something went wrong. Please try again.', { position: 'top-center' });
-                        console.log(response.razorpay_signature);
                      });
                },
                prefill: {
@@ -295,7 +293,7 @@ const DonationForm = () => {
                     <div className="form-group">
                         <label htmlFor="email">Email Address <span className="required" title="This field is required.">*</span></label>
                         <input 
-                            type="text"
+                            type="email"
                             id="email"
                             {...register("email")}
                             aria-required="true"
