@@ -19,8 +19,9 @@ const { copyright_text } = footer_content
 
 import whatAppImage from "@/assets/img/footer/whatsapp-button.png";
 
-const FooterTwo = () => {
+const FooterOne = () => {
    return (
+      <>
       <footer className="footer-area footer-area--two text-white pt-70">
          <div className="container">
             <div className="row justify-content-between">
@@ -69,7 +70,14 @@ const FooterTwo = () => {
             </div>
          </div>
       </footer>
+      <div className="footerMobileInfo d-lg-none">
+			<ul className="contact-details-top clearfix">
+            <li><a href="mailto:info@blindwelfaresociety.in" title="Email"><i className="fas fa-envelope"></i> <span>info@blindwelfaresociety.in</span></a></li>
+            <li><a href="tel:+91-9968969932" title="Phone"><i className="fas fa-phone-alt"></i> <span>+91-9968969932</span></a></li>
+         </ul>
+		</div>
+      </>
    )
 }
 
-export default FooterTwo
+export default FooterOne

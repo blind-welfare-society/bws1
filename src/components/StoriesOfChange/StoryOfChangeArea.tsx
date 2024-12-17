@@ -22,7 +22,6 @@ const StoryOfChangeArea = () => {
          const { data, total } = await fetchPosts(page, limit);
          setPosts(data);
          setTotal(total);
-         console.log(data);
       } catch (error) {
          setError(error as Error);
       } finally {
