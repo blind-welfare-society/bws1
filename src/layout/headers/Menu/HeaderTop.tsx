@@ -58,33 +58,33 @@ const HeaderTop = ({ style }: any) => {
           <div className="topbar-right">
             <ul>
               <li className="email">
-                <i className="fas fa-envelope" role='img' aria-label="Email"></i>
-                <Link href="mailto:info@blindwelfaresociety.in" title="Email" className="ml-10">
+                <i className="fas fa-envelope" role='img' aria-hidden="true"></i>
+                <Link href="mailto:info@blindwelfaresociety.in" title="Email" className="ml-10" aria-label="Email">
                   info@blindwelfaresociety.in
                 </Link>
               </li>
               <li className="phone">
-                <i className="fas fa-phone-alt" role='img' aria-label="Phone"></i>
-                <Link href="tel:+91-9968969932" title="Phone">
+                <i className="fas fa-phone-alt" role='img' aria-hidden="true"></i>
+                <Link href="tel:+91-9968969932" title="Phone" aria-label="Phone">
                   +91-9968969932
                 </Link>
               </li>
               <li className="social-area">
                 <span>Follow Us - </span>
-                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook">
-                  <i className="fab fa-facebook-f" role="img" aria-label="SShare"></i>
+                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Share on Facebook">
+                  <i className="fab fa-facebook-f" role="img" aria-hidden="true"></i>
                 </Link>
-                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter">
-                  <i className="fab fa-twitter" role="img"></i>
+                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Share on Twitter">
+                  <i className="fab fa-twitter" role="img" aria-hidden="true"></i>
                 </Link>
-                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram">
-                  <i className="fab fa-instagram" role="img"></i>
+                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Share on Instagram'>
+                  <i className="fab fa-instagram" role="img" aria-hidden="true"></i>
                 </Link>
-                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin">
-                  <i className="fab fa-linkedin-in" role="img"></i>
+                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Share on Linkedin'>
+                  <i className="fab fa-linkedin-in" role="img" aria-hidden="true"></i>
                 </Link>
-                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube">
-                  <i className="fab fa-youtube" role="img"></i>
+                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Share on Youtube'>
+                  <i className="fab fa-youtube" role="img" aria-hidden="true"></i>
                 </Link>
               </li>
             </ul>
