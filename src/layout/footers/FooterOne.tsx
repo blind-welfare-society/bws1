@@ -72,8 +72,16 @@ const FooterOne = () => {
       </footer>
       <div className="footerMobileInfo d-lg-none">
 			<ul className="contact-details-top clearfix">
-            <li><a href="mailto:info@blindwelfaresociety.in" title="Email"><i className="fas fa-envelope"></i> <span>info@blindwelfaresociety.in</span></a></li>
-            <li><a href="tel:+91-9968969932" title="Phone"><i className="fas fa-phone-alt"></i> <span>+91-9968969932</span></a></li>
+            <li>
+               <a href="mailto:info@blindwelfaresociety.in" title="Email">
+                  <i className="fas fa-envelope"role="img" aria-label="Email"></i> <span>info@blindwelfaresociety.in</span>
+               </a>
+            </li>
+            <li>
+               <a href="tel:+91-9968969932" title="Phone">
+                  <i className="fas fa-phone-alt" role="img" aria-label="Phone"></i> <span>+91-9968969932</span>
+               </a>
+            </li>
          </ul>
 		</div>
       </>
