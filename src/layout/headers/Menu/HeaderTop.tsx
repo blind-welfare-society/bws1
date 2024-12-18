@@ -58,13 +58,13 @@ const HeaderTop = ({ style }: any) => {
           <div className="topbar-right">
             <ul>
               <li className="email">
-                <i className="fas fa-envelope"></i>
+                <i className="fas fa-envelope" role='img' aria-label="Email"></i>
                 <Link href="mailto:info@blindwelfaresociety.in" title="Email" className="ml-10">
                   info@blindwelfaresociety.in
                 </Link>
               </li>
               <li className="phone">
-                <i className="fas fa-phone-alt"></i>
+                <i className="fas fa-phone-alt" role='img' aria-label="Phone"></i>
                 <Link href="tel:+91-9968969932" title="Phone">
                   +91-9968969932
                 </Link>
