@@ -33,7 +33,7 @@ const AccessibleTabs = (props: any) => {
     <div className="container">
     <div className="row">
         <div className="col-md-8">
-          <div className="tabs backersTab mt-20 mb-40">
+          <div className="tabs backersTab mt-20 mb-20">
             <div role="tablist" aria-label="Supporters Tabs" className="nav nav-tabs">
               {tabs.map((tab, index) => (
                 <button

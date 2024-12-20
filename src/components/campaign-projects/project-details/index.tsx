@@ -7,6 +7,7 @@ import ProjectDetailsArea from "./ProjectDetailsArea"
 import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
 import Tabs from "@/components/common/Tabs"
+import ShareButtons from "@/components/common/ShareButtons";
 import axios from "@/lib/axios";
 import { useState, useEffect } from "react"
 
@@ -33,6 +34,13 @@ const ProjectDetails = (props:any) => {
            <main>
             <ProjectDetailsArea project_content={projectContent} product_list={productList} />
             <Tabs mostGenerousDonar={mostGenerousDonar} recentDonarList={recentDonarList} />
+            <div className="container">
+               <div className="row">
+                  <div className="col-md-12">
+                     <ShareButtons />
+                  </div>
+               </div>
+            </div>
             <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
             <BecomeVolunteer />

@@ -9,7 +9,7 @@ import ContributeForm from "./right-bar/ContributeForm";
 import PaymentMods from "@/components/common/PaymentMods";
 import { usePathname } from "next/navigation";
 import BeneficiariesTestimonials from "@/components/common/BeneficiariesTestimonials";
-import ShareButtons from "@/components/common/ShareButtons";
+
 
 const ProjectDetailsArea = (props: any) => {
     const currentProject = usePathname();
@@ -78,6 +78,13 @@ const ProjectDetailsArea = (props: any) => {
                          />
                     <ProjectBrief project_description={description} project_content={content} video_content={videoContent} />
                     </div>
+                    <div className="mt-4">
+                        {currentProject === '/projects/be-the-light-donate-groceries-to-homeless-blind-in-need' && <BeneficiariesTestimonials /> }
+                        <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
+                        <PaymentMods />
+                        <ProjectUpdates />    
+                        <ProjectFaqs /> 
+                    </div>
                 </div>
                 <div className="col-md-4 donationOptForm order-lg-2 order-1">
                     <ProgressInfo targetAmount={targetAmount} goatDetail={goatDetail} />
@@ -92,16 +99,6 @@ const ProjectDetailsArea = (props: any) => {
                         onPreferredSlotClick={handlePreferredSlotClick}
                         resetDonationAmount={setTotalDonationAmount}
                     />
-                </div>
-            </div>
-            <div className="row mt-lg-0 mt-4">
-                <div className="col-md-12">
-                    {currentProject === '/projects/be-the-light-donate-groceries-to-homeless-blind-in-need' && <BeneficiariesTestimonials /> }
-                    <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
-                    <PaymentMods />
-                    <ShareButtons />
-                    <ProjectUpdates />    
-                    <ProjectFaqs /> 
                 </div>
             </div>
         </div>   
