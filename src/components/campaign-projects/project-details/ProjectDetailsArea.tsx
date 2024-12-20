@@ -48,20 +48,6 @@ const ProjectDetailsArea = (props: any) => {
                 </div>
             </div>
             <div className="row project_details_section">
-                <div className="col-md-4 donationOptForm order-lg-2 order-1">
-                    <ProgressInfo targetAmount={targetAmount} goatDetail={goatDetail} />
-                    <ContributeForm 
-                        preferred_slot={preferred_slot} 
-                        project_id={props.project_content.id} 
-                        products={products} 
-                        minimum_amount={minimumAmount}
-                        donation_amount={totalPrice} 
-                        formattedProducts={formattedProducts}
-                        onProductChange={setFormattedProducts}
-                        onPreferredSlotClick={handlePreferredSlotClick}
-                        resetDonationAmount={setTotalDonationAmount}
-                    />
-                </div>
                 <div className="col-md-8">
                     <div className="bannerImage">
                         <div className="bgImg1">
@@ -92,6 +78,20 @@ const ProjectDetailsArea = (props: any) => {
                          />
                     <ProjectBrief project_description={description} project_content={content} video_content={videoContent} />
                     </div>
+                </div>
+                <div className="col-md-4 donationOptForm order-lg-2 order-1">
+                    <ProgressInfo targetAmount={targetAmount} goatDetail={goatDetail} />
+                    <ContributeForm 
+                        preferred_slot={preferred_slot} 
+                        project_id={props.project_content.id} 
+                        products={products} 
+                        minimum_amount={minimumAmount}
+                        donation_amount={totalPrice} 
+                        formattedProducts={formattedProducts}
+                        onProductChange={setFormattedProducts}
+                        onPreferredSlotClick={handlePreferredSlotClick}
+                        resetDonationAmount={setTotalDonationAmount}
+                    />
                 </div>
             </div>
             <div className="row mt-lg-0 mt-4">
