@@ -73,7 +73,9 @@ const ContactForm = () => {
                      aria-required="true"
                      aria-invalid={!!errors.name}
                      aria-describedby={errors.name ? 'name-error' : undefined}
-                     className="form-control" />
+                     className="form-control"
+                     placeholder='Enter your name'
+                  />
                   <p className="form_error">{errors.name?.message}</p>
                </div>
             </div>
@@ -87,7 +89,9 @@ const ContactForm = () => {
                      aria-required="true"
                      aria-invalid={!!errors.email}
                      aria-describedby={errors.email ? 'email-error' : undefined}
-                     className="form-control" />
+                     className="form-control"
+                     placeholder='Enter your email'
+                  />
                   <p className="form_error">{errors.email?.message}</p>
                </div>
             </div>
@@ -101,7 +105,9 @@ const ContactForm = () => {
                      aria-required="true"
                      aria-invalid={!!errors.phone}
                      aria-describedby={errors.phone ? 'phone-error' : undefined}
-                     className="form-control" />
+                     className="form-control"
+                     placeholder='Enter your Phone Number'
+                  />
                   <p className="form_error">{errors.phone?.message}</p>
                </div>
             </div>
@@ -115,7 +121,9 @@ const ContactForm = () => {
                      aria-required="true"
                      aria-invalid={!!errors.subject}
                      aria-describedby={errors.subject ? 'subject-error' : undefined}
-                     className="form-control" />
+                     className="form-control"
+                     placeholder='Enter your subject'
+                  />
                   <p className="form_error">{errors.subject?.message}</p>
                </div>
             </div>
@@ -129,7 +137,7 @@ const ContactForm = () => {
                      aria-invalid={!!errors.comment}
                      aria-describedby={errors.comment ? 'comment-error' : undefined}
                      className="form-control"
-                     rows={3}></textarea>
+                     rows={3} placeholder='Enter your message'></textarea>
                   <p className="form_error">{errors.comment?.message}</p>
                </div>
             </div>
