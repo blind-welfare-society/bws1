@@ -97,10 +97,10 @@ const ContactForm = () => {
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="phone_number">Phone Number</label>
+                  <label htmlFor="phone">Phone Number</label>
                   <input
                      type="text"
-                     id="phone_number"
+                     id="phone"
                      {...register("phone")}
                      aria-required="true"
                      aria-invalid={!!errors.phone}
@@ -113,7 +113,7 @@ const ContactForm = () => {
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="phone_number">Subject</label>
+                  <label htmlFor="subject">Subject</label>
                   <input
                      type="text"
                      id="subject"
@@ -129,7 +129,7 @@ const ContactForm = () => {
             </div>
             <div className="col-md-12">
                <div className="form-group">
-                  <label htmlFor="message">Message</label>
+                  <label htmlFor="comment">Message</label>
                   <textarea
                      id="comment"
                      {...register("comment")}
