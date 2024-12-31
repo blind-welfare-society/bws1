@@ -5,7 +5,6 @@ import Brand from "@/components/common/Brand"
 import Features from "@/components/homes/home-two/Features"
 import BecomeVolunteer from "@/components/homes/home-three/BecomeVolunteer"
 import VolunteerVideo from "./VolunteerVideo"
-import CtaArea from "@/components/homes/home-two/CtaArea"
 import Testimonial from "@/components/homes/home-two/Testimonial"
 
 const BecomeVolunteers = () => {
@@ -17,7 +16,6 @@ const BecomeVolunteers = () => {
             <Features style={true} />
             <BecomeVolunteer style={false} />
             <VolunteerVideo style={false} />
-            <CtaArea />
             <Testimonial style={true} />
             <Brand style={false} />
          </main>

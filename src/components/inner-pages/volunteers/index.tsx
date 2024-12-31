@@ -6,7 +6,6 @@ import CmsPages from "@/components/cmspages"
 import FeaturedStories from "@/components/common/FeaturedStories"
 import VolunteerArea from "./VolunteerArea"
 import Blog from "@/components/homes/home-one/Blog"
-import CtaArea from "@/components/homes/home-one/CtaArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 
@@ -33,7 +32,6 @@ const Volunteers = () => {
             <Banner image_url={imageUrl} />
             <CmsPages />
             <VolunteerArea /> 
-            <CtaArea />
             <FeaturedStories />
             <Blog />
             </main>

@@ -7,7 +7,6 @@ import LocationMap from "./LocationMap"
 import axios from "@/lib/axios";
 import { useEffect, useState } from "react";
 import FeaturedStories from "@/components/common/FeaturedStories"
-import CtaArea from "@/components/homes/home-one/CtaArea"
 import Blog from "@/components/homes/home-one/Blog"
 
 const Contact = () => {
@@ -32,7 +31,6 @@ const Contact = () => {
             <ContactArea/>
             <LocationMap />
             <FeaturedStories />
-            <CtaArea />
             <Blog />
          </main>
          <FooterOne />

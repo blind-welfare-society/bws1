@@ -3,7 +3,6 @@ import Link from "next/link"
 import { useState, useEffect } from "react";
 import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiFeaturedCampaigns';
 import SponsorMeal from "@/components/homes/home-one/SponsorMeal";
-import CtaArea from "@/components/homes/home-one/CtaArea"
 
 const FeaturedCampaignsArea = () => { 
    const [posts, setPosts] = useState<Post[]>([]);
@@ -78,7 +77,6 @@ const FeaturedCampaignsArea = () => {
             </div>
         </div>
         <SponsorMeal />
-        <CtaArea />
         </>
     )
 }

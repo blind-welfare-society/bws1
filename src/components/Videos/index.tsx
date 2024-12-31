@@ -5,7 +5,6 @@ import HeaderOne from "@/layout/headers/HeaderOne"
 import VideoArea from "./VideoArea"
 import FeaturedStories from "@/components/common/FeaturedStories"
 import Blog from "@/components/homes/home-one/Blog"
-import CtaArea from "@/components/homes/home-one/CtaArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 
@@ -31,7 +30,6 @@ const Videos = () => {
             <main>
             <Banner image_url={imageUrl} />
             <VideoArea />
-            <CtaArea />
             <FeaturedStories />
             <Blog />
             </main>

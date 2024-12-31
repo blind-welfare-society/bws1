@@ -6,7 +6,6 @@ import WalkingCane from "./WalkingCane"
 import FeaturedStories from "@/components/common/FeaturedStories"
 import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
-import CtaArea from "@/components/homes/home-one/CtaArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
@@ -34,7 +33,6 @@ const InnerCmsPage = () => {
          <main>
             <Banner image_url={imageUrl} />
             <WalkingCane />
-            <CtaArea />
             <FeaturedStories />
             <BecomeVolunteer />
             <Blog />
