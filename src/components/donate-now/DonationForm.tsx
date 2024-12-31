@@ -427,6 +427,7 @@ const DonationForm = () => {
                     </div>
                 </div>
                 )}
+                <p className="mb-4"><span>Donation Total <span>₹</span><span id="total_donation">{totalPrice}</span></span></p>
                 <p className='donate_info'>All payments go through a secure gateway</p>
                 <div className="col-md-12">
                     <div className="form-group pt-10 mb-0">
