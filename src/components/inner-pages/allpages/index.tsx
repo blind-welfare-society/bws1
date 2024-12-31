@@ -22,6 +22,7 @@ const InnerCmsPage = () => {
       axios.get(fullPathName).then((res) => {
          //console.log(res.data); // Check the response structure
          setCmsContent(res.data);
+         window.scrollTo(0, 0);
       });
    }, [fullPathName]);
 

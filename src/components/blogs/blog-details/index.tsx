@@ -31,6 +31,7 @@ const BlogDetails = (props:any) => {
             }
 
             setCmsContent(data);
+            window.scrollTo(0, 0);
          } catch (error) {
             router.push('/'); // Redirect to 404 on fetch failure
          } finally {
