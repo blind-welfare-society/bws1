@@ -33,7 +33,7 @@ const schema = yup
    .object({
       donation_amount: yup.number()
       .required("Donation Amount is required")
-      .min(400, "Enter other amount - ₹400 or more")
+      .min(400, "Enter other amount - ₹400 or more")
       .label("Donation Amount"),
       amount_choosed: yup.string().required().label("Amount Choosed"),
       first_name: yup.string().required().label("First Name"),
@@ -220,7 +220,7 @@ const DonateWalkingCaneForm = () => {
                         {...register("donation_amount")}
                         readOnly={!isEditable}
                         onChange={handleAmountChange} // Allow manual editing if editable
-                        placeholder="Enter other amount - ₹400 or more"
+                        placeholder={!isEditable ? "" : `Enter other amount - ₹400 or more`} 
                         id="donation_amount"
                         // Placeholder when empty
                      />
