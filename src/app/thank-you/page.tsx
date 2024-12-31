@@ -1,4 +1,4 @@
-import ThankYou from "@/components/thank-you";
+import ContactThankYou from "@/components/thank-you/Contact";
 import Wrapper from "@/layout/Wrapper";
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
 const index = () => {
    return (
       <Wrapper>
-         <ThankYou />
+         <ContactThankYou />
       </Wrapper>
    )
 }

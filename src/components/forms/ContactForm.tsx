@@ -42,16 +42,17 @@ const ContactForm = () => {
          });
          
          if (response.status === 200) {
-         toast('Message sent successfully', { position: 'top-center' });
+            //toast('Message sent successfully', { position: 'top-center' });
+            window.location.href = `/thank-you`;
          reset();
          } else {
-         toast.error('Something went wrong. Please try again.', { position: 'top-center' });
+            toast.error('Something went wrong. Please try again.', { position: 'top-center' });
          }
       } catch (error: any) {
          console.error('Error:', error.response?.data || error.message);
          toast.error('Failed to send message. Please check your network or try again.', { position: 'top-center' });
       }finally {
-         setLoading(false); // Set loading to false after response is received
+         setLoading(false);
       }
 };
 
