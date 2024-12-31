@@ -220,7 +220,7 @@ const DonateWalkingCaneForm = () => {
                         {...register("donation_amount")}
                         readOnly={!isEditable}
                         onChange={handleAmountChange} // Allow manual editing if editable
-                        placeholder={!isEditable ? "" : `Enter other amount - ₹400 or more`} 
+                        placeholder={!isEditable ? "" : `Enter other amount - ₹400 or more`}
                         id="donation_amount"
                         // Placeholder when empty
                      />
