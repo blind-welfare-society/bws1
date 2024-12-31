@@ -33,7 +33,8 @@ const schema = yup
    .object({
       donation_amount: yup.number()
       .required("Donation Amount is required")
-      .min(400, "Enter other amount - ₹400 or more")
+      .typeError('Donation Amount must be a number')
+      .min(400, "Please Enter amount More than 400")
       .label("Donation Amount"),
       amount_choosed: yup.string().required().label("Amount Choosed"),
       first_name: yup.string().required().label("First Name"),
@@ -101,7 +102,7 @@ const DonateWalkingCaneForm = () => {
     };
    }, []);
 
-   const { register, handleSubmit, reset, formState: { errors }, setValue, watch} = useForm<FormData>({
+   const { register, handleSubmit, reset, formState: { errors }, setValue, watch,clearErrors} = useForm<FormData>({
       resolver: yupResolver(schema),
       defaultValues: {
          amount_choosed: "₹1200 will provide walking canes to 3 blind persons",
@@ -113,11 +114,17 @@ const DonateWalkingCaneForm = () => {
    const [isEditable, setIsEditable] = useState(false);
    const is80GSelected = watch("form_80G") === "1";
 
-   const handleRadioChange = (event:any) => {
-    const selectedAmount = event.target.getAttribute("data-value");
-      setDonationAmount(selectedAmount);
-      setValue('donation_amount', selectedAmount);
-      setIsEditable(selectedAmount === "0");
+   const handleRadioChange = (event: any) => {
+      const selectedAmount = event.target.getAttribute("data-value");
+      if (selectedAmount === "0") {
+         setDonationAmount(""); // Set to empty string to enable placeholder
+         setIsEditable(true); // Make the input editable
+      } else {
+         setDonationAmount(selectedAmount);
+         setIsEditable(false); // Make the input non-editable for predefined amounts
+      }
+      setValue("donation_amount", selectedAmount === "0" ? 0 : Number(selectedAmount));
+      clearErrors("donation_amount");
    };
 
    const handleAmountChange = (event:any) => {
@@ -220,7 +227,7 @@ const DonateWalkingCaneForm = () => {
                         {...register("donation_amount")}
                         readOnly={!isEditable}
                         onChange={handleAmountChange} // Allow manual editing if editable
-                        placeholder={!isEditable ? "" : `Enter other amount - ₹400 or more`}
+                        placeholder={!isEditable ? "" : `Enter other amount - ₹400 or more`} 
                         id="donation_amount"
                         // Placeholder when empty
                      />
