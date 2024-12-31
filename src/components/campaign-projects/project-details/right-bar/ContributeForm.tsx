@@ -272,7 +272,9 @@ const ContributeForm = (props: any) => {
                     aria-invalid={!!errors.full_name}
                     aria-describedby={errors.full_name ? 'full_name-error' : undefined}
                     {...register("full_name")} 
-                    className="form-control" />
+                    className="form-control"
+                    placeholder="Full Name"
+                    />
                 <p className="form_error">{errors.full_name?.message}</p>
             </div>
             <div className="col-md-12">
@@ -283,7 +285,9 @@ const ContributeForm = (props: any) => {
                     aria-required="true"
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? 'email-error' : undefined}
-                    className="form-control" />
+                    className="form-control" 
+                    placeholder="Email"
+                    />
                 <p className="form_error">{errors.email?.message}</p>      
             </div>
             <div className="col-md-12">      
@@ -294,7 +298,9 @@ const ContributeForm = (props: any) => {
                     aria-required="true"
                     aria-invalid={!!errors.phone}
                     aria-describedby={errors.phone ? 'phone-error' : undefined}
-                    className="form-control" />
+                    className="form-control" 
+                    placeholder="Phone Number"
+                    />
                 <p className="form_error">{errors.phone?.message}</p>   
             </div> 
         </div> 
