@@ -21,6 +21,7 @@ const NewsArea = () => {
          const { data, total } = await fetchPosts(page, limit);
          setPosts(data);
          setTotal(total);
+         window.scrollTo(0, 0);
       } catch (error) {
          setError(error as Error);
       } finally {

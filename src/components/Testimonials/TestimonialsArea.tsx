@@ -21,6 +21,7 @@ const TestimonialsArea = () => {
             const { data, total } = await fetchTestimonialsPosts(page, limit);
             setPosts(data);
             setTotal(total);
+            window.scrollTo(0, 0);
         } catch (error) {
             setError(error as Error);
         } finally {

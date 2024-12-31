@@ -26,6 +26,7 @@ const CategoryBlogArea = () => {
          const { data, total } = await fetchPostsByCategory(page, limit, slug);
          setPosts(data);
          setTotal(total);
+         window.scrollTo(0, 0);
       } catch (error) {
          setError(error as Error);
       } finally {
