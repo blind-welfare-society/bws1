@@ -81,12 +81,9 @@ const ProjectDetailsArea = (props: any) => {
                     <div className="mt-4">
                         {currentProject === '/projects/be-the-light-donate-groceries-to-homeless-blind-in-need' && <BeneficiariesTestimonials /> }
                         <div dangerouslySetInnerHTML={{ __html: props.project_description }}></div>
-                        <PaymentMods />
-                        <ProjectUpdates />    
-                        <ProjectFaqs /> 
                     </div>
                 </div>
-                <div className="col-md-4 donationOptForm order-lg-2 order-1">
+                <div className="col-md-4 donationOptForm mt-md-0 mt-4">
                     <ProgressInfo targetAmount={targetAmount} goatDetail={goatDetail} />
                     <ContributeForm 
                         preferred_slot={preferred_slot} 
@@ -99,6 +96,13 @@ const ProjectDetailsArea = (props: any) => {
                         onPreferredSlotClick={handlePreferredSlotClick}
                         resetDonationAmount={setTotalDonationAmount}
                     />
+                </div>
+                <div className="col-md-8">
+                    <div className="mt-4">
+                        <PaymentMods />
+                        <ProjectUpdates />    
+                        <ProjectFaqs /> 
+                    </div>
                 </div>
             </div>
         </div>   

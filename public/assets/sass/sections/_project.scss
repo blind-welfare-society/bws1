@@ -693,7 +693,13 @@
     .donationItems {
         width: auto;
     }
-
+    
+    .donationOptForm {
+        position: unset !important;
+        top: unset !important;
+        left: unset !important;
+        bottom: unset;
+    }
 }
 
 @media only screen and (max-width: 991px) {

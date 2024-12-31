@@ -357,3 +357,9 @@
     }
 
 }
+
+@media only screen and (max-width: 767px) {
+    .featured-campaigns.four-cols .content{
+        height: auto;
+    }
+}
