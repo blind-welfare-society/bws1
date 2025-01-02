@@ -27,6 +27,7 @@ const menu_data: MenuItem[] = [
             { link: "/mission-and-vision", title: "Mission and Vision" },
             { link: "/our-founder", title: "Our Founder" },
             { link: "/volunteer", title: "Volunteer" },
+            { link: "/our-team", title: "Our Team" },
         ],
     },
     {
