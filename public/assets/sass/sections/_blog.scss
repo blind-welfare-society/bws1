@@ -506,3 +506,162 @@
             border: 1px solid #ccc;
         }
 }
+
+.team-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    box-shadow: 0px -2px 8px 1px #ccc;
+
+    .team-item__img {
+        img {
+            border-radius: 50%;
+            border: 6px solid #b7c1fb;
+            padding: 5px;
+        }
+    }
+
+    h4 {
+        color: #363b97;
+        font-weight: 700;
+        font-size: 22px;
+        padding-top: 16px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .designation {
+        color: #333884;
+        font-size: 15px;
+        font-weight: 600;
+        font-style: italic;
+    }
+}
+
+/* Overlay styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+/* Dialog box styling */
+.modal-dialog {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: auto;
+    max-width: 900px;
+    padding: 20px;
+    position: relative;
+    z-index: 9999999;
+    outline: none;
+    /* For focus outline on key navigation */
+    animation: modalFadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 100%;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .2);
+    border-radius: .3rem;
+    outline: 0;
+}
+
+.team-popup-inner .popup-pic {
+    float: left;
+    width: 32%;
+    text-align: center;
+    margin-right: 20px;
+
+    h4 {
+        color: #363b97;
+        font-weight: 700;
+        font-size: 22px;
+        padding-top: 16px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+}
+
+.modal-header {
+    border-bottom: 0;
+}
+
+.modal-body {
+    position: relative;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1rem;
+}
+
+/* Close button styling */
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 44px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #555;
+}
+
+.modal-close:hover {
+    color: black;
+}
+
+/* Title styling */
+.modal-dialog h2 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+/* Description styling */
+.modal-dialog p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Image styling */
+.modal-dialog img {
+    margin-top: 10px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Fade-in animation */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.team-item__content {
+    .read-more {
+        border: 1px solid #11a3c9;
+        padding: 2px 14px;
+    }
+}

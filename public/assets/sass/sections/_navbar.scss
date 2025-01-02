@@ -82,7 +82,7 @@
 .navbar-area {
     position: relative;
     width: 100%;
-    z-index: 99;
+    /*z-index: 99;*/
 
     @include res-bl(xxl) {
         padding: 10px 0;
