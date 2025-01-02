@@ -49,7 +49,7 @@ const TeamModal: React.FC<TeamModalProps> = ({ isOpen, closeModal, post }) => {
                         <div className="popup-pic">
                         <Image src={post.image} width={150} height={150} alt={post.name} />
                         <h4 className="">{post.name}</h4>
-                        <p>{post.designation}</p>
+                        <p className="designation">{post.designation}</p>
                         </div>
                         <div className="popup-data">
                             <p dangerouslySetInnerHTML={{ __html: post.description }}></p>
