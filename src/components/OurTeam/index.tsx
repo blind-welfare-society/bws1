@@ -13,9 +13,10 @@ const Blogs = () => {
          <main>
             <Banner image_url="assets/img/blog/blog-banner.jpg" />
             <div className="container">
-               <div className="row">
-                  <div className="col-12">
+               <div className="row justify-content-center">
+                  <div className="col-10">
                         <h1 className="text-center headings-with-border">Our Team</h1>
+                        <p className="text-center"><strong>At the Blind Welfare Society, our team is a blend of passionate individuals dedicated to creating a world where blindness is not a limitation but a pathway to new opportunities. From experienced leaders to tireless volunteers, we work as a united force to empower visually impaired individuals, particularly in rural and underserved communities.</strong></p>
                   </div>
                </div>
             </div>
