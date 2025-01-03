@@ -33,7 +33,8 @@ const NavMenu = () => {
                     title={menu.title}
                     role="none"
                 >
-                    <a
+                    {menu.has_dropdown ? (
+                        <a
                         href={menu.link || "#"}
                         role="menuitem"
                         aria-haspopup={menu.has_dropdown ? "true" : undefined}
@@ -47,15 +48,25 @@ const NavMenu = () => {
                             }
                         }}
                         onKeyDown={(e) => handleKeyPress(e, menu.title)}
-                        tabIndex={0}
-                    >
-                        {menu.title}
-                    </a>
+                        tabIndex={menu.has_dropdown && expandedMenu === menu.title ? 0 : -1}
+                        >
+                            {menu.title}
+                        </a>
+                    ): (
+                        <a
+                        href={menu.link || "#"}
+                        role="menuitem"
+                        className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
+                        >
+                            {menu.title}
+                        </a>
+                    )}
                     {menu.has_dropdown && menu.sub_menus && (
                         <div
                             id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
-                            role="menu"
+                            role=""
+                            aria-expanded={expandedMenu == menu.title}
                             aria-hidden={expandedMenu !== menu.title}
                         >
                             <ul className="sub-nav-group">
@@ -66,6 +77,7 @@ const NavMenu = () => {
                                             role="menuitem"
                                             aria-current={isSubMenuItemActive(sub_m.link) ? "page" : undefined}
                                             className={isSubMenuItemActive(sub_m.link) ? "active" : ""}
+                                            tabIndex={expandedMenu === menu.title ? 0 : -1}
                                         >
                                             {sub_m.title}
                                         </Link>
