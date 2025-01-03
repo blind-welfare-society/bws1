@@ -1019,3 +1019,9 @@ li.donate-btn-mobile a {
         -webkit-transform: rotate(45deg);
     }
 }
+
+@media screen and (max-width: 567px) {
+    .navbar-area{
+        z-index: 99;
+    }
+}
