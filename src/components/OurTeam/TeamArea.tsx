@@ -76,7 +76,7 @@ const TeamArea = () => {
                         </div>
                         <div className="team-item__content">
                            <h4>{item.name}</h4>
-                           <p className="designation">{item.designation}</p>
+                           <h5 className="designation">{item.designation}</h5>
                            <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
                            <button onClick={() => openModal(item)} className="read-more">Read More</button>
                         </div>
