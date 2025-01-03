@@ -24,6 +24,9 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
          {style_1 ? <HeaderTop style={true} /> : <HeaderTop style={false} />}
          <nav className={`navbar navbar-area navbar-expand-lg ${style_1 ? "navbar--two" : "py-30 navbar--one"} ${style_2 ? "navbar--three" : ""} ${sticky ? "sticky-active" : ""}`}>
             <div className="container nav-container navbar-bg">
+               <div className="logo">
+                  <Link href="/"><Image src={style_2 ? HeaderLogo_2 : HeaderLogo_1} alt="BWS Logo" /></Link>
+               </div>
                <div className="responsive-mobile-menu">
                   <button
                      onClick={toggleMobileMenu}
@@ -35,9 +38,6 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                      <span className="icon-left"></span>
                      <span className="icon-right"></span>
                   </button>
-               </div>
-               <div className="logo">
-                  <Link href="/"><Image src={style_2 ? HeaderLogo_2 : HeaderLogo_1} alt="BWS Logo" /></Link>
                </div>
                <div className={`collapse navbar-collapse ${isActive ? "sopen" : ""}`} id="Iitechie_main_menu">
                   <NavMenu />
