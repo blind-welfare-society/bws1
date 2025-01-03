@@ -27,6 +27,20 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                <div className="logo">
                   <Link href="/"><Image src={style_2 ? HeaderLogo_2 : HeaderLogo_1} alt="BWS Logo" /></Link>
                </div>
+               <div className="footerMobileInfo d-lg-none">
+                  <ul className="contact-details-top clearfix">
+                     <li>
+                        <a href="mailto:info@blindwelfaresociety.in" title="Email" aria-label="Email">
+                           <i className="fas fa-envelope" role="img"  aria-hidden="true"></i> <span>info@blindwelfaresociety.in</span>
+                        </a>
+                     </li>
+                     <li>
+                        <a href="tel:+91-9968969932" title="Phone" aria-label="Phone">
+                           <i className="fas fa-phone-alt" role="img" aria-hidden="true"></i> <span>+91-9968969932</span>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
                <div className="responsive-mobile-menu">
                   <button
                      onClick={toggleMobileMenu}
@@ -44,20 +58,6 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                </div>
             </div>
          </nav>
-         <div className="footerMobileInfo d-lg-none">
-			<ul className="contact-details-top clearfix">
-            <li>
-               <a href="mailto:info@blindwelfaresociety.in" title="Email" aria-label="Email">
-                  <i className="fas fa-envelope" role="img"  aria-hidden="true"></i> <span>info@blindwelfaresociety.in</span>
-               </a>
-            </li>
-            <li>
-               <a href="tel:+91-9968969932" title="Phone" aria-label="Phone">
-                  <i className="fas fa-phone-alt" role="img" aria-hidden="true"></i> <span>+91-9968969932</span>
-               </a>
-            </li>
-         </ul>
-		</div>
       </>
    )
 }
