@@ -13,7 +13,7 @@ const NavMenu = () => {
     const isSubMenuItemActive = (subMenuLink: string) => currentRoute === subMenuLink;
 
     const handleMenuToggle = (menuTitle: string) => {
-        setExpandedMenu((prev) => (prev === menuTitle ? null : menuTitle));
+        setExpandedMenu((prev) => (prev === menuTitle ? null : menuTitle)); // Toggle expanded state
     };
 
     const handleKeyPress = (event: React.KeyboardEvent, menuTitle: string) => {
@@ -37,14 +37,14 @@ const NavMenu = () => {
                             href={menu.link || "#"}
                             role="button"
                             aria-haspopup="true"
-                            aria-expanded={expandedMenu === menu.title ? "true" : "false"}
-                            aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
-                            id={menu.has_dropdown ? `accessible-submenu-${menu.id}` : undefined}
+                            aria-expanded={expandedMenu === menu.title ? "true" : "false"}  // Reflect toggle state
+                            aria-controls={`submenu-${menu.id}`} // Control the submenu
+                            id={`accessible-submenu-${menu.id}`}
                             className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
                             onClick={(e) => {
                                 if (menu.has_dropdown) {
                                     e.preventDefault();
-                                    handleMenuToggle(menu.title);
+                                    handleMenuToggle(menu.title);  // Toggle submenu visibility
                                 }
                             }}
                             onKeyDown={(e) => handleKeyPress(e, menu.title)}
@@ -52,7 +52,7 @@ const NavMenu = () => {
                         >
                             {menu.title}
                         </a>
-                    ): (
+                    ) : (
                         <a
                             href={menu.link || "#"}
                             className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
@@ -63,8 +63,9 @@ const NavMenu = () => {
                     {menu.has_dropdown && menu.sub_menus && (
                         <div
                             id={`submenu-${menu.id}`}
-                            className="sub-nav sub-menu"
-                            aria-expanded={expandedMenu === menu.title ? "true" : "false"}
+                            role=""
+                            className={`sub-nav sub-menu ${expandedMenu === menu.title ? "show" : "collapse"}`}  // Added `collapse` and `show` for visibility toggling
+                            aria-expanded={expandedMenu === menu.title ? "true" : "false"}  // Updated on toggle
                             aria-hidden={expandedMenu !== menu.title ? "true" : "false"}
                             aria-labelledby={`accessible-submenu-${menu.id}`}
                         >
