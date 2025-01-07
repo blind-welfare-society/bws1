@@ -78,11 +78,13 @@
         }
     }
 }
-
+#modal-popup-open.navbar-area {
+    z-index: -10 !important;
+}
 .navbar-area {
     position: relative;
     width: 100%;
-    /*z-index: 99;*/
+    z-index: 99;
 
     @include res-bl(xxl) {
         padding: 10px 0;
@@ -1017,11 +1019,5 @@ li.donate-btn-mobile a {
         transform: rotate(45deg);
         -ms-transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
-    }
-}
-
-@media screen and (max-width: 567px) {
-    .navbar-area{
-        z-index: 99;
     }
 }

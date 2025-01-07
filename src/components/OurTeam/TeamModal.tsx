@@ -19,6 +19,7 @@ const TeamModal: React.FC<TeamModalProps> = ({ isOpen, closeModal, post }) => {
   const modalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    const navMenu = document.querySelector(".navbar-area");
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape" && isOpen) {
         closeModal();
@@ -26,12 +27,19 @@ const TeamModal: React.FC<TeamModalProps> = ({ isOpen, closeModal, post }) => {
     };
 
     if (isOpen) {
+      console.log("open");
+      //navMenu?.classList.add("modal-popup-open");
+      navMenu?.setAttribute("id", "modal-popup-open");
       document.addEventListener("keydown", handleKeyDown);
       modalRef.current?.focus();
+    }else {
+      // Remove class when modal is closed
+      navMenu?.removeAttribute("id");
     }
 
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
+      navMenu?.removeAttribute("id");
     };
   }, [isOpen, closeModal]);
 
