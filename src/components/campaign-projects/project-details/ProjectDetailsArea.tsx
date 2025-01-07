@@ -40,6 +40,46 @@ const ProjectDetailsArea = (props: any) => {
         setTotalDonationAmount(0); // Reset donation amount when a product is added
     };
 
+    const [activeTab, setActiveTab] = useState('products-tab');
+
+    const handleTabClick = (event:any, tabId:any) => {
+        event.preventDefault(); // Prevent default hash behavior
+        setActiveTab(tabId); // Update the active tab
+        const targetElement = document.getElementById(tabId);
+        
+        if (targetElement) {
+        // Adjust scroll position by subtracting the header height (e.g., 50px)
+        window.scrollTo({
+            top: targetElement.offsetTop - 200, // Adjust the 50px offset as needed
+            behavior: 'smooth',
+        });
+        }
+    };
+
+    console.log(activeTab);
+
+    useEffect(() => {
+    // Listen to hash change events for smooth scroll
+        const onHashChange = () => {
+        const targetId = window.location.hash.replace('#', '');
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            // Adjust scroll position by subtracting the header height
+            window.scrollTo({
+            top: targetElement.offsetTop - 200, // Adjust the 50px offset as needed
+            behavior: 'smooth',
+            });
+            setActiveTab(targetId); // Update active tab on hash change
+        }
+        };
+
+        window.addEventListener('hashchange', onHashChange);
+
+        return () => {
+        window.removeEventListener('hashchange', onHashChange);
+        };
+    }, []);
+
     return (
         <div className="container project-container">
             <div className="row">
@@ -57,14 +97,14 @@ const ProjectDetailsArea = (props: any) => {
                     <div className="product_project_updates">
                     <div className="sticky-top-tabs">
                         <ul className="sticky-tabs">
-                            <li role="presentation" className="sticky-tab-item active">
-                                <a href="#productsTab" data-toggle="tab" aria-controls="Product" aria-expanded="true">Products</a>
+                            <li role="presentation" className={`sticky-tab-item ${activeTab === 'products-tab' ? 'active' : ''}`}>
+                                <a href="#products-tab" id="products-tab-panel" data-toggle="tab" aria-controls="Product" aria-expanded="true" onClick={(e) => handleTabClick(e, 'products-tab')}>Products</a>
                             </li>
-                            <li role="presentation" className="sticky-tab-item">
-                                <a href="#projectTab" data-toggle="tab" aria-controls="Project" aria-expanded="false">Project</a>
+                            <li role="presentation" className={`sticky-tab-item ${activeTab === 'project-tab' ? 'active' : ''}`}>
+                                <a href="#project-tab" id="products-tab-panel" data-toggle="tab" aria-controls="Project" aria-expanded="false" onClick={(e) => handleTabClick(e, 'project-tab')}>Project</a>
                             </li>
-                            <li role="presentation" className="sticky-tab-item">
-                                <a href="#updatesTab" data-toggle="tab" aria-controls="Updates" aria-expanded="false">Updates</a>
+                            <li role="presentation" className={`sticky-tab-item ${activeTab === 'updates-tab' ? 'active' : ''}`}>
+                                <a href="#updates-tab" id="updates-tab-panel" data-toggle="tab" aria-controls="Updates" aria-expanded="false" onClick={(e) => handleTabClick(e, 'updates-tab')} >Updates</a>
                             </li>
                         </ul>
                     </div>

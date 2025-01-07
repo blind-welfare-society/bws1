@@ -15,7 +15,9 @@
     --script-font: 'Pacifico', cursive;
     scroll-behavior: inherit;
 }
-
+html {
+    scroll-behavior: smooth;
+}
 body {
     color: var(--base-color);
     font-family: var(--base-font);

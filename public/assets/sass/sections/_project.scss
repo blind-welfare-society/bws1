@@ -13,10 +13,10 @@
 }
 
 .sticky-top-tabs {
-    top: 0;
+    top: 14%;
     position: sticky;
     margin-top: 15px;
-
+    z-index: 100;
     .sticky-tabs {
         display: flex;
         flex-wrap: wrap;
