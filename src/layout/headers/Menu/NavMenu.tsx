@@ -86,8 +86,8 @@ const NavMenu = () => {
                     )}
                 </li>
             ))}
-            <li className="donate-btn-mobile" title="Donate Now" role="none">
-                <Link role="menuitem" href="/donate">Donate Now</Link>
+            <li className="donate-btn-mobile" title="Donate Now">
+                <Link href="/donate">Donate Now</Link>
             </li>
         </ul>
     );
