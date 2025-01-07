@@ -34,12 +34,12 @@ const NavMenu = () => {
                 >
                     {menu.has_dropdown ? (
                         <a
-                        href={menu.link || "#"}
-                        role="button"
-                        aria-haspopup={menu.has_dropdown ? "true" : undefined}
-                        aria-expanded={menu.has_dropdown && expandedMenu === menu.title ? "true" : "false"}
-                        aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
-                        aria-label={`${menu.has_dropdown && expandedMenu === menu.title ? "Menu Expanded" : "Menu Collapsed"}`}
+                            href={menu.link || "#"}
+                            role="button"
+                            aria-haspopup={menu.has_dropdown ? "true" : undefined}
+                            aria-expanded={menu.has_dropdown && expandedMenu === menu.title ? "true" : "false"}
+                            aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
+                            aria-label={`${menu.has_dropdown && expandedMenu === menu.title ? menu.title + " Expanded" : menu.title + " Collapsed"}`}
                         id={menu.has_dropdown ? `accessible-submenu-${menu.id}` : undefined}
                         className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
                         onClick={(e) => {
@@ -64,7 +64,6 @@ const NavMenu = () => {
                     {menu.has_dropdown && menu.sub_menus && (
                         <div
                             id={`submenu-${menu.id}`}
-                            role="menuitem"
                             className="sub-nav sub-menu"
                             aria-expanded={expandedMenu == menu.title}
                             aria-hidden={expandedMenu !== menu.title}
