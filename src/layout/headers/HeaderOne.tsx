@@ -29,8 +29,8 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                </div>
                <div className="footerMobileInfo d-lg-none">
                   <ul className="contact-details-top clearfix">
-                     <li><a href="mailto:info@blindwelfaresociety.in" title="Email"><i className="fas fa-envelope"></i> <span>info@blindwelfaresociety.in</span></a></li>
-                     <li><a href="tel:+91-9968969932" title="Phone"><i className="fas fa-phone-alt"></i> <span>+91-9968969932</span></a></li>
+                     <li><a title="Email" aria-label="Email" href="mailto:info@blindwelfaresociety.in"><i className="fas fa-envelope" role="img" aria-hidden="true"></i> <span>info@blindwelfaresociety.in</span></a></li>
+                     <li><a href="tel:+91-9968969932" title="Phone" aria-label="Phone"><i className="fas fa-phone-alt" role="img" aria-hidden="true"></i> <span>+91-9968969932</span></a></li>
                   </ul>
                </div>
                <div className="responsive-mobile-menu">

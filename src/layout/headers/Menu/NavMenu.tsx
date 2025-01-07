@@ -31,12 +31,11 @@ const NavMenu = () => {
                     className={`nav-item ${menu.has_dropdown ? "menu-item-has-children" : ""} 
                         ${expandedMenu === menu.title ? "open" : ""}`}
                     title={menu.title}
-                    role="none"
                 >
                     {menu.has_dropdown ? (
                         <a
                         href={menu.link || "#"}
-                        role="menuitem"
+                        role="button"
                         aria-haspopup={menu.has_dropdown ? "true" : undefined}
                         aria-expanded={menu.has_dropdown && expandedMenu === menu.title ? "true" : "false"}
                         aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
@@ -55,7 +54,6 @@ const NavMenu = () => {
                     ): (
                         <a
                         href={menu.link || "#"}
-                        role="menuitem"
                         className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
                         >
                             {menu.title}
