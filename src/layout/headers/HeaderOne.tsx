@@ -38,7 +38,6 @@ const HeaderOne = ({ style_1, style_2 }: any) => {
                      onClick={toggleMobileMenu}
                      className={`menu toggle-btn d-block d-lg-none ${isActive ? "open" : ""}`}
                      data-target="#Iitechie_main_menu"
-                     aria-expanded="false"
                      aria-label={`${isActive ? "Menu Expanded" : "Menu Collapsed"}`}
                   >
                      <span className="icon-left"></span>

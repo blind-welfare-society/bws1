@@ -24,7 +24,7 @@ const NavMenu = () => {
     };
 
     return (
-        <ul className="navbar-nav menu-open text-lg-end" role="menubar">
+        <ul className="navbar-nav menu-open text-lg-end">
             {menu_data.map((menu: any) => (
                 <li
                     key={menu.id}
