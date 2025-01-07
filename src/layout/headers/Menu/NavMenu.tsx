@@ -63,16 +63,14 @@ const NavMenu = () => {
                         <div
                             id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
-                            role=""
                             aria-expanded={expandedMenu == menu.title}
                             aria-hidden={expandedMenu !== menu.title}
                         >
                             <ul className="sub-nav-group">
                                 {menu.sub_menus.map((sub_m: any, i: number) => (
-                                    <li key={i} role="none">
+                                    <li key={i} title={sub_m.title}>
                                         <Link
                                             href={sub_m.link}
-                                            role="menuitem"
                                             aria-current={isSubMenuItemActive(sub_m.link) ? "page" : undefined}
                                             className={isSubMenuItemActive(sub_m.link) ? "active" : ""}
                                             tabIndex={expandedMenu === menu.title ? 0 : -1}
