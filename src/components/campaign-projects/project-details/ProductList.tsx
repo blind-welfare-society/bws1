@@ -96,7 +96,7 @@ const ProductList = ({ products, setTotalPrice, onProductChange, resetQuantities
   
 
   return (
-    <div className="row" id="productsTab">
+    <div className="row" id="products-tab">
       {products?.id?.map((id, index) => (
         
         <div className="col-md-4" key={id}>

@@ -1,6 +1,6 @@
 const ProjectUpdates = () => {
     return (
-        <div id="updatesTab">
+        <div id="updates-tab">
             <h4 className="project-heading">Updates</h4>
             <p className="no-updates">We will share the recent updates on this project here.</p>
         </div>
