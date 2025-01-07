@@ -39,7 +39,7 @@ const NavMenu = () => {
                         aria-haspopup={menu.has_dropdown ? "true" : undefined}
                         aria-expanded={menu.has_dropdown && expandedMenu === menu.title ? "true" : "false"}
                         aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
-                        aria-label={`${isMenuItemActive(menu.link) ? "Menu Expanded" : "Menu Collapsed"}`}
+                        aria-label={`${menu.has_dropdown && expandedMenu === menu.title ? "Menu Expanded" : "Menu Collapsed"}`}
                         id={menu.has_dropdown ? `accessible-submenu-${menu.id}` : undefined}
                         className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
                         onClick={(e) => {
