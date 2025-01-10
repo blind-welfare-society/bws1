@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
 import SponsorMealForm from "@/components/forms/SponsorMealForm";
 import ShareButtons from "@/components/common/ShareButtons";
+import DonationUpdated from "@/components/common/DonationUpdated";
 
 
 const SponsorMeal = () => {
@@ -50,6 +51,7 @@ const SponsorMeal = () => {
                   <div className="about-us-content-three mb-25">
                      <PaymentMods />
                      <ShareButtons />
+                     <DonationUpdated page_id={cmsContent['page_id']} />
                      <ProjectFaqs />
                   </div>
                </div>
