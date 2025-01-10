@@ -15,8 +15,9 @@
 .sticky-top-tabs {
     top: 14%;
     position: sticky;
-    margin-top: 15px;
+    margin-top: 8px;
     z-index: 100;
+
     .sticky-tabs {
         display: flex;
         flex-wrap: wrap;
@@ -678,6 +679,24 @@
     }
 }
 
+.update-slider {
+    img {
+        width: 100%;
+        height: auto;
+        padding: 5px;
+        border-radius: 15px;
+    }
+
+    .slick-dots {
+        bottom: -12px;
+
+        li button {
+            width: 14px;
+            height: 14px;
+        }
+    }
+}
+
 @media only screen and (max-width: 767px) {
     .project-container {
         .headings-with-border {
@@ -693,13 +712,14 @@
     .donationItems {
         width: auto;
     }
-    
+
     .donationOptForm {
         position: unset !important;
         top: unset !important;
         left: unset !important;
         bottom: unset;
     }
+
 }
 
 @media only screen and (max-width: 991px) {

@@ -13,6 +13,8 @@ import BeneficiariesTestimonials from "@/components/common/BeneficiariesTestimon
 
 const ProjectDetailsArea = (props: any) => {
     const currentProject = usePathname();
+
+    const productId = props.project_content.id;
     const title = props.project_content.title;
     const banner_image = props.project_content.project_image;
     
@@ -140,7 +142,7 @@ const ProjectDetailsArea = (props: any) => {
                 <div className="col-md-8">
                     <div className="mt-4">
                         <PaymentMods />
-                        <ProjectUpdates />    
+                        <ProjectUpdates project_id={productId} type="project" />    
                         <ProjectFaqs /> 
                     </div>
                 </div>
