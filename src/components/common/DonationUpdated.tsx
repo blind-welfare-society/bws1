@@ -13,17 +13,17 @@ interface ProjectUpdate {
   showAnswer:boolean;
 }
 
-const ProjectUpdates = (props: any) => {
+const DonationUpdated = (props: any) => {
     const [updates, setUpdates] = useState<ProjectUpdate[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
 
-    const projectID = props.project_id;
+    const pageId = props.page_id;
 
     useEffect(() => {
         const fetchUpdates = async () => {
         try {
-            const response = await axios.get(`/project-update/${projectID}`);
+            const response = await axios.get(`/page-update/${pageId}`);
             const updatesWithToggle = response.data.data.map((update: ProjectUpdate, index: number) => ({
                 ...update,
                 showAnswer: index === 0,
@@ -38,7 +38,7 @@ const ProjectUpdates = (props: any) => {
         };
 
         fetchUpdates();
-    }, [projectID]);
+    }, [pageId]);
 
     console.log(updates);
 
@@ -67,10 +67,10 @@ const ProjectUpdates = (props: any) => {
 
     
     const settings = {
-      slidesToShow: 3,
+      slidesToShow: 5,
       slidesToScroll: 1,
       arrows: false,
-      autoplay: false,
+      autoplay: true,
       fade: false,
       dots: true,
       prevArrow: <CustomPrevArrow />,
@@ -110,7 +110,7 @@ const ProjectUpdates = (props: any) => {
                                     <div className="accordion-body">
                                         <p className="mt-2">{ item.title}</p>
                                         <div dangerouslySetInnerHTML={{ __html: item.description }}></div>
-                                        {item.updates_images.length > 3 ? (
+                                        {item.updates_images.length > 4 ? (
                                             <Slider {...settings}  className="update-slider row mt-4">
                                                 {item.updates_images.map((image, index) => (
                                                     <div key={index} className="col-md-4">    
@@ -118,10 +118,10 @@ const ProjectUpdates = (props: any) => {
                                                     </div>
                                                 ))}
                                             </Slider>
-                                        ): item.updates_images.length > 0 &&(
+                                        ): item.updates_images.length > 0 && (
                                             <div className="update-slider row mt-4 justify-content-center">
                                                 {item.updates_images.map((image, index) => (
-                                                    <div key={index} className="col-md-4">    
+                                                    <div key={index} className="col-md-2">    
                                                         <Image src={image} alt="Image" width={200} height={150} />
                                                     </div>
                                                 ))}
@@ -141,4 +141,4 @@ const ProjectUpdates = (props: any) => {
     )
 }
 
-export default ProjectUpdates
+export default DonationUpdated

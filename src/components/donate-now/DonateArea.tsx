@@ -4,6 +4,7 @@ import DonationForm from "./DonationForm";
 import PaymentMods from "@/components/common/PaymentMods";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
 import ShareButtons from "@/components/common/ShareButtons";
+import DonationUpdated from "@/components/common/DonationUpdated";
 import BeneficiariesTestimonials from "@/components/common/BeneficiariesTestimonials";
 
 const DonateArea = () => { 
@@ -44,6 +45,7 @@ const DonateArea = () => {
                                     <div className="col-md-12 donatePage">
                                         <PaymentMods />
                                         <ShareButtons />
+                                        <DonationUpdated page_id={cmsContent['page_id']} />
                                         <ProjectFaqs />
                                     </div>
                                 </div>
