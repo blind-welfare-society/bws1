@@ -12,7 +12,7 @@ const VideoArea = () => {
    const [page, setPage] = useState(1);
    const [total, setTotal] = useState(0);
 
-   const limit = 21;
+   const limit = 12;
 
    useEffect(() => {
    const getPosts = async () => {
