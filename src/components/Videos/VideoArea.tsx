@@ -12,7 +12,7 @@ const VideoArea = () => {
    const [page, setPage] = useState(1);
    const [total, setTotal] = useState(0);
 
-   const limit = 20;
+   const limit = 21;
 
    useEffect(() => {
    const getPosts = async () => {
@@ -56,6 +56,25 @@ const VideoArea = () => {
                          <div dangerouslySetInnerHTML={{ __html: item.link}}></div>
                     </div>
                     ))}
+                </div>
+                <div className="pagination pt-20">
+                   <button onClick={() => handlePageClick(1)} disabled={page === 1}> First </button>
+                   <button onClick={() => handlePageClick(page - 1)} disabled={page === 1}>Previous</button>
+                   {pages.map((pageNumber) => (
+                    <button
+                        key={pageNumber}
+                        onClick={() => handlePageClick(pageNumber)}
+                        disabled={page === pageNumber}
+                    >
+                        {pageNumber}
+                    </button>
+                   ))}
+                  <button onClick={() => handlePageClick(page + 1)} disabled={page === totalPages}>
+                    Next
+                    </button>
+                    <button onClick={() => handlePageClick(totalPages)} disabled={page === totalPages}>
+                    Last
+                    </button>  
                 </div>
             </div>
         </div>
