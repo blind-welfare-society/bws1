@@ -88,7 +88,7 @@ const NavMenu = () => {
                 </li>
             ))}
             <li className="donate-btn-mobile" title="Donate Now">
-                <Link href="/donate">Donate Now</Link>
+                <Link href="/donate" style={{ color: "#fff", backgroundColor: "#f84d42"}}>Donate Now</Link>
             </li>
         </ul>
     );

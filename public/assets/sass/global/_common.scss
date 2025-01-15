@@ -27,7 +27,7 @@
         transition: 0.25s;
         position: absolute;
         border-radius: 5px;
-        border: 1px dashed #3587d0;
+        border: 1px dashed var(--primary-color);
     }
     &:focus,
     &:hover {
@@ -112,7 +112,7 @@
     width: 44px;
     height: 44px;
     color: white;
-    background-color: #3587d0;
+    background-color: var(--primary-color);
     text-align: center;
     line-height: 44px;
     z-index: 99;
