@@ -65,7 +65,8 @@ const NavMenu = () => {
                         <div
                             id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
-                            aria-expanded={expandedMenu == menu.title}
+                            role="region"
+                            //aria-expanded={expandedMenu == menu.title}
                             aria-hidden={expandedMenu !== menu.title}
                             aria-labelledby={`accessible-submenu-${menu.id}`}
                         >
