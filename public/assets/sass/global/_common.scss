@@ -12,7 +12,7 @@
     display: inline-block;
     text-transform: uppercase;
     font-family: var(--heading-font);
-    background: var(--primary-color);
+    background: #3587d0;
     @include res-bl(sm) {
         font-weight: 600;
         padding: 12px 20px;
@@ -27,7 +27,7 @@
         transition: 0.25s;
         position: absolute;
         border-radius: 5px;
-        border: 1px dashed var(--primary-color);
+        border: 1px dashed #3587d0;
     }
     &:focus,
     &:hover {
@@ -112,7 +112,7 @@
     width: 44px;
     height: 44px;
     color: white;
-    background-color: var(--primary-color);
+    background-color: #3587d0;
     text-align: center;
     line-height: 44px;
     z-index: 99;
