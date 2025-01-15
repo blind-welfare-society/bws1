@@ -66,7 +66,7 @@ const ContactForm = () => {
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="name">Your Name</label>
+                  <label htmlFor="name">Your Name <span className='text-danger'>*</span></label>
                   <input
                      type="text"
                      id="name"
@@ -82,7 +82,7 @@ const ContactForm = () => {
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="email">Your Email</label>
+                  <label htmlFor="email">Your Email <span className='text-danger'>*</span></label>
                   <input
                      type="email"
                      id="email"
@@ -98,7 +98,7 @@ const ContactForm = () => {
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="phone">Phone Number</label>
+                  <label htmlFor="phone">Phone Number <span className='text-danger'>*</span></label>
                   <input
                      type="text"
                      id="phone"
@@ -114,7 +114,7 @@ const ContactForm = () => {
             </div>
             <div className="col-sm-6">
                <div className="form-group">
-                  <label htmlFor="subject">Subject</label>
+                  <label htmlFor="subject">Subject <span className='text-danger'>*</span></label>
                   <input
                      type="text"
                      id="subject"
@@ -130,7 +130,7 @@ const ContactForm = () => {
             </div>
             <div className="col-md-12">
                <div className="form-group">
-                  <label htmlFor="comment">Message</label>
+                  <label htmlFor="comment">Message <span className='text-danger'>*</span></label>
                   <textarea
                      id="comment"
                      {...register("comment")}

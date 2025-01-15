@@ -273,7 +273,7 @@ const ContributeForm = (props: any) => {
                     aria-describedby={errors.full_name ? 'full_name-error' : undefined}
                     {...register("full_name")} 
                     className="form-control"
-                    placeholder="Full Name"
+                    placeholder="Full Name*"
                     />
                 <p className="form_error">{errors.full_name?.message}</p>
             </div>
@@ -286,7 +286,7 @@ const ContributeForm = (props: any) => {
                     aria-invalid={!!errors.email}
                     aria-describedby={errors.email ? 'email-error' : undefined}
                     className="form-control" 
-                    placeholder="Email"
+                    placeholder="Email*"
                     />
                 <p className="form_error">{errors.email?.message}</p>      
             </div>
@@ -299,7 +299,7 @@ const ContributeForm = (props: any) => {
                     aria-invalid={!!errors.phone}
                     aria-describedby={errors.phone ? 'phone-error' : undefined}
                     className="form-control" 
-                    placeholder="Phone Number"
+                    placeholder="Phone Number*"
                     />
                 <p className="form_error">{errors.phone?.message}</p>   
             </div> 
