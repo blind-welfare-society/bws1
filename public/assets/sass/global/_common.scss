@@ -12,7 +12,7 @@
     display: inline-block;
     text-transform: uppercase;
     font-family: var(--heading-font);
-    background: #3587d0;
+    background: var(--primary-color);
     @include res-bl(sm) {
         font-weight: 600;
         padding: 12px 20px;
