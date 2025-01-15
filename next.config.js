@@ -16,9 +16,9 @@ module.exports = {
   async redirects() {
     return [
       {
-        source: '/index.php/sponsor-a-meal-on-any-special-occasion',
-        destination: '/sponsor-a-meal-on-any-special-occasion',
-        permanent: true, // Indicates a 301 redirect
+        source: '/index.php/:path*', // Match any URL starting with "index.php/"
+        destination: '/:path*',    // Redirect to the same path without "index.php/"
+        permanent: true,   // Indicates a 301 redirect
       },
     ];
   },
