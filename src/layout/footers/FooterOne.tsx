@@ -59,7 +59,7 @@ const FooterOne = () => {
          
          <div className="footer-bottom mt-10">
             <div className="container">
-               <div className="footer-bottom__inner pb-3">
+               <div className="footer-bottom__inner">
                   <div className="copyright">
                      <p>{copyright_text}</p>
                   </div>
