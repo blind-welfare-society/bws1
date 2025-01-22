@@ -5,7 +5,8 @@ import axios from "@/lib/axios";
 import { useEffect, useState } from "react";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
 import DonateWalkingCaneForm from "@/components/forms/DonateWalkingCaneForm";
-
+import ShareButtons from "@/components/common/ShareButtons";
+import DonationUpdated from "@/components/common/DonationUpdated";
 
 const WalkingCane = () => {
 
@@ -34,16 +35,22 @@ const WalkingCane = () => {
                   <div className="about-us-content-three mb-25">
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['content'] }}></div>
                   </div>
+               </div>
+               <div className="col-xl-4 donationOptForm1">
+                  <DonateWalkingCaneForm />
+               </div>
+            </div>
+            <div className="row">
+               <div className="col-md-8">
                   <div className="about-us-content-three mb-25">
                      <div dangerouslySetInnerHTML={{ __html: cmsContent['description'] }}></div>
                   </div>
                   <div className="about-us-content-three mb-25">
                      <PaymentMods />
+                     <ShareButtons />
+                     <DonationUpdated page_id={cmsContent['page_id']} />
                      <ProjectFaqs />
                   </div>
-               </div>
-               <div className="col-xl-4 donationOptForm1">
-                  <DonateWalkingCaneForm />
                </div>
             </div>
          </div>
