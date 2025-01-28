@@ -2,7 +2,7 @@
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
 import FeaturedStories from "@/components/common/FeaturedStories"
-import OurCause from "@/components/homes/home-one/OurCause"
+import RelatedCause from "./RelatedCause"
 import ProjectDetailsArea from "./ProjectDetailsArea"
 import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
@@ -41,7 +41,7 @@ const ProjectDetails = (props:any) => {
                   </div>
                </div>
             </div>
-            <OurCause noOfPosts={4} style={true} />
+            <RelatedCause noOfPosts={4} slug={slug} />
             <FeaturedStories />
             <BecomeVolunteer />
             <Blog />
