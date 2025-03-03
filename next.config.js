@@ -12,6 +12,7 @@ module.exports = {
         pathname: '/**', // Optional: match all paths
       }
     ],
+    unoptimized: true,
   },
   async redirects() {
     return [
