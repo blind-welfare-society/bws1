@@ -12,7 +12,7 @@ interface ContentType {
 }
 
 const footer_content: ContentType = {
-   copyright_text: "©2024 Copyright. Blind Welfare Society All Rights Reserved.",
+   copyright_text: `© ${new Date().getFullYear()} Copyright. Blind Welfare Society All Rights Reserved.`,
 }
 
 const { copyright_text } = footer_content
