@@ -34,9 +34,9 @@ const NavMenu = () => {
                     {menu.has_dropdown ? (
                         <button
                             type="button"
-                            role="button"
+                            role="menuitem"
                             aria-haspopup="true"
-                            aria-expanded={expandedMenu === menu.title ? "true" : "false"}
+                            aria-expanded={expandedMenu === menu.title}
                             aria-label={expandedMenu === menu.title ? `${menu.title} Expanded` : `${menu.title} Collapsed`}
                             id={`accessible-submenu-${menu.id}`}
                             className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
@@ -46,7 +46,11 @@ const NavMenu = () => {
                             {menu.title}
                         </button>
                     ) : (
-                        <Link href={menu.link || "#"} className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}>
+                        <Link 
+                            href={menu.link || "#"} 
+                            role="menuitem" 
+                            className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
+                        >
                             {menu.title}
                         </Link>
                     )}
@@ -55,15 +59,16 @@ const NavMenu = () => {
                         <div
                             id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
-                            role="region"
-                            aria-hidden={expandedMenu !== menu.title ? "true" : "false"}
+                            role="menu"
+                            aria-hidden={expandedMenu !== menu.title}
                             aria-labelledby={`accessible-submenu-${menu.id}`}
                         >
                             <ul className="sub-nav-group">
                                 {menu.sub_menus.map((sub_m: any, i: number) => (
-                                    <li key={i} title={sub_m.title}>
+                                    <li key={i} title={sub_m.title} role="none">
                                         <Link
                                             href={sub_m.link}
+                                            role="menuitem"
                                             aria-current={isSubMenuItemActive(sub_m.link) ? "page" : undefined}
                                             className={isSubMenuItemActive(sub_m.link) ? "active" : ""}
                                             tabIndex={expandedMenu === menu.title ? 0 : -1}
@@ -78,7 +83,13 @@ const NavMenu = () => {
                 </li>
             ))}
             <li className="donate-btn-mobile" title="Donate Now">
-                <Link href="/donate" style={{ color: "#fff", backgroundColor: "#f84d42"}}>Donate Now</Link>
+                <Link 
+                    href="/donate" 
+                    role="menuitem" 
+                    style={{ color: "#fff", backgroundColor: "#f84d42"}}
+                >
+                    Donate Now
+                </Link>
             </li>
         </ul>
     );
