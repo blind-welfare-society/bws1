@@ -1020,4 +1020,17 @@ li.donate-btn-mobile a {
         -ms-transform: rotate(45deg);
         -webkit-transform: rotate(45deg);
     }
+    >button:after {
+        content: "";
+        margin: -5px 0 0 5px;
+        vertical-align: middle;
+        border-right: 2px solid #11a3c9;
+        border-bottom: 2px solid #11a3c9;
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+    }
 }
