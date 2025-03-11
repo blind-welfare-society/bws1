@@ -252,3 +252,8 @@
         margin: -85px auto 0;
     }
 }
+
+@media only screen and (max-width: 567px) {
+    .faq-accordion-two .accordion-item .accordion-header button{font-size: 13px;}
+    .faq-accordion-two .accordion-item .accordion-header button{padding: 0.7rem .55rem 0.7rem .55rem;}
+}

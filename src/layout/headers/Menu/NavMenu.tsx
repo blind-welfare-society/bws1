@@ -37,7 +37,6 @@ const NavMenu = () => {
                             role="button"
                             aria-haspopup="true"
                             aria-expanded={expandedMenu === menu.title ? "true" : "false"}
-                            aria-controls={`submenu-${menu.id}`}
                             aria-label={expandedMenu === menu.title ? `${menu.title} Expanded` : `${menu.title} Collapsed`}
                             id={`accessible-submenu-${menu.id}`}
                             className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
@@ -57,7 +56,7 @@ const NavMenu = () => {
                             id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
                             role="region"
-                            aria-hidden={expandedMenu !== menu.title}
+                            aria-hidden={expandedMenu !== menu.title ? "true" : "false"}
                             aria-labelledby={`accessible-submenu-${menu.id}`}
                         >
                             <ul className="sub-nav-group">
