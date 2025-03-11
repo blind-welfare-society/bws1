@@ -36,20 +36,20 @@ const NavMenu = () => {
                         <a
                             href={menu.link || "#"}
                             role="button"
-                            aria-haspopup={menu.has_dropdown ? "true" : undefined}
                             aria-expanded={menu.has_dropdown && expandedMenu === menu.title ? "true" : "false"}
-                            aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
-                            aria-label={`${menu.has_dropdown && expandedMenu === menu.title ? menu.title + " Expanded" : menu.title + " Collapsed"}`}
-                        id={menu.has_dropdown ? `accessible-submenu-${menu.id}` : undefined}
-                        className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
-                        onClick={(e) => {
-                            if (menu.has_dropdown) {
-                                e.preventDefault();
-                                handleMenuToggle(menu.title);
-                            }
-                        }}
-                        onKeyDown={(e) => handleKeyPress(e, menu.title)}
-                        tabIndex={0}
+                            tabIndex={0}
+                            className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
+                            id={menu.has_dropdown ? `accessible-submenu-${menu.id}` : undefined}
+                            aria-controls={menu.has_dropdown ? `accessible-submenu-${menu.id + 1}` : undefined}
+                            //aria-haspopup={menu.has_dropdown ? "true" : undefined}
+                            //aria-label={`${menu.has_dropdown && expandedMenu === menu.title ? menu.title + " Expanded" : menu.title + " Collapsed"}`}
+                            onClick={(e) => {
+                                if (menu.has_dropdown) {
+                                    e.preventDefault();
+                                    handleMenuToggle(menu.title);
+                                }
+                            }}
+                            onKeyDown={(e) => handleKeyPress(e, menu.title)}
                         >
                             {menu.title}
                         </a>
@@ -62,11 +62,12 @@ const NavMenu = () => {
                         </a>
                     )}
                     {menu.has_dropdown && menu.sub_menus && (
+                        /* eslint-disable */
                         <div
-                            id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
                             role="region"
-                            //aria-expanded={expandedMenu == menu.title}
+                            id={`accessible-submenu-${menu.id + 1}`}
+                            aria-expanded={expandedMenu == menu.title}
                             aria-hidden={expandedMenu !== menu.title}
                             aria-labelledby={`accessible-submenu-${menu.id}`}
                         >
@@ -85,6 +86,7 @@ const NavMenu = () => {
                                 ))}
                             </ul>
                         </div>
+                        /* eslint-disable */
                     )}
                 </li>
             ))}
