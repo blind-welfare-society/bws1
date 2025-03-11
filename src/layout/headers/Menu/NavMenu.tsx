@@ -9,6 +9,7 @@ const NavMenu = () => {
     const currentRoute = usePathname();
 
     const isMenuItemActive = (menuLink: string) => currentRoute === menuLink;
+
     const isSubMenuItemActive = (subMenuLink: string) => currentRoute === subMenuLink;
 
     const handleMenuToggle = (menuTitle: string) => {
@@ -32,43 +33,48 @@ const NavMenu = () => {
                     title={menu.title}
                 >
                     {menu.has_dropdown ? (
-                        <button
-                            type="button"
-                            role="menuitem"
-                            aria-haspopup="true"
-                            aria-expanded={expandedMenu === menu.title}
-                            aria-label={expandedMenu === menu.title ? `${menu.title} Expanded` : `${menu.title} Collapsed`}
-                            id={`accessible-submenu-${menu.id}`}
-                            className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
-                            onClick={() => handleMenuToggle(menu.title)}
-                            onKeyDown={(e) => handleKeyPress(e, menu.title)}
+                        <a
+                            href={menu.link || "#"}
+                            role="button"
+                            aria-haspopup={menu.has_dropdown ? "true" : undefined}
+                            aria-expanded={menu.has_dropdown && expandedMenu === menu.title ? "true" : "false"}
+                            aria-controls={menu.has_dropdown ? `submenu-${menu.id}` : undefined}
+                            aria-label={`${menu.has_dropdown && expandedMenu === menu.title ? menu.title + " Expanded" : menu.title + " Collapsed"}`}
+                        id={menu.has_dropdown ? `accessible-submenu-${menu.id}` : undefined}
+                        className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
+                        onClick={(e) => {
+                            if (menu.has_dropdown) {
+                                e.preventDefault();
+                                handleMenuToggle(menu.title);
+                            }
+                        }}
+                        onKeyDown={(e) => handleKeyPress(e, menu.title)}
+                        tabIndex={0}
                         >
                             {menu.title}
-                        </button>
-                    ) : (
-                        <Link 
-                            href={menu.link || "#"} 
-                            role="menuitem" 
-                            className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
+                        </a>
+                    ): (
+                        <a
+                        href={menu.link || "#"}
+                        className={`nav-link ${isMenuItemActive(menu.link) ? "active" : ""}`}
                         >
                             {menu.title}
-                        </Link>
+                        </a>
                     )}
-
                     {menu.has_dropdown && menu.sub_menus && (
                         <div
                             id={`submenu-${menu.id}`}
                             className="sub-nav sub-menu"
-                            role="menu"
+                            role="region"
+                            //aria-expanded={expandedMenu == menu.title}
                             aria-hidden={expandedMenu !== menu.title}
                             aria-labelledby={`accessible-submenu-${menu.id}`}
                         >
                             <ul className="sub-nav-group">
                                 {menu.sub_menus.map((sub_m: any, i: number) => (
-                                    <li key={i} title={sub_m.title} role="none">
+                                    <li key={i} title={sub_m.title}>
                                         <Link
                                             href={sub_m.link}
-                                            role="menuitem"
                                             aria-current={isSubMenuItemActive(sub_m.link) ? "page" : undefined}
                                             className={isSubMenuItemActive(sub_m.link) ? "active" : ""}
                                             tabIndex={expandedMenu === menu.title ? 0 : -1}
@@ -83,13 +89,7 @@ const NavMenu = () => {
                 </li>
             ))}
             <li className="donate-btn-mobile" title="Donate Now">
-                <Link 
-                    href="/donate" 
-                    role="menuitem" 
-                    style={{ color: "#fff", backgroundColor: "#f84d42"}}
-                >
-                    Donate Now
-                </Link>
+                <Link href="/donate" style={{ color: "#fff", backgroundColor: "#f84d42"}}>Donate Now</Link>
             </li>
         </ul>
     );
