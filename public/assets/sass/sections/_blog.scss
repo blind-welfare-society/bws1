@@ -757,3 +757,9 @@
         padding: 2px 14px;
     }
 }
+
+@media only screen and (max-width: 567px) {
+    .modal-body{max-height: calc(100vh - 210px);overflow-y: auto;}
+    .team-popup-inner .popup-pic .h4, .team-popup-inner .popup-pic h4{font-size: 15px;}
+    .team-popup-inner .popup-pic .designation{font-size: 13px;}
+}
