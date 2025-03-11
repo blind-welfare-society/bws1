@@ -69,7 +69,7 @@ const TeamArea = () => {
          <div className="container">
             <div className="row justify-content-center">
                {posts.map((item) => (
-                  <div key={item.id} className="col-xl-4 col-md-6">
+                  <div key={item.id} className="col-xl-4 col-md-6 mb-2">
                      <div className="team-item d-flex justify-content-center align-items-center text-center flex-column">
                         <div className="team-item__img">
                            <Image src={item.image} width={200} height={200} alt={item.name} className="circle" />
