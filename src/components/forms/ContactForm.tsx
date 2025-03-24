@@ -145,7 +145,7 @@ const ContactForm = () => {
             <div className="col-md-12">
                <div className="form-group pt-10 mb-0">
                   <button type="submit" className="cr-btn ml-5" disabled={loading}>
-                     {loading ? 'Please wait...' : 'Send us a message'}
+                     {loading ? 'Please wait...' : 'Sent Message'}
                   </button>
                </div>
             </div>
