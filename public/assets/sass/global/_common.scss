@@ -10,7 +10,8 @@
     color: white;
     font-weight: 800;
     display: inline-block;
-    text-transform: uppercase;
+    text-transform: capitalize;
+    font-size: 20px;
     font-family: var(--heading-font);
     background: var(--primary-color);
     @include res-bl(sm) {
