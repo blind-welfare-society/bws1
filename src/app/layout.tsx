@@ -31,6 +31,7 @@ export default function RootLayout({
   useEffect(() => {
     // Remove the 'theme' key from localStorage on page load
     localStorage.removeItem('idDarkMode');
+    localStorage.setItem("fontSizeModifier", '1');
     //console.log('Removed theme from localStorage');
   }, []);
 

@@ -618,6 +618,10 @@
     }
 }
 
+li.donate-btn-mobile a {
+    font-size: calc(1.125rem * var(--font-size-modifier))!important;
+}
+
 @media only screen and (max-width: 991px) {
     .nav-right-part {
         margin-right: 30px;

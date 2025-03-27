@@ -214,7 +214,7 @@
 
         h4 {
             color: #363b97;
-            font-size: 20px;
+            font-size: calc(1.25rem * var(--font-size-modifier));
             margin-bottom: 5px;
 
             @include res-bl(xxl) {

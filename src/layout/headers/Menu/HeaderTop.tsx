@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
+import TextResizer from "../TextResizer"
 
 const HeaderTop = ({ style }: any) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -53,6 +54,9 @@ const HeaderTop = ({ style }: any) => {
               ) : (
                 <button className="theme-switch">Switch to Dark</button>
               )}
+            </div>
+            <div className='text-resizer'>
+              <TextResizer />
             </div>
           </div>
           <div className="topbar-right">

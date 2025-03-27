@@ -13,6 +13,7 @@
     --base-font: 'DM Sans', sans-serif;
     --heading-font: 'Nunito', sans-serif;
     --script-font: 'Pacifico', cursive;
+    --font-size-modifier: 1;
     scroll-behavior: inherit;
 }
 html {
@@ -22,7 +23,7 @@ body {
     color: var(--base-color);
     font-family: var(--base-font);
     font-weight: normal;
-    font-size: 16px;
+    font-size: calc(1rem * var(--font-size-modifier));
     line-height: 28px;
     overflow-x: hidden;
 }
@@ -283,8 +284,7 @@ code {
     clip-path: none;
     color: #21759b;
     display: block;
-    font-size: 15px;
-    font-size: 0.875rem;
+    font-size: calc(0.938rem * var(--font-size-modifier));
     font-weight: bold;
     height: auto;
     left: 5px;
@@ -490,7 +490,7 @@ ul {
     height: 50px;
     background-color: var(--main-color);
     color: #fff;
-    font-size: 15px;
+    font-size: calc(0.938rem * var(--font-size-modifier));
     font-weight: 600;
     letter-spacing: 1px;
     border: none;
