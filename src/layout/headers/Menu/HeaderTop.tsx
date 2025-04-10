@@ -2,6 +2,13 @@
 import Link from 'next/link';
 import React, { useState, useEffect } from 'react';
 import TextResizer from "../TextResizer"
+import Image from 'next/image';
+
+import youtube from  '../../../../public/assets/img/social/youtube-white.png';
+import facebook from '../../../../public/assets/img/social/fb-white.png'; 
+import instagram from '../../../../public/assets/img/social/insta-white.png'; 
+import linkedin from '../../../../public/assets/img/social/linkedin-white.png'; 
+import twitter from '../../../../public/assets/img/social/twitter-white.png'; 
 
 const HeaderTop = ({ style }: any) => {
   const [darkMode, setDarkMode] = useState(false);
@@ -76,19 +83,19 @@ const HeaderTop = ({ style }: any) => {
               <li className="social-area">
                 <span>Follow Us - </span>
                 <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Share on Facebook">
-                  <i className="fab fa-facebook-f" role="img" aria-hidden="true"></i>
+                  <Image src={facebook} alt="Share on Facebook" width={22} height={22} />
                 </Link>
                 <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Share on Twitter">
-                  <i className="fab fa-twitter" role="img" aria-hidden="true"></i>
+                  <Image src={twitter} alt="Share on Twitter" width={28} height={28} />
                 </Link>
                 <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Share on Instagram'>
-                  <i className="fab fa-instagram" role="img" aria-hidden="true"></i>
+                  <Image src={instagram} alt="Share on Instagram" width={24} height={24} />
                 </Link>
                 <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Share on Linkedin'>
-                  <i className="fab fa-linkedin-in" role="img" aria-hidden="true"></i>
+                  <Image src={linkedin} alt="Share on Linkedin" width={28} height={28} />
                 </Link>
                 <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Share on Youtube'>
-                  <i className="fab fa-youtube" role="img" aria-hidden="true"></i>
+                  <Image src={youtube} alt="Share on Youtube" width={22} height={22} />
                 </Link>
               </li>
             </ul>
