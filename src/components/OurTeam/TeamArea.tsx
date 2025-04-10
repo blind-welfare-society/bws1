@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
-import TeamModal from "./TeamModal";
 import { fetchPosts, Post, PaginatedResponse } from '@/utils/apiTeams';
 
 const TeamArea = () => {
@@ -13,24 +12,7 @@ const TeamArea = () => {
    const [page, setPage] = useState(1);
    const [total, setTotal] = useState(0);
     
-   const [isOpen, setIsOpen] = useState(false);
-  const [selectedPost, setSelectedPost] = useState(null);
-
-    // Function to open modal
-    const openModal = (item:any) => {
-        setSelectedPost(item);
-        setIsOpen(true);
-    };
-
-    // Function to close modal
-    const closeModal = () => {
-        setIsOpen(false);
-        setSelectedPost(null);
-    };
-
    
-    
-
    const limit = 12;
 
    useEffect(() => {
@@ -78,7 +60,7 @@ const TeamArea = () => {
                            <h4>{item.name}</h4>
                            <h5 className="designation">{item.designation}</h5>
                            <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
-                           <button onClick={() => openModal(item)} className="read-more">Read More</button>
+                           <Link href={`/team/${item.slug}`}  className="read-more" title="Read More">Read More</Link>
                         </div>
                      </div>
                   </div>
@@ -107,7 +89,6 @@ const TeamArea = () => {
                Last
             </button>
             </div>
-            <TeamModal isOpen={isOpen} closeModal={closeModal} post={selectedPost} />
          </div>
       </div>
    )
