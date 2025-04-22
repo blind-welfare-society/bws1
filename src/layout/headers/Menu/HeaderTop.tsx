@@ -81,7 +81,7 @@ const HeaderTop = ({ style }: any) => {
                 </Link>
               </li>
               <li className="social-area">
-                <span>Follow Us - </span>
+                <span>Follow Us</span>
                 <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Share on Facebook">
                   <Image src={facebook} alt="Share on Facebook" width={22} height={22} />
                 </Link>

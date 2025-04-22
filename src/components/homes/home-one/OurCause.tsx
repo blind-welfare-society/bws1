@@ -52,10 +52,14 @@ const OurCause = ({ noOfPosts, style }: { noOfPosts: number, style: boolean }) =
             <div className="row">
                {posts.map((item) => (
                   <div key={item.id} className={ `${style ? "col-md-3 four-cols pe-0 ps-0" : "col-md-6"} featured-campaigns`}>
-                     <h2 className={ `${style ? "" : "headings-with-border"} text-center`}>{item.project_Name}</h2>
+                     <h2 className={ `${style ? "" : "headings-with-border"} text-center`}>
+                        <Link href={`/projects/${item.project_slug}`}>{item.project_Name}</Link>
+                     </h2>
                      <div className={`cause-two-item cause-blue`}>
                         <div className="image">
+                           <Link href={`/projects/${item.project_slug}`}>
                            <Image src={item.image} alt={item.project_Name} width={386} height={184} />
+                           </Link>
                         </div>
                         <div className="content">
                            <div className={ `${style ? "project-box-wrapper-style2" : "project-box-wrapper"} pt-4`}>
@@ -63,7 +67,7 @@ const OurCause = ({ noOfPosts, style }: { noOfPosts: number, style: boolean }) =
                               {item.project_brief && <p>{item.project_brief}</p>}
                               <div className="row">
                                  <div className="col-md-6">
-                                    <p className="donateDetails">₹{item.totalAmount}<br /><small>raised of ₹{item.target_amount}</small></p>
+                                    <p className="donateDetails">₹{item.totalAmount.toLocaleString()}<br /><small>raised of ₹{item.target_amount.toLocaleString()}</small></p>
                                  </div>
                                  <div className="col-md-6">
                                     <div className="counterBox">

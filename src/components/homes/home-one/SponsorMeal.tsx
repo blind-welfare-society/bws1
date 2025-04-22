@@ -28,7 +28,7 @@ const SponsorMeal = () => {
                 <div className="row justify-content-center">
                     <div className="col-xl-8 col-lg-10 col-md-10">
                         <div className="section-title text-center mb-50">
-                            <h2 className="text-center headings-with-border">{title}</h2>
+                            <h2 className="text-center headings-with-border"><Link href={pathName}>{title}</Link></h2>
                         </div>
                     </div>
                 </div>

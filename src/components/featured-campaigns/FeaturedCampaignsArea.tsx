@@ -36,10 +36,12 @@ const FeaturedCampaignsArea = () => {
                 <div className="row">
                 {posts.map((item) => (
                     <div key={item.id} className="col-md-6 featured-campaigns">
-                        <h2 className="text-center headings-with-border">{item.project_Name}</h2>
+                        <h2 className="text-center headings-with-border">
+                            <Link href={`/projects/${item.project_slug}`}>{item.project_Name}</Link>
+                        </h2>
                         <div className={`cause-two-item cause-blue`}>
                             <div className="image">
-                            <Image src={item.image} alt="Cause" width={386} height={184} />
+                                <Link href={`/projects/${item.project_slug}`}><Image src={item.image} alt="Cause" width={386} height={184} /></Link>
                             </div>
                             <div className="content">
                                 <div className="project-box-wrapper pt-4">
@@ -47,7 +49,7 @@ const FeaturedCampaignsArea = () => {
                                 {item.project_brief && <p>{item.project_brief}</p>}
                                 <div className="row">
                                     <div className="col-md-6">
-                                        <p className="donateDetails">₹{item.totalAmount}<br /><small>raised of ₹{item.target_amount}</small></p>
+                                        <p className="donateDetails">₹{item.totalAmount.toLocaleString()}<br /><small>raised of ₹{item.target_amount.toLocaleString()}</small></p>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="counterBox">
