@@ -49,7 +49,7 @@ const FeaturedCampaignsArea = () => {
                                 {item.project_brief && <p>{item.project_brief}</p>}
                                 <div className="row">
                                     <div className="col-md-6">
-                                        <p className="donateDetails">₹{item.totalAmount.toLocaleString()}<br /><small>raised of ₹{item.target_amount.toLocaleString()}</small></p>
+                                    <p className="donateDetails">₹{Number(item.totalAmount).toLocaleString('en-IN')}<br /><small>raised of ₹{Number(item.target_amount).toLocaleString('en-IN')}</small></p>
                                     </div>
                                     <div className="col-md-6">
                                         <div className="counterBox">
