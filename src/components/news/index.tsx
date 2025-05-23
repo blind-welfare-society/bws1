@@ -6,6 +6,7 @@ import NewsArea from "./NewsArea"
 import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
 import Blog from "@/components/homes/home-one/Blog"
 import FeaturedStories from "@/components/common/FeaturedStories"
+import OurCause from "@/components/homes/home-one/OurCause"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
@@ -39,6 +40,7 @@ const NewsEvents = () => {
                 </div>
             </div>
                <NewsArea />
+               <OurCause noOfPosts={4} style={true} />
                <FeaturedStories />
                <BecomeVolunteer />
                <Blog />

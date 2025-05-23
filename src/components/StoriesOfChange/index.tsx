@@ -2,6 +2,7 @@
 import Banner from "@/components/common/Banner"
 import FooterOne from "@/layout/footers/FooterOne"
 import HeaderOne from "@/layout/headers/HeaderOne"
+import OurCause from "@/components/homes/home-one/OurCause"
 import StoryOfChangeArea from "./StoryOfChangeArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
@@ -37,6 +38,7 @@ const StoriesOfChange = () => {
                </div>
             </div> 
             <StoryOfChangeArea />
+            <OurCause noOfPosts={4} style={true} />
          </main>
          <FooterOne />
       </>

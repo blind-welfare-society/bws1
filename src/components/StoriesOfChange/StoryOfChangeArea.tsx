@@ -65,6 +65,29 @@ const StoryOfChangeArea = () => {
                      </div>
                     ))};
                 </div>
+                <div className="pagination pt-20">
+                    <button onClick={() => handlePageClick(1)} disabled={page === 1}>
+                    First
+                    </button>
+                    <button onClick={() => handlePageClick(page - 1)} disabled={page === 1}>
+                    Previous
+                    </button>
+                    {pages.map((pageNumber) => (
+                    <button
+                        key={pageNumber}
+                        onClick={() => handlePageClick(pageNumber)}
+                        disabled={page === pageNumber}
+                    >
+                        {pageNumber}
+                    </button>
+                    ))}
+                    <button onClick={() => handlePageClick(page + 1)} disabled={page === totalPages}>
+                    Next
+                    </button>
+                    <button onClick={() => handlePageClick(totalPages)} disabled={page === totalPages}>
+                    Last
+                    </button>
+                </div>
             </div>
         </div>
     )
