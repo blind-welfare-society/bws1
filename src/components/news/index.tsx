@@ -42,8 +42,8 @@ const NewsEvents = () => {
                <NewsArea />
                <OurCause noOfPosts={4} style={true} />
                <FeaturedStories />
-               <BecomeVolunteer />
                <Blog />
+               <BecomeVolunteer />
          </main>
          <FooterOne />
       </>
