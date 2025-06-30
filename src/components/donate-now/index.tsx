@@ -6,9 +6,11 @@ import OurCause from "@/components/homes/home-one/OurCause"
 import DonateArea from "./DonateArea";
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
+import { usePathname } from "next/navigation";
 
 const DonateNow = () => {
-    let fullPathName = '/banner-image/donate';
+    const pathName = usePathname();
+    let fullPathName = '/banner-image' + pathName;
         
     const [cmsContent, setCmsContent] = useState({} as any);
     

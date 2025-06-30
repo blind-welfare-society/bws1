@@ -1,4 +1,5 @@
 import InnerCmsPage from "@/components/inner-pages/allpages";
+import DonateNow from "@/components/donate-now";
 import Wrapper from "@/layout/Wrapper";
 import axios from "@/lib/axios";
 import { Metadata } from "next";
@@ -23,10 +24,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 
-const Page = () => {
+const Page = async ({ params }: Props) => {
+  const slug = params.slug;
+  const response = await axios.get(`/get-template/${slug}`);
+  const templateName = response.data.template;
+  console.log("Template Name:", templateName);
   return (
       <Wrapper>
-         <InnerCmsPage />
+        {/* Render the component based on the template name */}
+        {templateName === 'donate' ? <DonateNow /> : <InnerCmsPage />}
       </Wrapper>
    )
 }

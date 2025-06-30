@@ -1,5 +1,6 @@
 import axios from "@/lib/axios";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import DonationForm from "./DonationForm";
 import PaymentMods from "@/components/common/PaymentMods";
 import ProjectFaqs from "@/components/common/ProjectFaqs";
@@ -8,7 +9,8 @@ import DonationUpdated from "@/components/common/DonationUpdated";
 import BeneficiariesTestimonials from "@/components/common/BeneficiariesTestimonials";
 
 const DonateArea = () => { 
-    const pathName = "/donate";
+    //const pathName = "/donate";
+    const pathName = usePathname();
 
     const [cmsContent, setCmsContent] = useState({} as any);
 
