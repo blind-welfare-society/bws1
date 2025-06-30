@@ -7,6 +7,9 @@ import DonateArea from "./DonateArea";
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
+import FeaturedStories from "@/components/common/FeaturedStories"
+import BecomeVolunteer from "@/components/homes/home-one/BecomeVolunteer"
+import Blog from "@/components/homes/home-one/Blog"
 
 const DonateNow = () => {
     const pathName = usePathname();
@@ -30,6 +33,9 @@ const DonateNow = () => {
             <Banner image_url={imageUrl} />
             <DonateArea />
             <OurCause noOfPosts={4} style={true} />
+            <FeaturedStories />
+            <Blog />
+            <BecomeVolunteer />
          </main>
          <FooterOne />
         </>

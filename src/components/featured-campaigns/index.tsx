@@ -34,8 +34,8 @@ const FeaturedCampaigns = () => {
          <Banner image_url={imageUrl != "" ? imageUrl : "assets/img/blog/blog-banner.jpg"}  />
             <FeaturedCampaignsArea />
             <FeaturedStories />
-            <BecomeVolunteer />
             <Blog />
+            <BecomeVolunteer />
          </main>
          <FooterOne />
       </>

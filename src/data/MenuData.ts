@@ -45,12 +45,6 @@ const menu_data: MenuItem[] = [
     },
     {
         id: 4,
-        has_dropdown: false,
-        title: "Feed the blind",
-        link: "light-up-lives-donate-groceries-to-empower-blind-girls-in-need",
-    },
-    {
-        id: 5,
         has_dropdown: true,
         title: "Gallery",
         link: "",
@@ -60,16 +54,22 @@ const menu_data: MenuItem[] = [
         ],
     },
     {
-        id: 6,
+        id: 5,
         has_dropdown: false,
         title: "Contact Us",
         link: "/contact-us",
     },
     {
-        id: 7,
+        id: 6,
         has_dropdown: false,
         title: "Blogs",
         link: "/blogs",
+    },
+    {
+        id: 7,
+        has_dropdown: false,
+        title: "Feed the blind",
+        link: "light-up-lives-donate-groceries-to-empower-blind-girls-in-need",
     },
 ];
 export default menu_data;

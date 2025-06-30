@@ -39,8 +39,8 @@ const ProjectsList = () => {
             </div>
             <ProjectListArea />
             <FeaturedStories />
-            <BecomeVolunteer />
             <Blog />
+            <BecomeVolunteer />
          </main>
          <FooterOne />
       </>
