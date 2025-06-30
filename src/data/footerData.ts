@@ -41,7 +41,7 @@ const footer_data: DataType[] = [
       id:2,
       page:"home_2",
       widget_title: "Quick links",
-      footer_link: [{ link: "/contact-us", link_title: "Contact" }, { link: "/terms-conditions", link_title: "Terms & Conditions" }, { link: "/privacy-policy", link_title: "Privacy Policy" }, { link: "/donation-refund-policy", link_title: "Donation Refund Policy" }]
+      footer_link: [{ link: "/light-up-lives-donate-groceries-to-empower-blind-girls-in-need", link_title: "Feed the blind" },{ link: "/contact-us", link_title: "Contact" }, { link: "/terms-conditions", link_title: "Terms & Conditions" }, { link: "/privacy-policy", link_title: "Privacy Policy" }, { link: "/donation-refund-policy", link_title: "Donation Refund Policy" }]
    },
 ]
 
