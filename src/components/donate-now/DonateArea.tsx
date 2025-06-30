@@ -32,14 +32,7 @@ const DonateArea = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-12">
-                                <iframe
-                                src="https://www.youtube.com/embed/8-SqMi81Qjo?rel=0"
-                                style={{ width: "100%", height: "460px" }}
-                                frameBorder="0"
-                                allow="autoplay; encrypted-media"
-                                allowFullScreen
-                                title="Embedded YouTube Video"
-                                ></iframe>
+                                <div dangerouslySetInnerHTML={{ __html: cmsContent['video_content'] }}></div>
                                 <div dangerouslySetInnerHTML={{ __html: cmsContent['content'] }}></div>
                                 <DonationForm />
                                 <BeneficiariesTestimonials />
