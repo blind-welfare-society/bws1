@@ -12,6 +12,7 @@ import BecomeVolunteer from "./BecomeVolunteer"
 import Testimonial from "./Testimonial"
 import FeaturedStories from "@/components/common/FeaturedStories"
 import SponsorMeal from "./SponsorMeal"
+import LocationMap from "@/components/inner-pages/contact/LocationMap"
 
 const HomeOne = () => {
    return (
@@ -29,6 +30,7 @@ const HomeOne = () => {
             <Blog style={true} />
             <Testimonial />
             <BecomeVolunteer />
+            <LocationMap />
          </main>
          <FooterOne />
       </>
