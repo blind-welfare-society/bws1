@@ -37,8 +37,18 @@ const schema = yup
       .min(400, "Please Enter amount More than 400")
       .label("Donation Amount"),
       amount_choosed: yup.string().required().label("Amount Choosed"),
-      first_name: yup.string().required().label("First Name"),
-      last_name: yup.string().required("Last name is required"),
+      first_name: yup.string()
+         .transform((value) => value?.trim())
+         .label("First Name")
+         .required()
+         .matches(/^[A-Za-z\s]+$/, "First name must contain only letters")
+         .min(2, "First name must be at least 2 characters"),
+      last_name: yup.string()
+         .transform((value) => value?.trim())
+         .label("Last Name")
+         .required("Last name is required")
+         .matches(/^[A-Za-z\s]+$/, "Last name must contain only letters")
+         .min(2, "Last name must be at least 2 characters"),
       email: yup.string().required().email().label("Enter Email"),
       phone: yup.string()
          .required('Phone number is required')
@@ -46,30 +56,54 @@ const schema = yup
       form_80G: yup.string().required(),
       pan: yup.string().when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
          ? schema.required("PAN is required for 80G receipt") 
+         .matches(/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/i, 'Invalid PAN format')
+         .transform((value) => value?.trim().toUpperCase())
          : schema.notRequired()
       ),
-      address: yup.string().when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
-         ? schema.required("Address is required for 80G receipt") 
+      address: yup.string()
+         .transform((value) => value?.trim())
+         .label("Address")
+         .when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
+         ? schema.required("Address is required for 80G receipt").min(5, "Address must be at least 5 characters")
          : schema.notRequired()
       ),
-      country: yup.string().when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
-         ? schema.required("Country is required for 80G receipt") 
+      country: yup.string()
+         .transform((value) => value?.trim())
+         .label("Country")
+         .when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
+         ? schema.required("Country is required for 80G receipt")
+         .matches(/^[A-Za-z\s]+$/, "Country must contain only letters")
+         .min(2, "Country must be at least 2 characters") 
          : schema.notRequired()
       ),
-      state: yup.string().when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
-         ? schema.required("state is required for 80G receipt") 
+      state: yup.string()
+         .transform((value) => value?.trim())
+         .label("State")
+         .when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
+         ? schema.required("state is required for 80G receipt")
+         .matches(/^[A-Za-z\s]+$/, "State must contain only letters")
+         .min(2, "State must be at least 2 characters") 
          : schema.notRequired()
       ),
-      city: yup.string().when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
-         ? schema.required("City is required for 80G receipt") 
+      city: yup.string()
+         .transform((value) => value?.trim())
+         .label("City")
+         .when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
+         ? schema.required("City is required for 80G receipt")
+         .matches(/^[A-Za-z\s]+$/, "City must contain only letters")
+         .min(2, "City must be at least 2 characters")
          : schema.notRequired()
       ),
-      pincode: yup.string().when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
-         ? schema.required("Pincode is required for 80G receipt") 
+      pincode: yup.string()
+         .transform((value) => value?.trim())
+         .label("Pincode")
+         .when("form_80G", (form_80G: string[], schema) => form_80G[0] === "1" 
+         ? schema.required("Pincode is required for 80G receipt")
+         .matches(/^[A-Za-z0-9\s-]{3,10}$/, "Invalid postal code format")
          : schema.notRequired()
       ),
    })
-   .required();
+.required();
 
 const DonateWalkingCaneForm = () => {
    const searchParams = useSearchParams();
