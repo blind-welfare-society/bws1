@@ -3,6 +3,7 @@ import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
 import SocialIcon from "@/components/common/SocialIcon";
 import footer_data from "@/data/footerData";
+import Script from "next/script";
 
 
 import donate from "@/assets/img/footer/donate-by.png";
@@ -63,9 +64,27 @@ const FooterOne = () => {
                   <div className="copyright">
                      <p>{copyright_text}</p>
                   </div>
-                  <div className="whatsAppChat">
-                     <a href="https://api.whatsapp.com/send?phone=918130943100&amp;text=Hello%20Blind%20Welfare%20Society,%20%20I%20would%20like%20to%20know%20more%20about%20your%20organization.%20Can%20you%20help?" target="_blank" className="whatsAppBtn"><Image src={whatAppImage} width={116} height={36} className="img-fluid" alt="Chat with us" /></a>
-                  </div>
+                  <Script
+                     id="interakt-script"
+                     strategy="afterInteractive" // loads after page is interactive
+                  >
+                     {`
+                        (function(w,d,s,c,r,a,m){
+                        w['KiwiObject']=r;
+                        w[r]=w[r] || function () {
+                           (w[r].q=w[r].q||[]).push(arguments)};
+                        w[r].l=1*new Date();
+                        a=d.createElement(s);
+                        m=d.getElementsByTagName(s)[0];
+                        a.async=1;
+                        a.src=c;
+                        m.parentNode.insertBefore(a,m)
+                        })(window,document,'script',"https://app.interakt.ai/kiwi-sdk/kiwi-sdk-17-prod-min.js?v="+ new Date().getTime(),'kiwi');
+                        window.addEventListener("load",function () {
+                        kiwi.init('', 'BmOD4kpacgX087rDAYROH28lgQsgiMu5', {});
+                        });
+                     `}
+                  </Script>
                </div>
             </div>
          </div>
