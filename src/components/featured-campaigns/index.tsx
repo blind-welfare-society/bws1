@@ -9,6 +9,7 @@ import FeaturedCampaignsArea from "./FeaturedCampaignsArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
+import MediaHighlights from "@/components/homes/home-one/MediaHighlights";
 
 
 const FeaturedCampaigns = () => {
@@ -35,6 +36,7 @@ const FeaturedCampaigns = () => {
             <FeaturedCampaignsArea />
             <FeaturedStories />
             <Blog />
+            <MediaHighlights headerPadding={`pt-120`} />
             <BecomeVolunteer />
          </main>
          <FooterOne />
