@@ -40,8 +40,8 @@ const ProjectsList = () => {
             </div>
             <ProjectListArea />
             <FeaturedStories />
-            <MediaHighlights headerPadding={`pt-120`} />
             <Blog />
+            <MediaHighlights headerPadding={`pt-10`} />
             <BecomeVolunteer />
          </main>
          <FooterOne />

@@ -38,8 +38,8 @@ const InnerCmsPage = () => {
             <CmsPages />
             <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
-            <MediaHighlights headerPadding={`pt-120`} />
             <Blog />
+            <MediaHighlights headerPadding={`pt-120`} />
             <BecomeVolunteer />
          </main>
          <FooterOne />
