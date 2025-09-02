@@ -763,3 +763,36 @@
     .team-popup-inner .popup-pic .h4, .team-popup-inner .popup-pic h4{font-size: 15px;}
     .team-popup-inner .popup-pic .designation{font-size: 13px;}
 }
+
+.media-highlight-item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .media-highlight-item__img{
+        a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img{
+                width: 85%;
+                height: auto;
+                text-align: center;
+                border: 2px solid #ef8e8e;
+                padding: 20px;
+            }
+        }
+    }
+
+    .media-highlight-item__content{
+        padding-top: 10px;
+        h4{
+            a{
+                font-size: 26px;
+                color: #363b97;
+            }
+        }
+    }
+}

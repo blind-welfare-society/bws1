@@ -9,6 +9,7 @@ import ProjectListArea from "./ProjectListArea"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
+import MediaHighlights from "@/components/homes/home-one/MediaHighlights";
 
 const ProjectsList = () => {
    const pathName = usePathname();
@@ -39,6 +40,7 @@ const ProjectsList = () => {
             </div>
             <ProjectListArea />
             <FeaturedStories />
+            <MediaHighlights headerPadding={`pt-120`} />
             <Blog />
             <BecomeVolunteer />
          </main>

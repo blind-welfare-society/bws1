@@ -6,6 +6,7 @@ import OurCause from "./OurCause"
 import Projects from "./Projects"
 import Event from "./Event"
 import Blog from "./Blog"
+import MediaHighlights from "./MediaHighlights" 
 import FooterOne from "@/layout/footers/FooterOne"
 import About from "./About"
 import BecomeVolunteer from "./BecomeVolunteer"
@@ -28,6 +29,7 @@ const HomeOne = () => {
             <FeaturedStories />
             <Event />
             <Blog style={true} />
+            <MediaHighlights headerPadding={`pt-10`} />
             <Testimonial />
             <BecomeVolunteer />
             <LocationMap />
