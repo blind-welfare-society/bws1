@@ -36,7 +36,7 @@ const FeaturedCampaigns = () => {
             <FeaturedCampaignsArea />
             <FeaturedStories />
             <Blog />
-            <MediaHighlights headerPadding={`pt-120`} />
+            <MediaHighlights headerPadding={`pt-10`} />
             <BecomeVolunteer />
          </main>
          <FooterOne />
