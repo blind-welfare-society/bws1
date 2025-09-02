@@ -39,7 +39,7 @@ const InnerCmsPage = () => {
             <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
             <Blog />
-            <MediaHighlights headerPadding={`pt-120`} />
+            <MediaHighlights headerPadding={`pt-10`} />
             <BecomeVolunteer />
          </main>
          <FooterOne />

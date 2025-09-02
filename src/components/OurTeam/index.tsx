@@ -8,6 +8,7 @@ import OurCause from "@/components/homes/home-one/OurCause"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
+import MediaHighlights from "@/components/homes/home-one/MediaHighlights";
 
 const Blogs = () => {
    const pathName = usePathname();
@@ -41,6 +42,7 @@ const Blogs = () => {
             <TeamArea />
             <OurCause noOfPosts={4} style={true} />
             <FeaturedStories />
+            <MediaHighlights headerPadding={`pt-120`} />
          </main>
          <FooterOne />
       </>

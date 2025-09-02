@@ -10,6 +10,7 @@ import OurCause from "@/components/homes/home-one/OurCause"
 import { useEffect, useState } from "react";
 import axios from "@/lib/axios";
 import { usePathname } from "next/navigation";
+import MediaHighlights from "@/components/homes/home-one/MediaHighlights";
 
 const NewsEvents = () => {
    const pathName = usePathname();
@@ -43,6 +44,7 @@ const NewsEvents = () => {
                <OurCause noOfPosts={4} style={true} />
                <FeaturedStories />
                <Blog />
+               <MediaHighlights headerPadding={`pt-10`} />
                <BecomeVolunteer />
          </main>
          <FooterOne />
