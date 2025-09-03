@@ -17,7 +17,7 @@ const MediaHighlights = ({ headerPadding }: any) => {
 
    const header_padding = headerPadding || 'pt-120';
 
-   const limit = 3;
+   const limit = 4;
 
    useEffect(() => {
    const getPosts = async () => {
@@ -52,7 +52,7 @@ const MediaHighlights = ({ headerPadding }: any) => {
                   <Image className="shape one top_image_bounce" src={aboutShape_1} alt="Shape" />
                </div>
                {posts.map((item) => (
-                  <div key={item.id} className="col-xl-4 col-md-6">
+                  <div key={item.id} className="col-xl-3 col-md-6">
                      <div className="media-highlight-item mb-30">
                         <div className="media-highlight-item__img">
                            <Link href={`${item.media_link}`} target="_blank"><Image src={item.media_image} width={400} height={200} alt={item.media_name} /></Link>
