@@ -777,20 +777,20 @@
             align-items: center;
 
             img{
-                width: 85%;
+                width: 100%;
                 height: auto;
                 text-align: center;
                 border: 2px solid #ef8e8e;
-                padding: 20px;
+                padding: 6px;
             }
         }
     }
 
     .media-highlight-item__content{
-        padding-top: 10px;
+        padding-top:3px;
         h4{
             a{
-                font-size: 24px;
+                font-size: 20px;
                 color: #363b97;
             }
         }
