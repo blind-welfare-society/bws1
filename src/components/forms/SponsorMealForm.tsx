@@ -193,8 +193,17 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
       }
    };
 
-
-
+   useEffect(() => {
+    if (!is80GSelected) {
+        setValue("pan", "");
+        setValue("address", "");
+        setValue("country", "");
+        setValue("state", "");
+        setValue("city", "");
+        setValue("pincode", "");
+        clearErrors(["pan", "address", "country", "state", "city", "pincode"]);
+    }
+    }, [is80GSelected, setValue, clearErrors]);
    const onSubmit = async (data: FormData) => {
       setLoading(true);
       try {

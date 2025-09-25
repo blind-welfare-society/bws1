@@ -157,7 +157,7 @@ const ContributeForm = (props: any) => {
         };
     }, []);
     
-    const { register, handleSubmit, reset, formState: { errors }, setValue, watch,} = useForm<FormData>({
+    const { register, handleSubmit, reset, formState: { errors }, setValue, watch,clearErrors} = useForm<FormData>({
       resolver: yupResolver(getSchema(minimum_amount)),
       defaultValues: {
          form_80G: "0",
@@ -181,6 +181,18 @@ const ContributeForm = (props: any) => {
     const donationAmountField = watch("donation_amount", totalDonationAmount || donationAmount);
 
     const is80GSelected = watch("form_80G") === "1";
+
+    useEffect(() => {
+    if (!is80GSelected) {
+        setValue("pan", "");
+        setValue("address", "");
+        setValue("country", "");
+        setValue("state", "");
+        setValue("city", "");
+        setValue("pincode", "");
+        clearErrors(["pan", "address", "country", "state", "city", "pincode"]);
+    }
+    }, [is80GSelected, setValue, clearErrors]);
     
     const onSubmit = async (data: FormData) => {
         setLoading(true);

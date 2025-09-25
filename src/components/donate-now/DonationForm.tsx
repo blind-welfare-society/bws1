@@ -140,7 +140,7 @@ const DonationForm = () => {
     }, []);
     
     
-    const { register, handleSubmit, formState: { errors },  watch, setValue, unregister} = useForm<FormData>({
+    const { register, handleSubmit, formState: { errors },  watch, setValue, unregister, clearErrors} = useForm<FormData>({
       resolver: yupResolver(schema),
       defaultValues: {
          form_80G: "0"
@@ -171,8 +171,18 @@ const DonationForm = () => {
         });
     }, [setValue, formattedProducts, totalPrice, unregister, watch]);
 
-
-
+    useEffect(() => {
+    if (!is80GSelected) {
+        setValue("pan", "");
+        setValue("address", "");
+        setValue("country", "");
+        setValue("state", "");
+        setValue("city", "");
+        setValue("pincode", "");
+        clearErrors(["pan", "address", "country", "state", "city", "pincode"]);
+    }
+    }, [is80GSelected, setValue, clearErrors]);
+    
 
     const onSubmit = async (data: FormData) => {
         setLoading(true);
