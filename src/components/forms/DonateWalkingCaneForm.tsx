@@ -34,7 +34,7 @@ const schema = yup
       donation_amount: yup.number()
       .required("Donation Amount is required")
       .typeError('Donation Amount must be a number')
-      .min(400, "Please enter amount 400 or more than 400")
+      .min(400, "Enter other amount -₹400 or more")
       .label("Donation Amount"),
       amount_choosed: yup.string().required().label("Amount Choosed"),
       first_name: yup.string()
