@@ -43,8 +43,8 @@ const ProjectDetails = (props:any) => {
             </div>
             <RelatedCause noOfPosts={4} slug={slug} />
             <FeaturedStories />
-            <BecomeVolunteer />
             <Blog />
+            <BecomeVolunteer />
          </main>
          <FooterOne />
       </>

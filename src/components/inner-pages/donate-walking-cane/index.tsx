@@ -34,8 +34,8 @@ const InnerCmsPage = () => {
             <Banner image_url={imageUrl} />
             <WalkingCane />
             <FeaturedStories />
-            <BecomeVolunteer />
             <Blog />
+            <BecomeVolunteer />
          </main>
          <FooterOne />
       </>

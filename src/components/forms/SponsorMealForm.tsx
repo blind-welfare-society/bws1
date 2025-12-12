@@ -42,7 +42,7 @@ const getSchema = (minamount: number | undefined) =>
       donation_amount: yup.number()
       .required("Donation Amount is required")
       .typeError('Donation Amount must be a number')
-      .min(minamount || 500, `Please enter an amount more than ${minamount || 500}`)
+      .min(minamount || 500, `Enter other amount - ₹${minamount || 500} or more`)
       .label("Donation Amount"),
       amount_choosed: yup.string().required().label("Amount Choosed"),
       name: yup.string()
