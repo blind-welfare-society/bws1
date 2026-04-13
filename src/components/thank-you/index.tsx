@@ -6,19 +6,28 @@ import axios from "@/lib/axios";
 import { usePathname } from 'next/navigation'
 import Image from "next/image"
 
+interface ThankYouProps {
+  pageID: string | number;
+  donationData?: any;
+}
 
-const ThankYou = ({ pageID }: any) => {
+const ThankYou = ({ pageID, donationData: propDonationData }: ThankYouProps) => {
    const [donationData, setDonationData] = useState({} as any);
 
    const fullPathName = `get-donation-status/${pageID}`;
    const currentPath = usePathname();
     
    useEffect(() => {
-      axios.get(fullPathName).then((res) => {
-         //console.log(res.data); // Check the response structure
-          setDonationData(res.data.data);
-      });
-   }, [fullPathName]);
+      // If donationData is passed as prop, use it; otherwise fetch it
+      if (propDonationData) {
+         setDonationData(propDonationData);
+      } else {
+         axios.get(fullPathName).then((res) => {
+            //console.log(res.data); // Check the response structure
+             setDonationData(res.data.data);
+         });
+      }
+   }, [fullPathName, propDonationData]);
 
    const formatDate = (dateString:any) => {
     const date = new Date(dateString);
