@@ -36,33 +36,28 @@ const TrackEvent = ({ pageID }: TrackEventProps) => {
 
   // Track conversion once data is fetched
   useEffect(() => {
-    if (typeof window !== "undefined" && donationData) {
-      const donationAmount = donationData.amount || donationData.total || 0;
+    const eventId = "donation_" + Date.now();
+    const donationAmount = donationData?.amount || donationData?.total || 0;
 
-      if (donationAmount > 0) {
-        const eventId = "donation_" + Date.now();
+    // Facebook Pixel
+    (window as any).fbq('track', 'Purchase', {
+      value: donationAmount,
+      currency: 'INR'
+    }, {
+      eventID: eventId
+    });
 
-        // Facebook Pixel
-        if (window.fbq) {
-          window.fbq('track', 'Purchase', {
-            value: donationAmount,
-            currency: 'INR',
-            content_ids: [pageID],
-            content_type: 'product',
-            eventID: eventId
-          });
-        }
+    (window as any).fbq('track', 'Donate');
 
-        // Google Ads
-        if (window.gtag) {
-          window.gtag('event', 'conversion', {
-            send_to: 'AW-527459866/kZgGCJabreQBEJrMwfsB',
-            transaction_id: eventId
-          });
-        }
-      }
+    // Google Ads
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-527459866/kZgGCJabreQBEJrMwfsB',
+        transaction_id: eventId
+      });
     }
-  }, [donationData, pageID]);
+
+  }, []);
 
   if (loading) {
     return <div>Loading...</div>;
