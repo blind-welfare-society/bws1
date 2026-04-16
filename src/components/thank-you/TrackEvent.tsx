@@ -38,9 +38,9 @@ const TrackEvent = ({ pageID }: TrackEventProps) => {
 
   useEffect(() => {
     if (!donationData || eventFired) return;
-
-    const eventId = "donation_" + Date.now();
-    const donationAmount = donationData.amount || donationData.total || 0;
+    
+    const eventId = "donation_" + pageID;
+    const donationAmount = Number(donationData.amount || donationData.total || 0);
 
     console.log("✅ FB firing with:", donationAmount);
 
