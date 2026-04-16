@@ -34,22 +34,28 @@ const TrackEvent = ({ pageID }: TrackEventProps) => {
       });
   }, [pageID]);
 
-  // Track conversion once data is fetched
+  const [eventFired, setEventFired] = useState(false);
+
   useEffect(() => {
+    if (!donationData || eventFired) return;
+
     const eventId = "donation_" + Date.now();
-    const donationAmount = donationData?.amount || donationData?.total || 0;
+    const donationAmount = donationData.amount || donationData.total || 0;
 
-    // Facebook Pixel
-    (window as any).fbq('track', 'Purchase', {
-      value: donationAmount,
-      currency: 'INR'
-    }, {
-      eventID: eventId
-    });
+    console.log("✅ FB firing with:", donationAmount);
 
-    (window as any).fbq('track', 'Donate');
+    if (window.fbq) {
+      (window as any).fbq('track', 'Purchase', {
+        value: donationAmount,
+        currency: 'INR'
+      }, { eventID: eventId });
 
-    // Google Ads
+      (window as any).fbq('trackCustom', 'Donate', {
+        value: donationAmount,
+        currency: 'INR'
+      });
+    }
+
     if (window.gtag) {
       window.gtag('event', 'conversion', {
         send_to: 'AW-527459866/kZgGCJabreQBEJrMwfsB',
@@ -57,7 +63,9 @@ const TrackEvent = ({ pageID }: TrackEventProps) => {
       });
     }
 
-  }, []);
+    setEventFired(true);
+
+  }, [donationData, eventFired]);
 
   if (loading) {
     return <div>Loading...</div>;
