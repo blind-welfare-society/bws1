@@ -53,18 +53,27 @@ const TrackEvent = ({ pageID }: TrackEventProps) => {
       (window as any).fbq('track', 'Purchase', {
         value: donationAmount,
         currency: 'INR',
-        transaction_id: eventId
       });
       console.log("✅ Purchase event tracked");
+
+      (window as any).fbq('trackCustom', 'Grocery New', {
+        value: donationAmount,
+        currency: 'INR'
+      });
+      console.log("✅ Grocery New custom event tracked");
     } else {
       console.warn("⚠️ fbq not available");
     }
+
 
     if (window.gtag) {
       window.gtag('event', 'conversion', {
         send_to: 'AW-527459866/kZgGCJabreQBEJrMwfsB',
         transaction_id: eventId
       });
+      console.log("✅ Conversion event tracked");
+    } else {
+      console.warn("⚠️ gtag not available");
     }
 
     setEventFired(true);
