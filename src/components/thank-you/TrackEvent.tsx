@@ -42,18 +42,22 @@ const TrackEvent = ({ pageID }: TrackEventProps) => {
     const eventId = "donation_" + pageID;
     const donationAmount = Number(donationData.amount || donationData.total || 0);
 
-    console.log("✅ FB firing with:", donationAmount);
+    console.log("✅ FB firing with:", {
+      amount: donationAmount,
+      eventId,
+      hasWindow: typeof window !== 'undefined',
+      hasFbq: !!window.fbq
+    });
 
     if (window.fbq) {
       (window as any).fbq('track', 'Purchase', {
         value: donationAmount,
-        currency: 'INR'
-      }, { eventID: eventId });
-
-      (window as any).fbq('trackCustom', 'Donate', {
-        value: donationAmount,
-        currency: 'INR'
+        currency: 'INR',
+        transaction_id: eventId
       });
+      console.log("✅ Purchase event tracked");
+    } else {
+      console.warn("⚠️ fbq not available");
     }
 
     if (window.gtag) {
