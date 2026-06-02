@@ -259,6 +259,11 @@ const ContributeForm = (props: any) => {
                     theme: {
                         color: "#F37254",
                     },
+                    notes: {
+                        campaign_name: 'Donate Groceries to the Blind',
+                        campaign_id:   'groceries-campaign',
+                    },
+
                 };
 
                 const rzp1 = new window.Razorpay(options);
