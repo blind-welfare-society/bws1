@@ -260,8 +260,8 @@ const ContributeForm = (props: any) => {
                         color: "#F37254",
                     },
                     notes: {
-                        campaign_name: 'Donate Groceries to the Blind',
-                        campaign_id:   'groceries-campaign',
+                        campaign_name: props.project_heading,
+                        campaign_id:  `campaign-${props.project_id}`,
                     },
 
                 };

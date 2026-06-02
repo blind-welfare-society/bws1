@@ -16,6 +16,7 @@ const ProjectDetailsArea = (props: any) => {
 
     const productId = props.project_content.id;
     const title = props.project_content.title;
+    const heading = props.project_content.heading;
     const banner_image = props.project_content.project_image;
     
     const products      = props.product_list;
@@ -130,6 +131,7 @@ const ProjectDetailsArea = (props: any) => {
                     <ContributeForm 
                         preferred_slot={preferred_slot} 
                         project_id={props.project_content.id} 
+                        project_heading={heading}
                         products={products} 
                         minimum_amount={minimumAmount}
                         donation_amount={totalPrice} 
