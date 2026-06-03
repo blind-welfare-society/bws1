@@ -74,9 +74,6 @@ export default function RootLayout({
             `,
           }}
         />
-        <noscript>
-        <Image height={1} width={1}  src="https://www.facebook.com/tr?id=158494329260374&ev=PageView &noscript=1" alt="" />
-        </noscript>
         <Script
           id="gtag-inline-script"
           strategy="afterInteractive"
