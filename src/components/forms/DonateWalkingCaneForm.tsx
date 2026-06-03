@@ -242,6 +242,10 @@ const DonateWalkingCaneForm = () => {
                theme: {
                   color: "#F37254",
                },
+               notes: {
+                  campaign_name: 'Donate Walking Cane',
+                  campaign_id:  'walkingcane-' + saveData_id,
+               },
             };
 
             const rzp1 = new window.Razorpay(options);

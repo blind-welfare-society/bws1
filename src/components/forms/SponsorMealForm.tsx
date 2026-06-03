@@ -270,6 +270,10 @@ const SponsorMealForm = ({ minamount }: { minamount: number }) => {
                theme: {
                   color: "#F37254",
                },
+               notes: {
+                  campaign_name: 'Sponsor Meal',
+                  campaign_id:  'sponsormeal-' + saveData_id,
+               },
             };
 
             const rzp1 = new window.Razorpay(options);
