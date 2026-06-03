@@ -247,6 +247,10 @@ const DonationForm = () => {
                theme: {
                   color: "#F37254",
                },
+               notes: {
+                  campaign_name: 'Donation from Donate Now Page',
+                  campaign_id:  'donation -' + saveData_id,
+               },
             };
 
             const rzp1 = new window.Razorpay(options);

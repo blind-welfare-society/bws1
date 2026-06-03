@@ -20,14 +20,6 @@ const index = (params: any) => {
             `,
           }}
          />
-         <Script
-          id="fb-conversion-inline-script"
-          dangerouslySetInnerHTML={{
-            __html: `
-             fbq('track', 'Donate');
-            `,
-          }}
-        />
          <DonationSuccess pageID={pageID} />
       </Wrapper>
    )
