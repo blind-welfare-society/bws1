@@ -1,6 +1,7 @@
 'use client'
 import HeaderOne from "@/layout/headers/HeaderOne"
 import HeroArea from "./HeroArea"
+import ImpactCounter from "./ImpactCounter"
 import ChooseArea from "./ChooseArea"
 import OurCause from "./OurCause"
 import Projects from "./Projects"
@@ -21,6 +22,7 @@ const HomeOne = () => {
          <HeaderOne style_1={false} style_2={false} />
          <main>
             <HeroArea />
+            <ImpactCounter />
             <About />
             <ChooseArea />
             <OurCause noOfPosts={4} style={false} />
