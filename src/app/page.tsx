@@ -1,6 +1,19 @@
 import HomeOne from "@/components/homes/home-one";
 import Wrapper from "@/layout/Wrapper";
 import axios from "@/lib/axios";
+import type { HomeBanner } from "@/components/homes/home-one/HeroArea";
+
+export const dynamic = 'force-dynamic';
+
+const getHomeBanners = async (): Promise<HomeBanner[]> => {
+  try {
+    const response = await axios.get<{ message: string; data: HomeBanner[] }>('/home-banners');
+    return Array.isArray(response.data?.data) ? response.data.data : [];
+  } catch (error) {
+    console.error('Error fetching home banners:', error);
+    return [];
+  }
+};
 
 export const metadata = async () => {
   try {
@@ -23,10 +36,12 @@ export const metadata = async () => {
     };
   }
 };
-const index = () => {
+const index = async () => {
+  const banners = await getHomeBanners();
+
   return (
     <Wrapper>
-      <HomeOne />
+      <HomeOne banners={banners} />
     </Wrapper>
   )
 }

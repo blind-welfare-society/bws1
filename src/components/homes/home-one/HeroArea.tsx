@@ -1,12 +1,11 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useMemo, useRef, useState } from "react"
 import Link from "next/link"
 import Slider from "react-slick"
-import axios from "@/lib/axios"
 import UseSticky from "@/hooks/UseSticky"
 
-type HomeBanner = {
+export type HomeBanner = {
    bannerImage: string
    title: string
    link: string
@@ -22,50 +21,28 @@ type HeroSlide = {
    alt: string
 }
 
-const HeroArea = () => {
+type HeroAreaProps = {
+   banners: HomeBanner[]
+}
+
+const HeroArea = ({ banners }: HeroAreaProps) => {
    const { sticky } = UseSticky()
    const sliderRef = useRef<Slider | null>(null)
-   const [heroSlides, setHeroSlides] = useState<HeroSlide[]>([])
    const [isPaused, setIsPaused] = useState(false)
    const [currentSlide, setCurrentSlide] = useState(0)
+   const heroSlides = useMemo<HeroSlide[]>(() => {
+      return banners
+         .filter((banner) => banner.bannerImage && banner.title)
+         .map((banner, index) => ({
+            id: `banner-${index}`,
+            image: banner.bannerImage,
+            text: banner.title,
+            link: banner.link || "#",
+            buttonText: banner.btnTxt || "Donate Now",
+            alt: banner.title,
+         }))
+   }, [banners])
    const hasMultipleSlides = heroSlides.length > 1
-
-   useEffect(() => {
-      let isMounted = true
-
-      const fetchHomeBanners = async () => {
-         try {
-            const response = await axios.get<{ message: string; data: HomeBanner[] }>("/home-banners")
-            const banners = Array.isArray(response.data?.data) ? response.data.data : []
-            const slides = banners
-               .filter((banner) => banner.bannerImage && banner.title)
-               .map((banner, index) => ({
-                  id: `banner-${index}`,
-                  image: banner.bannerImage,
-                  text: banner.title,
-                  link: banner.link || "#",
-                  buttonText: banner.btnTxt || "Donate Now",
-                  alt: banner.title,
-               }))
-
-            if (isMounted) {
-               setHeroSlides(slides)
-               setCurrentSlide(0)
-               if (slides.length > 0) {
-                  sliderRef.current?.slickGoTo(0)
-               }
-            }
-         } catch (error) {
-            console.error("Failed to load home banners", error)
-         }
-      }
-
-      fetchHomeBanners()
-
-      return () => {
-         isMounted = false
-      }
-   }, [])
 
    const temporarilyPauseSlider = () => {
       sliderRef.current?.slickPause()
