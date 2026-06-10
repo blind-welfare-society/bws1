@@ -56,7 +56,7 @@
         }
     }
     p {
-        font-size: calc(1.125rem * var(--font-size-modifier));
+        font-size: calc(1.225rem * var(--font-size-modifier));
     }
     &.for-hide-summary {
         @include res-bt(lg, xl) {

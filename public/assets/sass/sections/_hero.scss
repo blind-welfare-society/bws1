@@ -277,9 +277,11 @@
     align-items: center;
     transform: translateX(-50%);
     gap: 14px;
+    &.hero-slider-controls--sticky {
+        z-index: 99;
+    }
     @include res-bl(sm) {
         bottom: 24px;
-        justify-content: center;
         gap: 10px;
     }
     button {

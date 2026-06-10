@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import Link from "next/link"
 import Slider from "react-slick"
 import axios from "@/lib/axios"
+import UseSticky from "@/hooks/UseSticky"
 
 type HomeBanner = {
    bannerImage: string
@@ -22,6 +23,7 @@ type HeroSlide = {
 }
 
 const HeroArea = () => {
+   const { sticky } = UseSticky()
    const sliderRef = useRef<Slider | null>(null)
    const [heroSlides, setHeroSlides] = useState<HeroSlide[]>([])
    const [isPaused, setIsPaused] = useState(false)
@@ -146,7 +148,7 @@ const HeroArea = () => {
             ))}
          </Slider>
 
-         {hasMultipleSlides && <div className="hero-slider-controls" aria-label="Hero slider controls">
+         {hasMultipleSlides && <div className={`hero-slider-controls ${sticky ? "hero-slider-controls--sticky" : ""}`} aria-label="Hero slider controls">
             <button
                type="button"
                className="hero-slider-arrow hero-slider-arrow--prev"
