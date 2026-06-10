@@ -270,7 +270,7 @@
 .hero-slider-controls {
     left: 50%;
     bottom: 34px;
-    z-index: 3;
+    z-index: 99999999999999;
     width: min(100% - 30px, 1320px);
     display: flex;
     position: absolute;
