@@ -68,6 +68,7 @@ const FooterOne = () => {
             </div>
          </div>
       </footer>
+      <div className="whatsapp-button" style={{ width:"50%" }}>
       <Script
          id="interakt-script"
          strategy="afterInteractive" // loads after page is interactive
@@ -89,6 +90,7 @@ const FooterOne = () => {
             });
          `}
       </Script>
+      </div>
       </>
    )
 }
