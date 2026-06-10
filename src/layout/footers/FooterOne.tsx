@@ -64,33 +64,31 @@ const FooterOne = () => {
                   <div className="copyright">
                      <p>{copyright_text}</p>
                   </div>
+                  <Script
+                     id="interakt-script"
+                     strategy="afterInteractive" // loads after page is interactive
+                  >
+                     {`
+                        (function(w,d,s,c,r,a,m){
+                        w['KiwiObject']=r;
+                        w[r]=w[r] || function () {
+                           (w[r].q=w[r].q||[]).push(arguments)};
+                        w[r].l=1*new Date();
+                        a=d.createElement(s);
+                        m=d.getElementsByTagName(s)[0];
+                        a.async=1;
+                        a.src=c;
+                        m.parentNode.insertBefore(a,m)
+                        })(window,document,'script',"https://app.interakt.ai/kiwi-sdk/kiwi-sdk-17-prod-min.js?v="+ new Date().getTime(),'kiwi');
+                        window.addEventListener("load",function () {
+                        kiwi.init('', 'BmOD4kpacgX087rDAYROH28lgQsgiMu5', {});
+                        });
+                     `}
+                  </Script>
                </div>
             </div>
          </div>
       </footer>
-      <div className="whatsapp-button" style={{ width:"50%" }}>
-      <Script
-         id="interakt-script"
-         strategy="afterInteractive" // loads after page is interactive
-      >
-         {`
-            (function(w,d,s,c,r,a,m){
-            w['KiwiObject']=r;
-            w[r]=w[r] || function () {
-               (w[r].q=w[r].q||[]).push(arguments)};
-            w[r].l=1*new Date();
-            a=d.createElement(s);
-            m=d.getElementsByTagName(s)[0];
-            a.async=1;
-            a.src=c;
-            m.parentNode.insertBefore(a,m)
-            })(window,document,'script',"https://app.interakt.ai/kiwi-sdk/kiwi-sdk-17-prod-min.js?v="+ new Date().getTime(),'kiwi');
-            window.addEventListener("load",function () {
-            kiwi.init('', 'BmOD4kpacgX087rDAYROH28lgQsgiMu5', {});
-            });
-         `}
-      </Script>
-      </div>
       </>
    )
 }

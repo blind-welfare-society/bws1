@@ -551,6 +551,12 @@
     color: #363b97;
     font-weight: 600;
 }
+#kiwi-big-iframe-wrapper {
+    iframe {
+        aspect-ratio: 16 / 9;
+        width: 50% !important;
+    }
+}
 iframe {
     aspect-ratio: 16 / 9;
     width: 100% !important;
