@@ -1,253 +1,193 @@
 /*------------------------------------------------
-    ## Contact
+    ## Counters
 ------------------------------------------------*/
-
-.form-style-one {
-    label {
-        cursor: pointer;
-    }
-    .form-control {
-        color: #777777;
-        border-color: #919191;
-        &::placeholder {
-            color: #777777;
+.counter-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    .counter-item__icon {
+        margin-right: 20px;
+        font-size: 35px;
+        color: white;
+        flex: none;
+        text-align: center;
+        line-height: 74px;
+        @include size(72px, 74px);
+        background-size: 100% 100%;
+        background-image: url(../../img/shapes/circle-red.png);
+        &.counter-item__icon--green {
+            background-image: url(../../img/shapes/circle-green.png);
         }
-        &::-webkit-calendar-picker-indicator {
-            filter: invert(0.4);
-        }
-    }
-}
-
-/* Form Style Two */
-.form-style-two {
-    label {
-        cursor: pointer;
-    }
-    .form-control,
-    .single-select {
-        border: none;
-        width: 100%;
-        height: auto;
-        color: #727272;
-        font-size: 16px;
-        line-height: 1.5;
-        padding: 18px 30px;
-        background: rgba(255, 255, 255, 0.06);
-        &::placeholder {
-            color: #727272;
-        }
-        &::-webkit-calendar-picker-indicator {
-            filter: invert(0.35);
-        }
-        &:focus {
-            border: none;
+        &.counter-item__icon--yellow {
+            background-image: url(../../img/shapes/circle-yellow.png);
         }
     }
-    .nice-select:after {
-        right: 30px;
-        margin-top: -6px;
-        @include size(10px);
-    }
-}
-
-.volunteer-left-image {
-    padding-right: 10%;
-    img:not(.shape) {
-        border-radius: 50%;
-        height: auto;
-    }
-    .circle {
-        right: 0;
-        bottom: 6%;
-        max-width: 40%;
-        position: absolute;
-        border: 10px solid var(--black-color);
-    }
-    .shape {
-        position: absolute;
-        right: 100%;
-        z-index: -1;
-        top: 0;
-        max-width: 10%;
-        @include res-bl(md) {
-            left: -10px;
-        }
-    }
-}
-
-
-/* Donation Form */
-.donation-form {
-    padding: 35px 30px;
-    background: #FEF2F1;
-    border-radius: 10px;
-    @include res-bl(xs) {
-        @include gapLR(padding, 20px);
-    }
-    h5 {
-        font-size: 20px;
-        margin-bottom: 11px;
-    }
-    .form-group {
-        > label {
-            color: black;
-            font-size: 15px;
-            cursor: pointer;
-        }
-        .form-control {
-            border: none;
-            background: white;
-            padding: 18px 30px;
-            &:focus {
-                border: none;
+    .counter-item__content {
+        font-weight: 800;
+        line-height: 1.3;
+        font-family: var(--heading-font);
+        .count-text {
+            display: block;
+            font-size: 38px;
+            color: var(--heading-color);
+            @include res-bl(xs) {
+                font-size: 30px;
             }
         }
-    }
-    .custom-radio-price {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 25px;
-        align-items: center;
-        .radio-item {
-            position: relative;
-            margin-bottom: 10px;
-            label {
-                cursor: pointer;
-                font-size: 15px;
-                font-weight: 600;
-                transition: 0.35s;
-                margin-right: 13px;
-                padding: 10px 20px;
-                border-radius: 3px;
-                background: #FFFFFF;
-                color: var(--heading-color);
-                border: 1px solid rgba(0, 0, 0, 0.1);
-                @include res-bl(sm) {
-                    padding: 5px 15px;
-                }
-            }
-            input {
-                z-index: -1;
-                position: absolute;
-                &:checked {
-                    ~ label {
-                        color: white;
-                        background: var(--primary-color);
-                    }
-                }
-            }
-        }
-    }
-    .custom-radios {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 25px;
-        align-items: center;
-        .form-check-input {
-            margin-top: 7px;
-            margin-right: 5px;
-            @include size(15px);
-            background: transparent;
-            border: 4px solid rgba(0, 0, 0, 0.4);
-            &:focus,
-            &:checked {
-                box-shadow: none;
-                border-color: var(--primary-color);
-            }
-        }
-        .radio-item {
-            margin-bottom: 5px;
-            margin-right: 18px;
-        }
-        label {
-            cursor: pointer;
-            font-size: 18px;
-        }
-    }
-    .total-price {
-        flex-wrap: wrap;
-        @include flexcenter(space-between);
-        .price {
-            font-size: 28px;
-            font-weight: 800;
-            color: var(--primary-color);
-            font-family: var(--heading-font);
-        }
-        .cr-btn {
-            @include gapTB(margin, 10px);
+        h5 {
+            margin-bottom: 0;
+            font-size: 20px;
         }
     }
 }
 
-/* Contact Page */
-.contact-page-area {
-    .faq-three-left-part {
-        margin-left: -100px;
-        transform: translate(-65px);
-        @include res-bl(lb) {
-            margin-left: 65px;
-        }
-        @include res-bl(lg) {
-            margin-left: 0;
-            transform: translate(0);
-        }
-    }
-}
 
-.contact-page-form {
-    position: relative;
-    z-index: 1;
+/* Counter Home_2 */
+.counter-area {
     &:before {
-        content: '';
-        top: 0;
-        left: -65px;
-        z-index: -1;
+        @include size(100%);
         position: absolute;
-        background: #FEF2F1;
-        @include size(calc(50vw + 65px), 100%);
-        @include res-bl(lg) {
-            left: 50%;
-            transform: translate(-50%);
-            width: calc(100vw + 130px);
+        content: '';
+        left: 0;
+        top: 0;
+        z-index: -1;
+        background: linear-gradient(269.77deg, rgba(255, 255, 255, 0.86) 59.86%, rgba(217, 217, 217, 0) 99.81%);
+        @include res-bl(xl) {
+            opacity: 0.9;
+            background: white;
         }
-    }
-    .form-control {
-        background: white;
     }
 }
 
-.contact-info-item {
-    margin-bottom: 15px;
-    border:1px solid #199fc7;
-    padding: 15px 30px;
-    .contact-info__icon {
-        margin-right: 5px;
-        line-height: 24px;
-        @include size(24px);
-        margin-bottom: 0px;
+.counter-section-content {
+    > i {
+        font-size: 25px;
+        max-width: 400px;
+        font-weight: 700;
+        line-height: 1.3;
         display: inline-block;
+        font-family: var(--heading-font);
+        @include res-bl(xs) {
+            font-size: 20px;
+        }
+        span {
+            color: var(--primary-color);
+        }
     }
-    h5 {
-        font-size: 20px;
-        margin-bottom: 15px;
+    .counter-btns {
+        .cr-btn {
+            margin-top: 15px;
+            &:not(:last-child) {
+                margin-right: 30px;
+            }
+        }
     }
-    &.contact-info-item--green {
+}
+
+
+/* Impact Counter Home_1 */
+.impact-counter-area {
+    overflow: hidden;
+    background:
+        linear-gradient(180deg, rgba(248, 77, 66, 0.06) 0%, rgba(255, 255, 255, 0) 100%),
+        var(--lighter-color);
+    &:before,
+    &:after {
+        position: absolute;
+        content: '';
+        z-index: -1;
+        border-radius: 50%;
+        background: rgba(32, 184, 109, 0.12);
+    }
+    &:before {
+        top: -90px;
+        left: -70px;
+        @include size(220px);
+    }
+    &:after {
+        right: -110px;
+        bottom: -120px;
+        @include size(280px);
+        background: rgba(255, 184, 64, 0.18);
+    }
+}
+
+.impact-counter-item {
+    height: calc(100% - 30px);
+    display: flex;
+    padding: 34px 30px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    align-items: center;
+    background: white;
+    border: 1px solid rgba(52, 52, 52, 0.08);
+    box-shadow: 0 12px 35px rgba(0, 33, 71, 0.07);
+    transition: $transition;
+    &:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 18px 45px rgba(0, 33, 71, 0.11);
+        .impact-counter-item__icon {
+            color: white;
+            background: var(--primary-color);
+        }
+    }
+    &.impact-counter-item--green {
         --primary-color: var(--green-color);
     }
-    &.contact-info-item--yellow {
+    &.impact-counter-item--yellow {
         --primary-color: var(--yellow-color);
     }
-}
-
-.our-location {
-    iframe {
-        height: 645px;
-        @include res-bl(lg) {
-            height: 500px;
+    .impact-counter-item__icon {
+        flex: none;
+        margin-right: 22px;
+        font-size: 36px;
+        line-height: 76px;
+        text-align: center;
+        border-radius: 50%;
+        color: var(--primary-color);
+        @include size(76px);
+        background: rgba(248, 77, 66, 0.1);
+        transition: $transition;
+    }
+    .impact-counter-item__content {
+        h3 {
+            display: flex;
+            line-height: 1;
+            font-size: 42px;
+            margin-bottom: 10px;
+            align-items: baseline;
+            color: var(--heading-color);
+            @include res-bl(xs) {
+                font-size: 34px;
+            }
+            .d-flex {
+                display: inline-flex !important;
+            }
+            > span {
+                color: var(--primary-color);
+            }
         }
-        @include res-bl(sm) {
-            height: 350px;
+        .screen-reader-text {
+            color: var(--heading-color);
+        }
+        p {
+            margin-bottom: 0;
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.35;
+            color: var(--heading-color);
+            font-family: var(--heading-font);
         }
     }
-    margin-bottom: -10px;
+    @include res-bl(ms) {
+        display: block;
+        padding: 30px 24px;
+        text-align: center;
+        .impact-counter-item__icon {
+            margin: 0 auto 18px;
+        }
+        .impact-counter-item__content h3 {
+            justify-content: center;
+        }
+    }
 }
