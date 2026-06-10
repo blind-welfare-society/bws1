@@ -286,15 +286,15 @@
         border: 0;
         color: white;
         border-radius: 5px;
-        background: var(--primary-color);
-        box-shadow: 0 8px 20px color-mix(in srgb, var(--primary-color) 35%, transparent);
+        background: rgba(30, 30, 30, 0.72);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         transition: $transition;
         &:hover,
         &:focus-visible {
-            color: var(--heading-color);
+            color: white;
             outline: 3px solid white;
             outline-offset: 3px;
-            background: var(--yellow-color);
+            background: var(--primary-color);
         }
     }
 }
@@ -321,13 +321,11 @@
         overflow: hidden;
         border-radius: 50%;
         text-indent: 999px;
-        border: 2px solid white;
         @include size(16px);
-        background: color-mix(in srgb, var(--primary-color) 55%, white);
+        background: rgba(255, 255, 255, 0.68);
         box-shadow: none;
         &.active {
-            border-color: var(--yellow-color);
-            background: var(--primary-color);
+            background: var(--yellow-color);
             transform: scale(1.18);
         }
         @include res-bl(sm) {
