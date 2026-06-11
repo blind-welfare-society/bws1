@@ -106,7 +106,7 @@ const HeroArea = ({ banners }: HeroAreaProps) => {
                <div key={slide.id}>
                   <div className="hero-campaign-slide">
                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                     <img className="hero-campaign-slide__image" src={slide.image} alt={slide.alt} loading={index === 0 ? "eager" : "lazy"} />
+                     <img className="hero-campaign-slide__image" src={slide.image} alt={slide.text} loading={index === 0 ? "eager" : "lazy"} />
                      <div className="hero-campaign-slide__overlay" aria-hidden="true"></div>
                      <div className="container container-1370">
                         <div className="hero-campaign-slide__content text-white">
