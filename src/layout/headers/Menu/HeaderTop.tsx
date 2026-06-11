@@ -81,21 +81,21 @@ const HeaderTop = ({ style }: any) => {
                 </Link>
               </li>
               <li className="social-area">
-                <span>Follow Us</span>
-                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Share on Facebook">
-                  <Image src={facebook} alt="Share on Facebook" width={22} height={22} />
+                <span>Connect with Us</span>
+                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Follow us on Facebook">
+                  <Image src={facebook} alt="Follow us on Facebook" width={22} height={22} />
                 </Link>
-                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Share on Twitter">
-                  <Image src={twitter} alt="Share on Twitter" width={28} height={28} />
+                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Follow us on X">
+                  <Image src={twitter} alt="Follow us on X" width={28} height={28} />
                 </Link>
-                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Share on Instagram'>
-                  <Image src={instagram} alt="Share on Instagram" width={24} height={24} />
+                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Follow us on Instagram'>
+                  <Image src={instagram} alt="Follow us on Instagram" width={24} height={24} />
                 </Link>
-                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Share on Linkedin'>
-                  <Image src={linkedin} alt="Share on Linkedin" width={28} height={28} />
+                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Follow us on Linkedin'>
+                  <Image src={linkedin} alt="Follow us on Linkedin" width={28} height={28} />
                 </Link>
-                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Share on Youtube'>
-                  <Image src={youtube} alt="Share on Youtube" width={22} height={22} />
+                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Follow us on Youtube'>
+                  <Image src={youtube} alt="Follow us on Youtube" width={22} height={22} />
                 </Link>
               </li>
             </ul>

@@ -10,20 +10,20 @@ import twitter from '@/assets/img/social/twitter-black.png';
 const CommonSocialIcon = () => {
    return (
       <>
-         <Link href="https://www.facebook.com/blindwelfaresociety" target="_blank" title="Facebook">
-            <Image src={facebook} alt="Facebook" width={20} height={20} />
+         <Link href="https://www.facebook.com/blindwelfaresociety" target="_blank" title="Follow us on Facebook">
+            <Image src={facebook} alt="Follow us on Facebook" width={20} height={20} />
          </Link>
-         <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" target="_blank" title="Twitter">
-            <Image src={twitter} alt="Twitter" width={20} height={20} />
+         <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" target="_blank" title="Follow us on X">
+            <Image src={twitter} alt="Follow us on X" width={20} height={20} />
          </Link>
-         <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" target="_blank" title="Linkedin">
-            <Image src={linkedin} alt="Linkedin" width={20} height={20} />
+         <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" target="_blank" title="Follow us on Linkedin">
+            <Image src={linkedin} alt="Follow us on Linkedin" width={20} height={20} />
          </Link>
-         <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" target="_blank" title="Instagram">
-            <Image src={instagram} alt="Instagram" width={20} height={20} />
+         <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" target="_blank" title="Follow us on Instagram">
+            <Image src={instagram} alt="Follow us on Instagram" width={20} height={20} />
          </Link>
-         <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg" target="_blank" title="Youtube">
-            <Image src={youtube} alt="Youtube" width={20} height={20} />
+         <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg" target="_blank" title="Follow us on Youtube">
+            <Image src={youtube} alt="Follow us on Youtube" width={20} height={20} />
          </Link>
       </>
    )
