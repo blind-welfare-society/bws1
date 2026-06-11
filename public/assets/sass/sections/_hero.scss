@@ -210,6 +210,9 @@
 }
 
 .hero-campaign-slider {
+    .slick-slide {
+        pointer-events: none;
+    }
     .hero-campaign-slide__content {
         h1,
         .hero-campaign-slide__title,
@@ -219,6 +222,7 @@
         }
     }
     .slick-active {
+        pointer-events: auto;
         .hero-campaign-slide__content {
             h1,
             .hero-campaign-slide__title {
