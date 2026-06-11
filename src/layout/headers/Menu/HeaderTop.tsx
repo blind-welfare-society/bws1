@@ -82,19 +82,19 @@ const HeaderTop = ({ style }: any) => {
               </li>
               <li className="social-area">
                 <span>Connect with Us</span>
-                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Follow us on Facebook">
+                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Follow us on Facebook" target="_blank">
                   <Image src={facebook} alt="Follow us on Facebook" width={22} height={22} />
                 </Link>
-                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Follow us on X">
+                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Follow us on X" target="_blank">
                   <Image src={twitter} alt="Follow us on X" width={28} height={28} />
                 </Link>
-                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Follow us on Instagram'>
+                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Follow us on Instagram' target="_blank">
                   <Image src={instagram} alt="Follow us on Instagram" width={24} height={24} />
                 </Link>
-                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Follow us on Linkedin'>
+                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Follow us on Linkedin' target="_blank">
                   <Image src={linkedin} alt="Follow us on Linkedin" width={28} height={28} />
                 </Link>
-                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Follow us on Youtube'>
+                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Follow us on Youtube' target="_blank">
                   <Image src={youtube} alt="Follow us on Youtube" width={22} height={22} />
                 </Link>
               </li>
