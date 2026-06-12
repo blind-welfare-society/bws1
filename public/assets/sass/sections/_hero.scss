@@ -149,7 +149,7 @@
 }
 
 .hero-campaign-slide__content {
-    max-width: 740px;
+    max-width: 760px;
     padding: 100px 0 105px;
     @include res-bl(xxl) {
         max-width: 680px;
@@ -168,7 +168,7 @@
     .hero-campaign-slide__title {
         margin-bottom: 0;
         color: white;
-        font-size: 64px;
+        font-size: 58px;
         font-weight: 800;
         line-height: 1.12;
         text-transform: none;
@@ -192,6 +192,27 @@
         }
         @include res-bl(xs) {
             font-size: 28px;
+        }
+    }
+    .hero-campaign-slide__sub-heading {
+        max-width: 560px;
+        margin: 22px 0 0;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 22px;
+        font-weight: 600;
+        line-height: 1.45;
+        text-shadow: 0 3px 16px rgba(0, 0, 0, 0.28);
+        @include res-bl(xl) {
+            font-size: 20px;
+        }
+        @include res-bl(md) {
+            max-width: 500px;
+            font-size: 18px;
+        }
+        @include res-bl(sm) {
+            max-width: 100%;
+            margin-top: 16px;
+            font-size: 17px;
         }
     }
     .hero-btns {
@@ -218,6 +239,7 @@
     .hero-campaign-slide__content {
         h1,
         .hero-campaign-slide__title,
+        .hero-campaign-slide__sub-heading,
         .hero-btns {
             opacity: 0;
             transform: translateY(28px);
@@ -230,8 +252,11 @@
             .hero-campaign-slide__title {
                 animation: heroTextReveal 0.85s ease forwards;
             }
+            .hero-campaign-slide__sub-heading {
+                animation: heroTextReveal 0.85s ease 0.1s forwards;
+            }
             .hero-btns {
-                animation: heroButtonReveal 0.85s ease 0.18s forwards;
+                animation: heroButtonReveal 0.85s ease 0.24s forwards;
             }
         }
     }
@@ -264,6 +289,7 @@
         .hero-campaign-slide__content {
             h1,
             .hero-campaign-slide__title,
+            .hero-campaign-slide__sub-heading,
             .hero-btns {
                 opacity: 1;
                 animation: none !important;

@@ -8,6 +8,7 @@ import UseSticky from "@/hooks/UseSticky"
 export type HomeBanner = {
    bannerImage: string
    title: string
+   sub_heading?: string
    link: string
    btnTxt: string
 }
@@ -16,6 +17,7 @@ type HeroSlide = {
    id: string
    image: string
    text: string
+   subHeading?: string
    link: string
    buttonText: string
    alt: string
@@ -37,12 +39,15 @@ const HeroArea = ({ banners }: HeroAreaProps) => {
             id: `banner-${index}`,
             image: banner.bannerImage,
             text: banner.title,
+            subHeading: banner.sub_heading,
             link: banner.link || "#",
             buttonText: banner.btnTxt || "Donate Now",
             alt: banner.title,
          }))
    }, [banners])
    const hasMultipleSlides = heroSlides.length > 1
+
+   console.log("Hero slides:", heroSlides);
 
    const temporarilyPauseSlider = () => {
       sliderRef.current?.slickPause()
@@ -106,7 +111,7 @@ const HeroArea = ({ banners }: HeroAreaProps) => {
                <div key={slide.id}>
                   <div className="hero-campaign-slide">
                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                     <img className="hero-campaign-slide__image" src={slide.image} alt={slide.text} loading={index === 0 ? "eager" : "lazy"} />
+                     <img className="hero-campaign-slide__image" src={slide.image} alt={slide.alt} loading={index === 0 ? "eager" : "lazy"} />
                      <div className="hero-campaign-slide__overlay" aria-hidden="true"></div>
                      <div className="container container-1370">
                         <div className="hero-campaign-slide__content text-white">
@@ -114,6 +119,9 @@ const HeroArea = ({ banners }: HeroAreaProps) => {
                               <h1>{slide.text}</h1>
                            ) : (
                               <p className="hero-campaign-slide__title">{slide.text}</p>
+                           )}
+                           {slide.subHeading && (
+                              <p className="hero-campaign-slide__sub-heading">{slide.subHeading}</p>
                            )}
                            <div className="hero-btns pt-30 rpt-10">
                               <Link className="cr-btn" href={slide.link}>{slide.buttonText}</Link>
