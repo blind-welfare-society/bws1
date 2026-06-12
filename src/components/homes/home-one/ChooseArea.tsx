@@ -6,7 +6,7 @@ import VideoPopup from "@/modals/VideoPopup"
 import videoBg from "@/assets/img/video/video-bg.jpg"
 import leafShape from "@/assets/img/shapes/three-round-green.png"
 
-const tab_title: string[] = ["Mission", "Vission"]
+const tab_title: string[] = ["Mission", "Vision"]
 
 const tab_content: JSX.Element[] = [
    (<>Our Mission: To enable visually impaired individuals to overcome the barriers that impede their independence and participation in society.</>),
