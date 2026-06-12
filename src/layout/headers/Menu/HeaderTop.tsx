@@ -82,19 +82,19 @@ const HeaderTop = ({ style }: any) => {
               </li>
               <li className="social-area">
                 <span>Connect with Us</span>
-                <Link href="https://www.facebook.com/blindwelfaresociety" title="Facebook" aria-label="Follow us on Facebook" target="_blank">
+                <Link href="https://www.facebook.com/blindwelfaresociety" target="_blank" title="Follow us on Facebook">
                   <Image src={facebook} alt="Follow us on Facebook" width={22} height={22} />
                 </Link>
-                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" title="Twitter" aria-label="Follow us on X" target="_blank">
+                <Link href="https://twitter.com/bwelfaresociety?t=rBF0LR2jopVuUbgMm1ib2g&s=09" target="_blank" title="Follow us on X">
                   <Image src={twitter} alt="Follow us on X" width={28} height={28} />
                 </Link>
-                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" title="Instagram" aria-label='Follow us on Instagram' target="_blank">
+                <Link href="https://www.instagram.com/blindwelfaresocietyindia/?hl=en" target="_blank" title="Follow us on Instagram">
                   <Image src={instagram} alt="Follow us on Instagram" width={24} height={24} />
                 </Link>
-                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" title="Linkedin" aria-label='Follow us on Linkedin' target="_blank">
+                <Link href="https://www.linkedin.com/company/blind-welfare-society-in-india/" target="_blank" title="Follow us on Linkedin">
                   <Image src={linkedin} alt="Follow us on Linkedin" width={28} height={28} />
                 </Link>
-                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" title="Youtube" aria-label='Follow us on Youtube' target="_blank">
+                <Link href="https://www.youtube.com/channel/UCfHNcdJW41aPNrF9UyHUlCg/" target="_blank" title="Follow us on Youtube">
                   <Image src={youtube} alt="Follow us on Youtube" width={22} height={22} />
                 </Link>
               </li>
