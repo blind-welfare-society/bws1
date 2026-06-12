@@ -44,7 +44,7 @@ const OurCause = ({ noOfPosts, style }: { noOfPosts: number, style: boolean }) =
                <div className="col-xl-8 col-lg-10 col-md-10">
                   <div className="section-title text-center mb-50">
                      <h3>Featured <span> Campaigns</span></h3>
-                     <p><strong>By contributing to our features donation campaigns, you are not just supporting us, you are fostering independence, education, and accessibility for the people with blindness.</strong></p>
+                     <p><strong>By contributing to our featured donation campaigns, you are not just supporting us, you are fostering independence, education, and accessibility for the people with blindness.</strong></p>
                   </div>
                </div>
             </div>
