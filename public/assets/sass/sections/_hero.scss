@@ -66,6 +66,7 @@
         justify-content: center;
         .cr-btn {
             margin: 10px 10px 0;
+            text-transform: none;
         }
     }
 }
@@ -198,6 +199,7 @@
         flex-wrap: wrap;
         .cr-btn {
             margin-top: 10px;
+            text-transform: none;
             &:focus-visible {
                 outline: 3px solid white;
                 outline-offset: 4px;
