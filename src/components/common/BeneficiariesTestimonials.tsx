@@ -14,7 +14,7 @@ const BeneficiariesTestimonials = () => {
                 </div>
                 <div className="col-md-4">
                     <iframe
-                    src="https://www.youtube.com/embed/U6tzzUKbLgo?rel=0"
+                    src="https://www.youtube.com/embed/fXyYbNwxz9A?rel=0"
                     frameBorder="0"
                     allow="autoplay; encrypted-media"
                     allowFullScreen
