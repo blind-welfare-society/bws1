@@ -15,21 +15,21 @@ const BlogArea = () => {
    const limit = 12;
 
    useEffect(() => {
-   const getPosts = async () => {
-      try {
-         setLoading(true);
-         const { data, total } = await fetchPosts(page, limit);
-         setPosts(data);
-         setTotal(total);
-         window.scrollTo(0, 0);
-      } catch (error) {
-         setError(error as Error);
-      } finally {
-       setLoading(false);
-      }
-   };
+      const getPosts = async () => {
+         try {
+            setLoading(true);
+            const { data, total } = await fetchPosts(page, limit);
+            setPosts(data);
+            setTotal(total);
+            window.scrollTo(0, 0);
+         } catch (error) {
+            setError(error as Error);
+         } finally {
+            setLoading(false);
+         }
+      };
 
-   getPosts();
+      getPosts();
    }, [page]);
 
    const totalPages = Math.ceil(total / limit);
@@ -42,8 +42,8 @@ const BlogArea = () => {
       setPage(pageNumber);
    };
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+   if (loading) return <p>Loading...</p>;
+   if (error) return <p>Error: {error.message}</p>;
 
    return (
       <div className="blog-page-area pb-50 pt-30 rel z-1">
@@ -58,6 +58,7 @@ const BlogArea = () => {
                         <div className="blog-item__content blog-container">
                            <h4><Link href={`/blogs/${item.slug}`}>{item.title}</Link></h4>
                            <p className="post-date"><i className="flaticon-calendar"></i> {item.blog_date}</p>
+                           {/*
                            <div className="blog-categories">
                               {Array.isArray(item.cat_name) && item.cat_name.length > 0 ? (
                                  item.cat_name.map((category, index) => (
@@ -68,7 +69,8 @@ const BlogArea = () => {
                                  ))
                               ) : "" }
                            </div>
-                           <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
+                           */}
+                           <p dangerouslySetInnerHTML={{ __html: item.brief }}></p>
                            <Link href={`/blogs/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
                         </div>
                      </div>
@@ -76,29 +78,29 @@ const BlogArea = () => {
                ))}
             </div>
             <div className="pagination pt-20">
-            <button onClick={() => handlePageClick(1)} disabled={page === 1}>
-               First
-            </button>
-            <button onClick={() => handlePageClick(page - 1)} disabled={page === 1}>
-               Previous
-            </button>
-            {pages.map((pageNumber) => (
-               <button
-                  key={pageNumber}
-                  onClick={() => handlePageClick(pageNumber)}
-                  disabled={page === pageNumber}
-               >
-                  {pageNumber}
+               <button onClick={() => handlePageClick(1)} disabled={page === 1}>
+                  First
                </button>
-            ))}
-            <button onClick={() => handlePageClick(page + 1)} disabled={page === totalPages}>
-               Next
-            </button>
-            <button onClick={() => handlePageClick(totalPages)} disabled={page === totalPages}>
-               Last
-            </button>
+               <button onClick={() => handlePageClick(page - 1)} disabled={page === 1}>
+                  Previous
+               </button>
+               {pages.map((pageNumber) => (
+                  <button
+                     key={pageNumber}
+                     onClick={() => handlePageClick(pageNumber)}
+                     disabled={page === pageNumber}
+                  >
+                     {pageNumber}
+                  </button>
+               ))}
+               <button onClick={() => handlePageClick(page + 1)} disabled={page === totalPages}>
+                  Next
+               </button>
+               <button onClick={() => handlePageClick(totalPages)} disabled={page === totalPages}>
+                  Last
+               </button>
             </div>
-            
+
          </div>
       </div>
    )
