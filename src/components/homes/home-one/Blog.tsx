@@ -15,24 +15,24 @@ const HomeOneBlog = ({ style }: any) => {
 
    const limit = 3;
    useEffect(() => {
-   const getPosts = async () => {
-      try {
-         setLoading(true);
-         const { data, total } = await fetchPosts(page, limit);
-         setPosts(data);
-         setTotal(total);
-      } catch (error) {
-         setError(error as Error);
-      } finally {
-       setLoading(false);
-      }
-   };
+      const getPosts = async () => {
+         try {
+            setLoading(true);
+            const { data, total } = await fetchPosts(page, limit);
+            setPosts(data);
+            setTotal(total);
+         } catch (error) {
+            setError(error as Error);
+         } finally {
+            setLoading(false);
+         }
+      };
 
-   getPosts();
+      getPosts();
    }, [page]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
+   if (loading) return <p>Loading...</p>;
+   if (error) return <p>Error: {error.message}</p>;
 
    return (
       <div className={`pt-120 rpt-50 pb-60 rel z-1 ${style ? "blog-area-two overlay" : "blog-area"}`}>
@@ -46,7 +46,7 @@ const HomeOneBlog = ({ style }: any) => {
                </div>
             </div>
 
-           <div className="row justify-content-center">
+            <div className="row justify-content-center">
                {posts.map((item) => (
                   <div key={item.id} className="col-xl-4 col-md-6">
                      <div className="blog-item">
@@ -56,6 +56,7 @@ const HomeOneBlog = ({ style }: any) => {
                         <div className="blog-item__content blog-container">
                            <h4><Link href={`/blogs/${item.slug}`}>{item.title}</Link></h4>
                            <p className="post-date"><i className="flaticon-calendar"></i> {item.blog_date}</p>
+                           {/*
                            <div className="blog-categories">
                               {Array.isArray(item.cat_name) && item.cat_name.length > 0 ? (
                                  item.cat_name.map((category, index) => (
@@ -66,7 +67,8 @@ const HomeOneBlog = ({ style }: any) => {
                                  ))
                               ) : "" }
                            </div>
-                           <p dangerouslySetInnerHTML={{ __html: item.brief}}></p>
+                           */}
+                           <p dangerouslySetInnerHTML={{ __html: item.brief }}></p>
                            <Link href={`/blogs/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
                         </div>
                      </div>
