@@ -76,7 +76,9 @@ const CategoryBlogArea = () => {
                            </div>
                            */}
                            <p dangerouslySetInnerHTML={{ __html: item.brief }}></p>
-                           <Link href={`/blogs/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
+                           <Link href={`/blogs/${item.slug}`} className="read-more" aria-label="Read more">
+                              Read More <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                           </Link>
                         </div>
                      </div>
                   </div>
