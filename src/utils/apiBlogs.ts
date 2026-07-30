@@ -24,7 +24,7 @@ export interface PaginatedResponse {
 };*/
 
 
-export const fetchPosts = async (page: number, limit: number): Promise<PaginatedResponse> => {
+export const fetchBlogPosts = async (page: number, limit: number): Promise<PaginatedResponse> => {
   console.count("fetchPosts called");
   try {
     const response = await axios.get<{ message: string, data: Post[], total: number }>('/blog-posts', {
