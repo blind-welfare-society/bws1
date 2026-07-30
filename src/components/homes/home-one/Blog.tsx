@@ -2,12 +2,12 @@
 import Image from "next/image"
 import Link from "next/link"
 //import { useState, useEffect } from "react";
-import { fetchBlogPosts, Post } from '@/utils/apiBlogs';
+import { fetchHomeBlogPosts, Post } from '@/utils/apiBlogs';
 
 import blogShape_1 from "@/assets/img/shapes/three-round-yellow.png"
 
 const HomeOneBlog = async ({ style }: any) => {
-   const { data: posts } = await fetchBlogPosts(1, 3);
+   const { data: posts } = await fetchHomeBlogPosts(1, 3);
 
    return (
       <div className={`pt-120 rpt-50 pb-60 rel z-1 ${style ? "blog-area-two overlay" : "blog-area"}`}>
