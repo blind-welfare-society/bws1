@@ -1,38 +1,12 @@
-"use client"
 import Image from "next/image"
 import Link from "next/link"
-import { useState, useEffect } from "react";
 import { fetchPosts, Post } from '@/utils/apiBlogs';
 
 import blogShape_1 from "@/assets/img/shapes/three-round-yellow.png"
 
-const HomeOneBlog = ({ style }: any) => {
-   const [posts, setPosts] = useState<Post[]>([]);
-   const [loading, setLoading] = useState(true);
-   const [error, setError] = useState<Error | null>(null);
-   const [page, setPage] = useState(1);
-   const [total, setTotal] = useState(0);
+const HomeOneBlog = async ({ style }: any) => {
 
-   const limit = 3;
-   useEffect(() => {
-      const getPosts = async () => {
-         try {
-            setLoading(true);
-            const { data, total } = await fetchPosts(page, limit);
-            setPosts(data);
-            setTotal(total);
-         } catch (error) {
-            setError(error as Error);
-         } finally {
-            setLoading(false);
-         }
-      };
-
-      getPosts();
-   }, [page]);
-
-   if (loading) return <p>Loading...</p>;
-   if (error) return <p>Error: {error.message}</p>;
+   const { data: posts } = await fetchPosts(1, 3);
 
    return (
       <div className={`pt-120 rpt-50 pb-60 rel z-1 ${style ? "blog-area-two overlay" : "blog-area"}`}>
@@ -69,14 +43,18 @@ const HomeOneBlog = ({ style }: any) => {
                            </div>
                            */}
                            <p dangerouslySetInnerHTML={{ __html: item.brief }}></p>
-                           <Link href={`/blogs/${item.slug}`} className="read-more">Read More <i className="fas fa-arrow-right"></i></Link>
+                           <Link href={`/blogs/${item.slug}`} className="read-more" aria-label="Read More">
+                              Read More <i className="fas fa-arrow-right" aria-hidden="true"></i>
+                           </Link>
                         </div>
                      </div>
                   </div>
                ))}
             </div>
             <div className="text-center pt-30">
-               <Link href="/blogs" className="cr-btn">View All</Link>
+               <Link href="/blogs" className="cr-btn" aria-label="View All Blogs">
+                  View All
+               </Link>
             </div>
          </div>
          {style ? "" : <Image className="blog-shape-one top_image_bounce" src={blogShape_1} alt="Shape" />}
