@@ -25,6 +25,7 @@ export interface PaginatedResponse {
 
 
 export const fetchPosts = async (page: number, limit: number): Promise<PaginatedResponse> => {
+  console.count("fetchPosts called");
   try {
     const response = await axios.get<{ message: string, data: Post[], total: number }>('/blog-posts', {
       params: { page, limit },
@@ -33,7 +34,7 @@ export const fetchPosts = async (page: number, limit: number): Promise<Paginated
     const formattedData = response.data.data.map(post => ({
       ...post,
       //blog_date: formatDate(post.blog_date),
-      cat_name: post.cat_name ? JSON.parse(post.cat_name) : [], 
+      cat_name: post.cat_name ? JSON.parse(post.cat_name) : [],
     }));
 
     return {
